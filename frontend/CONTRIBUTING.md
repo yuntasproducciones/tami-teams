@@ -22,9 +22,10 @@ Para trabajar en este proyecto, necesitarás tener instalados en tu computadora:
 
 - **Node.js** (Versión recomendada: 22.3)
     - Para verificar tu versión de Node.js, utiliza el siguiente comando:
-
+  
+```
       node -v
-
+```
 - **npm** (Se instala junto con Node.js)
 
 Dependiendo de tu área de trabajo, se requiere lo siguiente:
@@ -49,25 +50,30 @@ utiliza los siguientes comandos para configurar y levantar el proyecto:
 
 1. Instala las dependencias del proyecto:
 
+```
    npm install
-
+```
 2. Instalar react-router-dom:
    Este paquete es esencial para gestionar la navegación en aplicaciones React.
-
+```
    npm install react-router-dom
+```
 
 3. Inicia el servidor de desarrollo:
 
+```
    npm run dev
-
+```
 4. Construye el proyecto para producción:
 
+```
    npm run build
-
+```
 5. Para ejecutar pruebas:
 
+```
    npm test
-
+```
 ## Estructura del Proyecto
 
 La estructura del proyecto está diseñada para facilitar la organización y el desarrollo.
@@ -110,7 +116,7 @@ Si encuentras errores, por favor abre un issue en GitHub con la siguiente inform
 5. Información adicional (sistema operativo, navegador, etc.).
 
 ## Estándares de Código
-Por favor, consulta el archivo CODESTYLE.md para conocer los estándares de código
+Por favor, consulta el archivo <strong> CODESTYLE.md </strong>para conocer los estándares de código
 que se deben seguir en este proyecto.
 
 ¡Esperamos tus contribuciones! uwu
