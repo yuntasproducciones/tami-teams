@@ -116,7 +116,7 @@ Si encuentras errores, por favor abre un issue en GitHub con la siguiente inform
 5. Información adicional (sistema operativo, navegador, etc.).
 
 ## Estándares de Código
-Por favor, consulta el archivo CODESTYLE.md para conocer los estándares de código
+Por favor, consulta el archivo <strong> CODESTYLE.md </strong>para conocer los estándares de código
 que se deben seguir en este proyecto.
 
 ¡Esperamos tus contribuciones! uwu
