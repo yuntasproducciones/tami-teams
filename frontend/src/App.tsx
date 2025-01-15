@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import About from './pages/About'; // Importa tu componente About
-import Home from './pages/Home';  // Importa el componente Home
+import About from './presentation/pages/About'; // Importa tu componente About
+import Home from './presentation/pages/Home';  // Importa el componente Home
 
 const App = () => {
     return (
