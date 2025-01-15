@@ -1,27 +1,23 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import About from './pages/About';  // Importa tu componente About
+import About from './pages/About'; // Importa tu componente About
+import Home from './pages/Home';  // Importa el componente Home
 
 const App = () => {
     return (
         <BrowserRouter>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link> {/* Enlace a la página About */}
+            <nav className="bg-gray-800 p-4 text-white">
+                <Link to="/" className="mx-2">Home</Link>
+                <Link to="/about" className="mx-2">About</Link> {/* Enlace a la página About */}
             </nav>
 
-            <Routes>
-                <Route path="/" element={<Home />} /> {/* Asegúrate de tener un componente Home */}
-                <Route path="/about" element={<About />} /> {/* Ruta hacia el componente About */}
-            </Routes>
+            <div className="container mx-auto p-4">
+                <Routes>
+                    <Route path="/" element={<Home />} /> {/* Ruta al componente Home */}
+                    <Route path="/about" element={<About />} /> {/* Ruta hacia el componente About */}
+                </Routes>
+            </div>
         </BrowserRouter>
     );
 };
-
-const Home = () => (
-    <div>
-        <h1>Home Page</h1>
-        <p>Welcome to the Home page.</p>
-    </div>
-);
 
 export default App;
