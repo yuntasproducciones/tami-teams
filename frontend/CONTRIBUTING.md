@@ -113,5 +113,5 @@ Si encuentras errores, por favor abre un issue en GitHub con la siguiente inform
 Por favor, consulta el archivo CODESTYLE.md para conocer los estándares de código
 que se deben seguir en este proyecto.
 
-¡Esperamos tus contribuciones!
+¡Esperamos tus contribuciones! uwu
 
