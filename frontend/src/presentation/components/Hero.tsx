@@ -1,9 +1,10 @@
 import { useState } from "react";
+import imgT from '../../../public/assets/images/home_carrusell_1.webp';
 
 const Hero = () => {
   const slides = [
     {
-      image: "https://plus.unsplash.com/premium_photo-1666672388644-2d99f3feb9f1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8anBnfGVufDB8fDB8fHww",
+      image: {imgT},
       title: "Herramientas tecnología que marcan la diferencia",
       items: ["✅ Ventilador holográfico", "✅ Purificador de agua"],
     },
