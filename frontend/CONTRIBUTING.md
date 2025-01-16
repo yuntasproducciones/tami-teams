@@ -11,6 +11,8 @@ Obligatorio que sea leído por todos los contribuyentes. Aquí encontrarán paut
 6. [Solicitudes de Funcionalidades](#solicitudes-de-funcionalidades)
 7. [Reportar Errores](#reportar-errores)
 8. [Estándares de Código](#estandares-de-codigo)
+9. [Levantar el contenedor de MariaDB en Docker](#levantar-el-contenedor-de-mariadb-en-docker)
+
 
 ## Cómo Empezar
 
@@ -121,3 +123,6 @@ que se deben seguir en este proyecto.
 
 ¡Esperamos tus contribuciones! uwu
 
+## Levantar el contenedor de MariaDB en Docker
+- Por favor, consulta el archivo <strong> RULES.md </strong> para saber como levantar el contenedor de MariaDB en Docker.
+- (Opcional si deseas tener la bd en docker, si no, puedes usar la bd local)
