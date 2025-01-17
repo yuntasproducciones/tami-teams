@@ -41,30 +41,54 @@ const Navbar = () => {
 
       {/* Menú */}
       <div className="flex items-center justify-center w-1/3">
-        <ul className="flex space-x-6">
+        <ul className="flex space-x-9">
           <li>
-            <Link to="/" className="text-white hover:underline">
+            <Link to="/" className="text-white hover:underline font-bold">
               Inicio
             </Link>
           </li>
           <li>
-            <Link to="/about" className="text-white hover:underline">
+            <Link to="/about" className="text-white hover:underline font-bold">
               Nosotros
             </Link>
           </li>
           <li>
-            <Link to="/products" className="text-white hover:underline">
+            <Link to="/products" className="text-white hover:underline font-bold">
               Productos
             </Link>
           </li>
           <li>
-            <Link to="/shipping-policies" className="text-white hover:underline">
+            <Link to="/shipping-policies" className="text-white hover:underline font-bold">
               Políticas de envíos
             </Link>
           </li>
+          <li className="relative group">
+            <button className="text-white hover:underline font-bold">
+              Más
+            </button>
+            <ul className="absolute left-0 hidden mt-2 space-y-2 bg-teal-600 p-2 rounded group-hover:block">
+              <li>
+                <Link to="/blog" className="text-white hover:underline">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/store" className="text-white hover:underline">
+                  Tienda
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" className="text-white hover:underline">
+                  Login
+                </Link>
+              </li>
+            </ul>
+          </li>
         </ul>
+        <button className="ml-20 mt-0 text-teal-700 bg-white px-4 py-2 rounded hover:bg-teal-600 font-bold">
+          Contáctanos
+        </button>
       </div>
-
       {/* Espaciador (opcional) */}
       <div className="w-1/3"></div>
     </nav>

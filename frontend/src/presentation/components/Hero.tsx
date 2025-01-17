@@ -1,22 +1,30 @@
 import { useState } from "react";
 import imgT from '../../../public/assets/images/home_carrusell_1.webp';
+import imgA from '../../../public/assets/images/home_carrusell_2.webp';
+import imgD from '../../../public/assets/images/home_carrusell_3.webp';
+
+interface Slide {
+  image: string;
+  title: string;
+  items?: string[];
+}
 
 const Hero = () => {
-  const slides = [
+  const slides: Slide[] = [
     {
-      image: {imgT},
-      title: "Herramientas tecnología que marcan la diferencia",
-      items: ["✅ Ventilador holográfico", "✅ Purificador de agua"],
+      image: imgT,
+      title: "Innovación y \n soluciones para \n cada proyecto",
+      items: [],
     },
     {
-      image: "../assets/images/HOME_Carrusel_1.webp",
-      title: "Innovación en tu hogar",
-      items: ["✅ Aspiradora inteligente", "✅ Sistema de seguridad avanzado"],
+      image: imgA,
+      title: "Equipos de alta \n tecnología para \n impulsar tu negocio",
+      items: [],
     },
     {
-      image: "/assets/images/HOME_Carrusel_1.webp",
-      title: "Soluciones sostenibles",
-      items: ["✅ Panel solar", "✅ Purificador de aire"],
+      image: imgD,
+      title: "Herramientas \n tecnología que \n marcan la diferencia",
+      items: [],
     },
   ];
 
@@ -31,36 +39,45 @@ const Hero = () => {
   };
 
   return (
-    <section
-      className="relative bg-cover bg-center h-[860px]"
-      style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="text-center text-white">
-          <h1 className="text-4xl font-bold">{slides[currentSlide].title}</h1>
-          <ul className="mt-4">
-            {slides[currentSlide].items.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-          <button className="mt-6 bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600">
-            Descubre más
-          </button>
+      <section
+          className="relative bg-cover bg-center h-[860px] pt-12"
+          style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-4xl font-bold whitespace-pre-line">
+              {slides[currentSlide].title}
+            </h1>
+            <ul className="mt-4">
+              {slides[currentSlide].items?.map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+              ))}
+            </ul>
+            <button
+                className="mt-6 text-teal-600 bg-white px-4 py-2 rounded hover:bg-teal-800 font-bold"> Descubre más
+            </button>
+          </div>
         </div>
-      </div>
-      <button
-        onClick={handlePrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded hover:bg-opacity-75"
-      >
-        ❮
-      </button>
-      <button
-        onClick={handleNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded hover:bg-opacity-75"
-      >
-        ❯
-      </button>
-    </section>
+
+<button
+    onClick={handlePrev}
+    className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
+>
+  <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 4L8 12L16 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<button
+    onClick={handleNext}
+    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
+>
+  <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 4L16 12L8 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+</button>
+      </section>
   );
 };
 
