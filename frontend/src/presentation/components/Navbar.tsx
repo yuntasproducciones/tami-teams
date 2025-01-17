@@ -40,22 +40,22 @@ const Navbar = () => {
         {/* Menú */}
         <div className="w-3/5">
           <nav className="flex justify-around">
-            <Link to="/" className="text-white hover:underline font-medium text-2xl">
+            <Link to="/" className="text-white hover:underline font-medium text-3xl">
               Inicio
             </Link>
-            <Link to="/about" className="text-white hover:underline font-medium text-2xl">
+            <Link to="/about" className="text-white hover:underline font-medium text-3xl">
               Nosotros
             </Link>
-            <Link to="/products" className="text-white hover:underline font-medium text-2xl">
+            <Link to="/products" className="text-white hover:underline font-medium text-3xl">
               Productos
             </Link>
-            <Link to="/shipping-policies" className="text-white hover:underline font-medium text-2xl">
+            <Link to="/shipping-policies" className="text-white hover:underline font-medium text-3xl">
               Políticas de envíos
             </Link>
 
             {/* Dropdown */}
             <div className="relative group">
-              <span className="text-white cursor-pointer pt-1 px-5 font-medium text-2xl">
+              <span className="text-white cursor-pointer pt-1 px-5 font-medium text-3xl">
                 Más
               </span>
               <div className="absolute hidden group-hover:block bg-teal-700 text-white shadow-md rounded-md">
