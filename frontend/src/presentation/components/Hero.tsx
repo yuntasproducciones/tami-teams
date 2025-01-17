@@ -39,45 +39,45 @@ const Hero = () => {
   };
 
   return (
-      <section
-          className="relative bg-cover bg-center h-[860px] pt-12"
-          style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl font-bold whitespace-pre-line">
-              {slides[currentSlide].title}
-            </h1>
-            <ul className="mt-4">
-              {slides[currentSlide].items?.map((item: string, index: number) => (
-                  <li key={index}>{item}</li>
-              ))}
-            </ul>
-            <button
-                className="mt-6 text-teal-600 bg-white px-4 py-2 rounded hover:bg-teal-800 font-bold"> Descubre más
-            </button>
-          </div>
+    <section
+      className="relative bg-cover bg-center h-[860px] pt-12 headerprueba"
+      style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 158, 156, 0.7) -33%, rgba(0, 158, 156, 0)), url(${slides[currentSlide].image})` }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center pl-[200px]">
+        <div className="text-white">
+          <h1 className="text-5xl font-bold whitespace-pre-line">
+            {slides[currentSlide].title}
+          </h1>
+          <ul className="mt-4">
+            {slides[currentSlide].items?.map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+          <button
+            className="mt-6 text-teal-600 text-lg bg-white px-4 py-2 rounded-2xl hover:bg-teal-800 font-bold"> Descubre más
+          </button>
         </div>
+      </div>
 
-<button
-    onClick={handlePrev}
-    className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
->
-  <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 4L8 12L16 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
+      <button
+        onClick={handlePrev}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
+      >
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4L8 12L16 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
 
-<button
-    onClick={handleNext}
-    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
->
-  <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 4L16 12L8 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
+      <button
+        onClick={handleNext}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
+      >
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 4L16 12L8 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
 
-</button>
-      </section>
+      </button>
+    </section>
   );
 };
 
