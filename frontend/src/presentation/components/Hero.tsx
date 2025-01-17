@@ -40,22 +40,25 @@ const Hero = () => {
 
   return (
     <section
-      className="relative bg-cover bg-center h-[860px] pt-12 headerprueba"
-      style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 158, 155, 0.69) -33%, rgba(0, 158, 156, 0)), url(${slides[currentSlide].image})` }}
-    >
+    className="relative bg-cover bg-center h-[920px] pt-12 headerprueba"
+    style={{
+      backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`
+    }}
+  >
+  
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center pl-[200px]">
         <div className="text-white">
           <h1 className="text-5xl font-bold whitespace-pre-line">
             {slides[currentSlide].title}
           </h1>
-          <ul className="mt-4">
+          <ul className="mt-5">
             {slides[currentSlide].items?.map((item: string, index: number) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <button
-            className="mt-6 text-teal-600 text-lg bg-white px-4 py-2 rounded-2xl hover:bg-teal-800 font-bold"> Descubre más
+          <button className="mt-6 text-teal-600 text-2xl bg-white px-8 py-4 rounded-2xl hover:bg-teal-800 font-bold">Descubre más
           </button>
+
         </div>
       </div>
 
