@@ -21,8 +21,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 w-full h-24 backdrop-blur-md transition-all z-50 bg-top ${isScrolled ? "bg-teal-600 shadow-lg" : "bg-teal-600/50"}`}>
-      <div className="mx-auto flex items-center justify-between px-[50px] py-1 h-full ">
+    <header className={`fixed top-0 left-0 w-full h-24 backdrop-blur-md transition-all z-50 bg-top ${isScrolled ? "bg-teal-600 shadow-lg border-b-4 border-white" : "bg-teal-600/50 border-b-2 border-white"}`}>
+      <div className="mx-auto flex items-center justify-between px-[100px] py-1 h-full ">
         {/* Logo */}
         <div className="flex items-center justify-start w-1/10 h-full">
           <img

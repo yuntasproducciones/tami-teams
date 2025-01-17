@@ -41,7 +41,7 @@ const Hero = () => {
   return (
     <section
       className="relative bg-cover bg-center h-[860px] pt-12 headerprueba"
-      style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 158, 156, 0.7) -33%, rgba(0, 158, 156, 0)), url(${slides[currentSlide].image})` }}
+      style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 158, 155, 0.69) -33%, rgba(0, 158, 156, 0)), url(${slides[currentSlide].image})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center pl-[200px]">
         <div className="text-white">
