@@ -4,7 +4,11 @@ export default {
     "./src/**/*.{html,js,ts,jsx,tsx}", // Rutas donde se encuentran tus archivos que usan Tailwind
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "verde_turquesa": "#009e9c",
+      }
+    },
   },
   plugins: [],
 }
