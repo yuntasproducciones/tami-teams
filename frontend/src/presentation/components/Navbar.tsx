@@ -29,12 +29,14 @@ const Navbar = () => {
       <div className="mx-auto flex items-center justify-between px-[100px] py-2 h-full">
         {/* Logo */}
         <div className="flex items-center justify-start w-1/10 h-full">
-          <img
-            src={logoTami}
-            alt="logo-tami"
-            className="h-full w-auto scale-150"
-            style={{ objectFit: "contain" }}
-          />
+        <img
+          src={logoTami}
+          alt="logo-tami"
+          className="h-full w-auto scale-[2] lg:scale-[1.7] -mt-6"
+          style={{ objectFit: "contain" }}
+        />
+
+
         </div>
 
         {/* Menú */}

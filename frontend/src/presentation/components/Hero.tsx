@@ -48,7 +48,7 @@ const Hero = () => {
   
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center pl-[200px]">
         <div className="text-white">
-          <h1 className="text-5xl font-bold whitespace-pre-line">
+          <h1 className="text-7xl font-bold whitespace-pre-line">
             {slides[currentSlide].title}
           </h1>
           <ul className="mt-5">
