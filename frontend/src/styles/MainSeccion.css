@@ -30,6 +30,7 @@
     gap: 10px;
     border-radius: 30px;
     white-space: pre-line;
+    transition: transform 0.3s ease-in-out; /* Add transition */
 
     &.background1 {
         background-image: url('../../public/assets/images/home_carrusell_5.webp');
@@ -60,7 +61,10 @@
     height: 30%;
     bottom: 0;
     background: linear-gradient(to top, #037070, transparent);
+}
 
+.main-container-paragraphs:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .secondary-container--title {
