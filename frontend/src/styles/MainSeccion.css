@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.secondary-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 95px;
+}
+
+.main-container-paragraphs {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 400px;
+    height: 550px;
+    gap: 10px;
+    border-radius: 30px;
+    white-space: pre-line;
+
+    &.background1 {
+        background-image: url('../../public/assets/images/home_carrusell_5.webp');
+        background-repeat: no-repeat;
+        background-size: 300%;
+        background-position: center;
+        background-position: 50% 100%;
+    }
+    &.background2 {
+        background-image: url('../../public/assets/images/home_carrusell_4.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-position: 80% 100%;
+    }
+    &.background3 {
+        background-image: url('../../public/assets/images/home_carrusell_6.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.main-container-paragraphs::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(to top, #037070, transparent);
+
+}
+
+.secondary-container--title {
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    align-self: center;
+    text-align: center;
+    line-height: 25px;
+    z-index: 1;
+}
+
+.secondary-container--text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    align-self: center;
+    line-height: 15px;
+    margin-bottom: 20px;
+    z-index: 1;
+}
