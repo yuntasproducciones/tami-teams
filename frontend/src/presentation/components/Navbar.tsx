@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed w-full h-32 transition-all z-50 bg-top ${
+      className={`fixed w-full h-32 transition-all z-50 bg-top duration-1000 ${
         isScrolled ? "bg-teal-700 shadow-lg" : "border-b border-white"
       }`}
     >
