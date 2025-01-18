@@ -7,45 +7,46 @@ DROP DATABASE IF EXISTS tamiperu;
 CREATE DATABASE tamiperu;
 USE tamiperu;
 
--- Estructura de tabla para la tabla clientes
+-- Estructura de tabla para la tabla categorias
 
-CREATE TABLE clientes (
-    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nombre varchar(255) NOT NULL,
-    email varchar(255) NOT NULL,
-    telefono varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AUTO_INCREMENT=1;
-
--- Estructura de tabla para la tabla ventas
-
-CREATE TABLE ventas (
-    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    cliente_id int(11) NOT NULL,
-    fecha datetime NOT NULL,
-    monto decimal(10,2) NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AUTO_INCREMENT=1;
+CREATE TABLE categorias (
+                            id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                            nombre VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Estructura de tabla para la tabla productos
 
 CREATE TABLE productos (
-    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nombre varchar(255) NOT NULL,
-    descripcion text DEFAULT NULL,
-    precio decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AUTO_INCREMENT=1;
-
--- Estructura de tabla para la tabla ventas_productos
-
-CREATE TABLE ventas_productos (
-    venta_id int(11) NOT NULL,
-    producto_id int(11) NOT NULL,
-    cantidad int(11) NOT NULL,
-    PRIMARY KEY (venta_id, producto_id),
-    FOREIGN KEY (venta_id) REFERENCES ventas(id),
-    FOREIGN KEY (producto_id) REFERENCES productos(id)
+                           id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                           imagen VARCHAR(255),
+                           descripcion TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Estructura de tabla para la relación productos_categorias
+
+CREATE TABLE productos_categorias (
+                                      id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                      producto_id INT(11) NOT NULL,
+                                      categoria_id INT(11) NOT NULL,
+                                      FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE,
+                                      FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Estructura de tabla para detalles_productos
+
+CREATE TABLE detalles_productos (
+                                    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                    producto_id INT(11) NOT NULL,
+                                    titulo VARCHAR(255) NOT NULL,
+                                    valoracion DECIMAL(3,2),
+                                    comentarios TEXT,
+                                    descripcion TEXT,
+                                    longitud DECIMAL(10,2),
+                                    ancho DECIMAL(10,2),
+                                    altura DECIMAL(10,2),
+                                    cantidad INT(11),
+                                    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
