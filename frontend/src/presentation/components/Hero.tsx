@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <section
-    className="relative bg-cover bg-center h-[920px] pt-12 headerprueba"
+    className="relative bg-cover bg-center h-[955px] pt-12 headerprueba"
     style={{
       backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`
     }}
