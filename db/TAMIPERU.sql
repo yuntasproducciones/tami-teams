@@ -7,6 +7,8 @@ DROP DATABASE IF EXISTS tamiperu;
 CREATE DATABASE tamiperu;
 USE tamiperu;
 
+DROP TABLE IF EXISTS productos;
+
 -- Estructura de tabla para la tabla categorias
 
 CREATE TABLE categorias (
