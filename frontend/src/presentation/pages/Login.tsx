@@ -1,7 +1,8 @@
 // Importaciones necesarias
 import { Link } from 'react-router-dom';
 import logoTami from '../../../public/assets/logos/logoprincipal.gif';
-import coheteLog from '../../../public/assets/images/login-cohete.webp';
+import mundo from '../../../public/assets/images/mundo.webp';
+import '../../styles/Login.css';
 
 // Componente de Login
 const Login = () => {
@@ -11,7 +12,7 @@ const Login = () => {
             {/* Contenedor de la imagen de fondo (60% del ancho) */}
             <div className="w-[60%] relative">
                 <img
-                    src={coheteLog}
+                    src={mundo}
                     alt="cohete-login"
                     className="w-full h-full object-cover"
                 />
@@ -20,10 +21,8 @@ const Login = () => {
             {/* Contenedor del formulario (40% del ancho) */}
             <div className="w-[40%] absolute right-0 h-full flex items-center justify-center">
                 {/* Contenedor interno con gradiente de fondo y bordes redondeados */}
-                <div className="w-[120%] h-[100%] rounded-l-[80px] shadow-lg flex flex-col items-center justify-center px-12 -ml-[20%]"
-                     style={{
-                         background: 'linear-gradient(135deg, #40E0D0 0%, #00A693 70%, #007A6E 100%)'
-                     }}>
+                <div className="w-[120%] h-[100%] rounded-l-[80px] shadow-lg flex flex-col items-center justify-center px-12 -ml-[20%]
+                fondo-container">
                     {/* Logo con efecto de zoom al pasar el mouse */}
                     <Link to="/" className="flex justify-center items-center w-full pr-6 group">
                         <img
