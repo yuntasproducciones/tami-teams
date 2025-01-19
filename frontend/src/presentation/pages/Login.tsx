@@ -1,4 +1,5 @@
 // Importaciones necesarias
+import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import logoTami from '../../../public/assets/logos/logoprincipal.gif';
 import mundo from '../../../public/assets/images/mundo.webp';
@@ -6,6 +7,18 @@ import '../../styles/Login.css';
 
 // Componente de Login
 const Login = () => {
+
+    //Mov del Login
+
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+        // Activa la animación cuando el componente se renderiza
+        setTimeout(() => {
+        setIsActive(true);
+        }, 100); 
+    }, []);
+
     return (
         // Contenedor principal que ocupa toda la pantalla
         <div className="flex h-screen">
@@ -19,7 +32,7 @@ const Login = () => {
             </div>
 
             {/* Contenedor del formulario (40% del ancho) */}
-            <div className="w-[40%] absolute right-0 h-full flex items-center justify-center">
+            <div className={`mov-login ${isActive ? "active" : ""}`}>
                 {/* Contenedor interno con gradiente de fondo y bordes redondeados */}
                 <div className="w-[120%] h-[100%] rounded-l-[80px] shadow-lg flex flex-col items-center justify-center px-12 -ml-[20%]
                 fondo-container">

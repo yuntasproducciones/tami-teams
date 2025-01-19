@@ -1,4 +1,23 @@
+body {
+    overflow-x: hidden;
+}
+
 .fondo-container {
     background: linear-gradient(to bottom right, rgb(153, 247, 236) 0%, #17A291 45%);
-
 }
+
+.mov-login {
+    position: absolute;
+    width: 40%;
+    right: 0;
+    transform: translateX(120%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease-in-out;
+}
+
+.mov-login.active {
+    transform: translateX(0); 
+  }
