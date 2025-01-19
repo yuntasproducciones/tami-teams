@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logoTami from '../../../public/assets/logos/logoprincipal.gif';
 import mundo from '../../../public/assets/images/mundo.webp';
 import '../../styles/Login.css';
+import fondoTami from '../../../public/assets/images/fondo_tami.webp';
 
 // Componente de Login
 const Login = () => {
@@ -16,7 +17,7 @@ const Login = () => {
         // Activa la animación cuando el componente se renderiza
         setTimeout(() => {
         setIsActive(true);
-        }, 100); 
+        }, 100);
     }, []);
 
     return (
@@ -31,11 +32,21 @@ const Login = () => {
                 />
             </div>
 
+            {/* Contenedor de la imagen de fondo que ocupa el 40 por ciento de la pagina (40% del ancho) */}
+            <div className="w-[40%] relative">
+                <img
+                    src={fondoTami}
+                    alt="fondo-tami"
+                    className="w-full h-full object-cover"
+                />
+            </div>
+
             {/* Contenedor del formulario (40% del ancho) */}
             <div className={`mov-login ${isActive ? "active" : ""}`}>
                 {/* Contenedor interno con gradiente de fondo y bordes redondeados */}
                 <div className="w-[120%] h-[100%] rounded-l-[80px] shadow-lg flex flex-col items-center justify-center px-12 -ml-[20%]
                 fondo-container">
+
                     {/* Logo con efecto de zoom al pasar el mouse */}
                     <Link to="/" className="flex justify-center items-center w-full pr-6 group">
                         <img
