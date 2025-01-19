@@ -1,7 +1,8 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 import { MainSeccion } from "../components/MainSection";
+import  Bienvenida  from "../components/Bienvenida";
+import Footer from "../components/Footer";
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Navbar />
             <Hero />
             <MainSeccion />
+            <Bienvenida />
             <Footer />
         </div>
     );
