@@ -3,6 +3,7 @@ import Home from "../presentation/pages/Home";
 import Products from "../presentation/pages/Products";
 import About from "../presentation/pages/About";
 import ShippingPolicies from "../presentation/pages/ShippingPolicies";
+import Login from "../presentation/pages/Login.tsx";
 
 
 const AppRoutes = () => {
@@ -13,6 +14,7 @@ const AppRoutes = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/shipping-policies" element={<ShippingPolicies />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
     </BrowserRouter>
   );
