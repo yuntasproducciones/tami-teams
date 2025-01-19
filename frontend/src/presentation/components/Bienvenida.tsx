@@ -1,5 +1,5 @@
 // Importación de imágenes
-import manoIA from "../../../public/assets/images/MANO_IA.png";
+import manoIA from "../../../public/assets/images/MANO_IA.webp";
 import tecnologia_fondo from "../../../public/assets/images/tecnologia_fondo.gif";
 
 /**
