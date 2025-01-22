@@ -26,7 +26,14 @@ function MainSeccion() {
             <MainContent>
                 {titulos.map((titulo, index) => (
                     <div key={index} className={`main-container-paragraphs ${images[index]?.image}`}>
-                        <h3 className="secondary-container--title">{titulo.text}</h3> {/* Aplica la clase aquí */}
+                        <h3 className="secondary-container--title pb-[60px]">
+                            {titulo.text.split(' ').map((word, wordIndex) => (
+                                <span key={wordIndex}>
+                                    {word}
+                                    <br />
+                                </span>
+                            ))}
+                        </h3>
                         <MainP text={parrafos[index]?.text} />
                     </div>
                 ))}
