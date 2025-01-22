@@ -1,0 +1,100 @@
+.blogHeader {
+  position: relative; /* Hacer que el contenedor sea un elemento posicionado */
+  display: flex;
+  align-items: flex-start; /* Alinear los elementos a la izquierda */
+}
+
+.blogIcon {
+  position: absolute; /* Posicionar el logo de manera absoluta dentro del contenedor */
+  left: 12%; /* Mover el logo un poco más a la derecha */
+  width: 50rem; /* 1rem = 16px por defecto, así que 50rem = 800px */
+  height: 30.75rem; /* 30.75rem = 492px */
+  top:100px;
+}
+.blogTitleContainer {
+  margin-left: 10%; /* Mover el contenedor del título a la izquierda */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinear el título a la izquierda */
+}
+
+.blogTitle {
+  font-size: 9rem;
+  margin-left: 0; /* Restablecer el margen del título */
+  margin-top: 250px;
+  font-style: italic;
+  color: #359a95; /* Cambiar el color del texto si es necesario */
+}
+
+
+
+.blogSubtitle {
+  font-size: 12.5rem;
+  margin-left: 0; /* Restablecer el margen del subtítulo */
+  font-weight: bold;
+  margin-top: -110px;
+  color: #359a95;
+}
+.blogImage {
+  width: 45%; /* Adjust the width to make the image smaller */
+  position: absolute; /* Ensure the image stays in place */
+  right: -7rem; /* Move the image further to the right */
+  top: 8.70rem; /* Move the image further up */
+  border-radius: 80px; /* Add rounded corners */
+}
+
+.blogImage2 {
+  width: 21%; /* Adjust the width to make the image smaller */
+  position: absolute; /* Ensure the image stays in place */
+  top: 15.25rem; /* Move the image further up */
+  right: 50rem ;
+  z-index: 10; /* Ensure the image appears in front */
+  border-radius: 80px;
+
+}
+.blogImage3 {
+  width: 29%; /* Adjust the width to make the image smaller */
+  position: absolute; /* Ensure the image stays in place */
+  right: 19rem ;
+  z-index: 10; /* Ensure the image appears in front */
+  border-radius: 70px;
+  top: 54rem; /* Move the image further up */
+
+
+}
+
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .blogHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blogIcon {
+    position: relative;
+    width: 30rem; /* Ajustado para pantallas más pequeñas */
+    height: 18.75rem; /* Ajustado para pantallas más pequeñas */
+    margin-bottom: -7rem;
+    margin-top: 1rem; /* Move the icon further down */
+    margin-left: -3rem;
+
+  }
+
+  .blogTitleContainer {
+    margin-left: 0;
+  }
+
+  .blogTitle {
+    font-size: 5rem;
+    margin-top: 0;
+  }
+
+  .blogSubtitle {
+    font-size: 7rem;
+    margin-top: -60px;
+  }
+}
+
