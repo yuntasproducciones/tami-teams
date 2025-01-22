@@ -39,12 +39,8 @@ const Hero = () => {
   };
 
   return (
-    <section
-<<<<<<< HEAD:frontend/src/presentation/components/Inicio/Hero.tsx
-    className="relative bg-cover bg-center h-[1040px] pt-12 headerprueba"
-=======
-    className="relative bg-cover bg-center h-[955px] pt-12 headerprueba"
->>>>>>> cf431c7d1bbd628edd0e6ce0ad1b0025e33a8a4f:frontend/src/presentation/components/Hero.tsx
+    <section className="relative bg-cover bg-center h-[1040px] pt-12 headerprueba"
+
     style={{
       backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`
     }}

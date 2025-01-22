@@ -1,16 +1,22 @@
-const PropositosSection = () => {
-  return (
-    <div className="mt-40 mb-40 flex items-center justify-center ">
-      <div className="relative z-10 bg-teal-500 px-28 py-12 rounded-3xl shadow-lg">
-        <h1 className="text-white text-lg md:text-6xl text-center">
-          Acerca de nuestros <br /> <span className="font-extrabold">propósitos y metas</span>
-        </h1>
-      </div>
-    </div>
-  );
-};
+import imgfon from "../../../../public/assets/images/productos.png";
 
-export default PropositosSection;
+function PropositosYMetas() {
+  return (
+    <section
+      className="relative bg-cover bg-center h-[350px] rounded-b-3xl flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${imgfon})`,
+      }}
+    >
+      <div className="bg-teal-400 text-white text-4xl py-8 px-14 rounded-full shadow-lg">
+        Acerca de nuestros <br/><span className="font-bold">propósitos y metas</span>
+      </div>
+    </section>
+  );
+}
+
+export default PropositosYMetas;
+
 
 
   
