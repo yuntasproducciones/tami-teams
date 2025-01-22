@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import logoTami from '../../../public/assets/logos/logoprincipal.gif';
+import logoTami from "../../../public/assets/logos/logoprincipal.gif";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +20,21 @@ const Navbar = () => {
     };
   }, []);
 
+  // Definir el menú en un array
+  const menuItems = [
+    { to: "/", label: "Inicio" },
+    { to: "/about", label: "Nosotros" },
+    { to: "/products", label: "Productos" },
+    { to: "/shipping-policies", label: "Políticas de envíos" },
+  ];
+
+  // Definir el dropdown de "Más"
+  const dropdownItems = [
+    { to: "/blog", label: "Blog" },
+    { to: "/store", label: "Tienda" },
+    { to: "/login", label: "Login" },
+  ];
+
   return (
     <header
       className={`fixed w-full h-32 transition-all z-50 bg-top ${
@@ -29,53 +44,45 @@ const Navbar = () => {
       <div className="mx-auto flex items-center justify-between px-[100px] py-2 h-full">
         {/* Logo */}
         <div className="flex items-center justify-start w-1/10 h-full">
-        <img
-          src={logoTami}
-          alt="logo-tami"
-          className="h-full w-auto scale-[2] lg:scale-[1.7] -mt-6"
-          style={{ objectFit: "contain" }}
-        />
-
-
+          <img
+            src={logoTami}
+            alt="logo-tami"
+            className="h-full w-auto scale-[2] lg:scale-[1.7] -mt-6"
+            style={{ objectFit: "contain" }}
+          />
         </div>
-
         {/* Menú */}
-        <div className="w-3/5">
-          <nav className="flex justify-around">
-            <Link to="/" className="text-white hover:underline font-medium text-3xl">
-              Inicio
-            </Link>
-            <Link to="/about" className="text-white hover:underline font-medium text-3xl">
-              Nosotros
-            </Link>
-            <Link to="/products" className="text-white hover:underline font-medium text-3xl">
-              Productos
-            </Link>
-            <Link to="/shipping-policies" className="text-white hover:underline font-medium text-3xl">
-              Políticas de envíos
-            </Link>
-
+        <div className="w-3/5 flex justify-between">
+          <nav className="flex justify-around gap-x-8">
+            {menuItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="text-white hover:underline font-medium text-3xl tracking-wider"
+              >
+                {item.label}
+              </Link>
+            ))}
             {/* Dropdown */}
             <div className="relative group">
-              <span className="text-white cursor-pointer pt-1 px-5 font-medium text-3xl">
+              <span className="text-white cursor-pointer pt-1 px-5 font-medium text-3xl tracking-wider">
                 Más
               </span>
               <div className="absolute hidden group-hover:block bg-teal-700 text-white shadow-md rounded-md">
-                <Link to="/blog" className="block px-4 py-2 hover:text-white font-medium text-2xl">
-                  Blog
-                </Link>
-                <Link to="/store" className="block px-4 py-2 hover:text-white font-medium text-2xl">
-                  Tienda
-                </Link>
-                <Link to="/login" className="block px-4 py-2  hover:text-white font-medium text-2xl">
-                  Login
-                </Link>
+                {dropdownItems.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className="block px-4 py-2 hover:text-white font-medium text-2xl tracking-wider"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </nav>
         </div>
 
-        {/* Botón de contacto */}
         <div className="flex items-center bg-white border-2 py-3 px-6 rounded-2xl">
           <a
             href="https://api.whatsapp.com/send?phone=51978883199"
@@ -94,3 +101,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

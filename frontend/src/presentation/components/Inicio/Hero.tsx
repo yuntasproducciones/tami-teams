@@ -1,7 +1,7 @@
 import { useState } from "react";
-import imgT from '../../../public/assets/images/home_carrusell_1.webp';
-import imgA from '../../../public/assets/images/home_carrusell_2.webp';
-import imgD from '../../../public/assets/images/home_carrusell_3.webp';
+import imgT from '../../../../public/assets/images/home_carrusell_1.webp';
+import imgA from '../../../../public/assets/images/home_carrusell_2.webp';
+import imgD from '../../../../public/assets/images/home_carrusell_3.webp';
 
 interface Slide {
   image: string;
@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <section
-    className="relative bg-cover bg-center h-[920px] pt-12 headerprueba"
+    className="relative bg-cover bg-center h-[1040px] pt-12 headerprueba"
     style={{
       backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`
     }}

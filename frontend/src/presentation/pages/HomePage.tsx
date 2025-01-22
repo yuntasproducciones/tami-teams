@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Hero from "../components/Inicio/Hero";
 import Footer from "../components/Footer";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <Navbar />
@@ -17,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

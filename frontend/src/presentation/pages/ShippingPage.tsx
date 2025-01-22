@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const ShippingPolicies = () => {
+const ShippingPage = () => {
   return (
     <div>
       <Navbar />
@@ -14,4 +14,4 @@ const ShippingPolicies = () => {
   );
 };
 
-export default ShippingPolicies;
+export default ShippingPage;
