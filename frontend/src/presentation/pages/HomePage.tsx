@@ -1,7 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Inicio/Hero";
 import Footer from "../components/Footer";
+import { MainSeccion } from "../components/MainSection";
 
+<<<<<<< HEAD:frontend/src/presentation/pages/HomePage.tsx
 const HomePage = () => {
   return (
     <div>
@@ -18,3 +20,17 @@ const HomePage = () => {
 };
 
 export default HomePage;
+=======
+const Home = () => {
+    return (
+        <div>
+            <Navbar />
+            <Hero />
+            <MainSeccion />
+            <Footer />
+        </div>
+    );
+};
+
+export default Home;
+>>>>>>> cf431c7d1bbd628edd0e6ce0ad1b0025e33a8a4f:frontend/src/presentation/pages/Home.tsx
