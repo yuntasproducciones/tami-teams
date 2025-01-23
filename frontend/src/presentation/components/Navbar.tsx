@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import logoTami from "../../../public/assets/logos/logoprincipal.gif";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +22,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Definir el menú en un array
   const menuItems = [
     { to: "/", label: "Inicio" },
     { to: "/about", label: "Nosotros" },
@@ -28,7 +29,6 @@ const Navbar = () => {
     { to: "/shipping-policies", label: "Políticas de envíos" },
   ];
 
-  // Definir el dropdown de "Más"
   const dropdownItems = [
     { to: "/blog", label: "Blog" },
     { to: "/store", label: "Tienda" },
@@ -37,11 +37,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed w-full h-32 transition-all z-50 bg-top duration-1000 ${
-        isScrolled ? "bg-teal-700 shadow-lg" : "border-b border-white"
+      className={`fixed w-full h-32 transition-all z-50 ${
+        isScrolled ? "bg-teal-700 shadow-lg" : "bg-transparent border-b border-white"
       }`}
     >
-      <div className="mx-auto flex items-center justify-between px-[100px] py-2 h-full">
+      <div className="container mx-auto flex items-center   justify-between px-4 h-full">
         {/* Logo */}
         <div className="flex items-center justify-start w-1/10 h-full">
           <img
@@ -51,50 +51,76 @@ const Navbar = () => {
             style={{ objectFit: "contain" }}
           />
         </div>
-        {/* Menú */}
-        <div className="w-3/5 flex justify-between">
-          <nav className="flex justify-around gap-x-8">
+
+        {/* Desktop Menu */}
+        <nav className="hidden lg:flex items-center space-x-8 ">
+          {menuItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="text-white hover:underline font-medium text-3xl tracking-wider"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <div className="relative group">
+            <span className="text-white cursor-pointer pt-1 px-5 font-medium text-3xl tracking-wider">
+              Más
+            </span>
+            <div className="absolute hidden group-hover:block bg-teal-700 text-white shadow-md rounded-md">
+              {dropdownItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="block px-4 py-2 hover:text-white font-medium text-2xl tracking-wider"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </nav>
+
+        {/* Mobile Menu Icon */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white text-4xl"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="fixed top-0 left-0 w-full h-screen bg-teal-700 text-white flex flex-col items-center justify-center z-50">
             {menuItems.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="text-white hover:underline font-medium text-3xl tracking-wider"
+                className="text-2xl font-medium mb-6"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            {/* Dropdown */}
-            <div className="relative group">
-              <span className="text-white cursor-pointer pt-1 px-5 font-medium text-3xl tracking-wider">
-                Más
-              </span>
-              <div className="absolute hidden group-hover:block bg-teal-700 text-white shadow-md rounded-md">
+            <div className="relative">
+              <span className="text-2xl font-medium">Más</span>
+              <div className="mt-4">
                 {dropdownItems.map((item) => (
                   <Link
                     key={item.to}
                     to={item.to}
-                    className="block px-4 py-2 hover:text-white font-medium text-2xl tracking-wider"
+                    className="block text-xl font-medium mb-2"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ))}
               </div>
             </div>
-          </nav>
-        </div>
-
-        <div className="flex items-center bg-white border-2 py-3 px-6 rounded-2xl">
-          <a
-            href="https://api.whatsapp.com/send?phone=51978883199"
-            className="flex items-center space-x-3 rounded-lg"
-          >
-            <div>
-              <p className="text-verde_turquesa text-2xl font-medium">
-                Contáctanos
-              </p>
-            </div>
-          </a>
-        </div>
+          </div>
+        )}
       </div>
     </header>
   );
