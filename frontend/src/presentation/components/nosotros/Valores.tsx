@@ -43,7 +43,7 @@ function Valores() {
           {valores.map((valor, index) => (
             <div
               key={index}
-              className="relative w-full max-w-xs bg-white shadow-lg rounded-xl overflow-hidden"
+              className="relative max-w-xs bg-white shadow-lg rounded-xl overflow-hidden"
             >
               <img
                 src={valor.imagen}
@@ -51,14 +51,14 @@ function Valores() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-teal-800 to-transparent opacity-75"></div>
-              <div className="absolute bottom-4 left-0 w-full text-white text-center px-4">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold">
-                  {valor.titulo}
-                </h3>
-                <p className="text-sm sm:text-base md:text-lg font-bold">
-                  {valor.descripcion}
-                </p>
-              </div>
+              <div className="absolute bottom-4 left-0 w-full text-white text-center px-4 flex flex-col justify-center items-center h-[100px] sm:h-[120px] md:h-[150px]">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold">
+                {valor.titulo}
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg font-bold">
+                {valor.descripcion}
+              </p>
+            </div>
             </div>
           ))}
         </div>
