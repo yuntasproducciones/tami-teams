@@ -7,6 +7,8 @@ export default {
     extend: {
       colors: {
         "verde_turquesa": "#009e9c",
+        "verde2": "#037070"
+
       }
     },
   },
