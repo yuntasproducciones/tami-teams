@@ -8,14 +8,34 @@ import Valores from "../components/nosotros/Valores";
 const AboutPage = () => {
   return (
     <div>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
+      
+      <main>
+        <section >
           <ImageSection />
+        </section>
+        
+        <section>
           <PropositosSection />
+        </section>
+        
+        <section>
           <Mision />
+        </section>
+        
+        <section>
           <Valores />
-      <Footer />
+        </section>
+      </main>
+      
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
 
 export default AboutPage;
+
