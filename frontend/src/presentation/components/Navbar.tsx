@@ -158,7 +158,7 @@ const Navbar = () => {
             <img
               src={logoTami}
               alt="logo-tami"
-              className="w-1/4 lg:w-2/3 2xl:w-4/5"
+              className="w-1/4 md:w-1/6 lg:w-2/3 2xl:w-4/5"
             />
           </div>
           <div className="flex items-center lg:hidden">
