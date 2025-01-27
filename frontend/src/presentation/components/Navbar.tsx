@@ -41,9 +41,9 @@ const Navbar = () => {
         isScrolled ? "bg-teal-700 shadow-lg" : "bg-transparent border-b border-white"
       }`}
     >
-      <div className="container mx-auto flex items-center   justify-between px-4 h-full">
+      <div className="container mx-auto flex items-center justify-between px-4 h-full">
         {/* Logo */}
-        <div className="flex items-center justify-start w-1/10 h-full">
+        <div className="flex items-center justify-center lg:justify-start w-1/10 h-full lg:ml-0">
           <img
             src={logoTami}
             alt="logo-tami"
@@ -52,8 +52,10 @@ const Navbar = () => {
           />
         </div>
 
+
+
         {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center space-x-8 ">
+        <nav className="hidden lg:flex items-center space-x-8 justify-center w-full">
           {menuItems.map((item) => (
             <Link
               key={item.to}
@@ -98,15 +100,15 @@ const Navbar = () => {
               <Link
                 key={item.to}
                 to={item.to}
-                className="text-2xl font-medium mb-6"
+                className="text-2xl font-medium mb-6 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
             <div className="relative">
-              <span className="text-2xl font-medium">Más</span>
-              <div className="mt-4">
+              <span className="text-2xl font-medium text-center">Más</span>
+              <div className="mt-4 text-center">
                 {dropdownItems.map((item) => (
                   <Link
                     key={item.to}
@@ -127,5 +129,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 

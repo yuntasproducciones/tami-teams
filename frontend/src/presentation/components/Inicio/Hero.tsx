@@ -39,49 +39,73 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-cover bg-center h-[1040px] pt-12 headerprueba"
-
-    style={{
-      backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`
-    }}
-  >
-  
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center pl-[200px]">
+    <section
+      className="relative bg-cover bg-center h-[100vh] md:h-[930px] pt-12"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center md:items-start px-4 md:px-[200px] text-center md:text-left">
         <div className="text-white">
-          <h1 className="text-7xl font-bold whitespace-pre-line">
+          <h1 className="text-3xl md:text-7xl font-bold whitespace-pre-line">
             {slides[currentSlide].title}
           </h1>
-          <ul className="mt-5">
+          <ul className="mt-3 md:mt-5">
             {slides[currentSlide].items?.map((item: string, index: number) => (
-              <li key={index}>{item}</li>
+              <li key={index} className="text-sm md:text-lg">{item}</li>
             ))}
           </ul>
-          <button className="mt-6 text-teal-600 text-2xl bg-white px-8 py-4 rounded-2xl hover:bg-teal-800 font-bold">Descubre más
+          <button className="mt-4 md:mt-6 text-teal-600 text-lg md:text-2xl bg-white px-4 md:px-8 py-2 md:py-4 rounded-xl hover:bg-teal-800 font-bold">
+            Descubre más
           </button>
-
         </div>
       </div>
 
       <button
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
+        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
       >
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 4L8 12L16 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 4L8 12L16 20"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </button>
 
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
+        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
       >
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 4L16 12L8 20" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 4L16 12L8 20"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
-
       </button>
     </section>
   );
 };
 
 export default Hero;
+
+
