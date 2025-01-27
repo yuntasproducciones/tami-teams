@@ -5,6 +5,7 @@ import gt4 from "../../../../public/assets/images/image-removebg.png";
 import gt5 from "../../../../public/assets/images/imagen.png";
 import gt6 from "../../../../public/assets/images/SBotellas 3-Photoroom.png";
 import gt7 from "../../../../public/assets/images/SVasos_2.png";
+import hi from "../../../../public/assets/images/productos.png";
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
 
@@ -28,10 +29,17 @@ const cardItems: CardItem[] = [
 
 const Emprendimiento = () => {
   return (
-    <div className="bg-white py-14 px-24">
-    <h2 className="w-5/5 sm:w-80 max-w-md bg-teal-500 hover:bg-teal-600 text-white rounded-full py-4 text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-center mx-auto sm:mx-0">
-  Emprendimiento
-</h2>
+    <div
+      className="bg-cover bg-center py-14 px-24"
+      style={{
+        backgroundImage: `url(${hi})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <h2 className="w-5/5 sm:w-80 max-w-md bg-teal-500 hover:bg-teal-600 text-white rounded-full py-4 text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-center mx-auto sm:mx-0">
+        Emprendimiento
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {cardItems.map((item) => (
@@ -45,7 +53,7 @@ const Emprendimiento = () => {
                 />
               </div>
               <div className="flex justify-center">
-                <Button className="w-full max-w-xs bg-white hover:bg-gray-200 text-teal-600 border-2 border-gray-300 font-bold text-base sm:text-lg">
+                <Button className="w-40 max-w-xs bg-white hover:bg-gray-200 text-teal-600 border-4 border-gray-300 font-bold text-base sm:text-lg">
                   {item.title}
                 </Button>
               </div>
