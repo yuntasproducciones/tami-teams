@@ -9,14 +9,12 @@ import hi from "../../../../public/assets/images/productos.png";
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
 
-// Tipo para las tarjetas
 type CardItem = {
   id: number;
   title: string;
   imageSrc: string;
 };
 
-// Datos de las tarjetas
 const cardItems: CardItem[] = [
   { id: 1, title: "Saber más", imageSrc: gt1 },
   { id: 2, title: "Saber más", imageSrc: gt2 },

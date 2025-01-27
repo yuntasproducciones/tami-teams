@@ -1,18 +1,16 @@
 import gt1 from "../../../../public/assets/images/Filtrador_de_Agua.png";
 import gt2 from "../../../../public/assets/images/imagen_5.png";
-import hi from "../../../../public/assets/images/productos.png"; // Imagen de fondo
+import hi from "../../../../public/assets/images/productos.png";
 
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
 
-// Tipo para las tarjetas
 type CardItem = {
   id: number;
   title: string;
   imageSrc: string;
 };
 
-// Datos de las tarjetas
 const cardItems: CardItem[] = [
   { id: 1, title: "Saber más", imageSrc: gt1 },
   { id: 2, title: "Saber más", imageSrc: gt2 },
@@ -23,7 +21,7 @@ const Trabajo = () => {
     <div
       className="bg-cover bg-center py-14 px-24"
       style={{
-        backgroundImage: `url(${hi})`, // Imagen de fondo
+        backgroundImage: `url(${hi})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
