@@ -6,7 +6,7 @@ import tiktokIcon from "../../../public/assets/icons/TIKTOK.svg";
 import twitterIcon from "../../../public/assets/icons/TWITTER.svg";
 import facebookIcon from "../../../public/assets/icons/FACEBOOK.svg";
 import instagramIcon from "../../../public/assets/icons/INSTAGRAM.svg";
-import mascotaTami from "../../../public/assets/logos/mascota _tami 3.webp";
+import mascotaTami from "../../../public/assets/logos/mascota_tami.webp";
 
 const Footer = () => {
   return (
@@ -117,12 +117,11 @@ const Footer = () => {
         </div>
 
         {/* Mascota y botón */}
-        <div className="w-full lg:w-1/6 flex flex-col items-center">
+        <div className="w-full lg:w-1/6 flex flex-col self-center items-center">
           <img
             src={mascotaTami}
             alt="Mascota Tami"
-            className="h-32 w-auto mb-4"
-            style={{ objectFit: "contain" }}
+            className="w-2/5 sm:w-1/4 lg:w-3/4 2xl:w-4/6 mb-4"
           />
           <button className="bg-teal-700 hover:bg-teal-800 text-white font-bold py-2 px-6 rounded-full">
             ¡CONTÁCTANOS!
