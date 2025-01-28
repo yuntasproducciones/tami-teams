@@ -6,6 +6,13 @@ import About from "../presentation/pages/About";
 import ShippingPolicies from "../presentation/pages/ShippingPolicies";
 import Login from "../presentation/pages/Login.tsx";
 import { Load_main } from '../presentation/components/Load_main.tsx';
+import BlogContenido from "../presentation/pages/BlogContenido";
+import DetalleSelladora from "../presentation/pages/DetalleSelladora";
+import DetalleMaquina from "../presentation/pages/DetalleMaquina";
+import DetalleBambu from "../presentation/pages/DetalleBambu";
+
+
+
 
 const AppRoutes = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +53,10 @@ const AppRoutes = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/shipping-policies" element={<ShippingPolicies />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/blog" element={<BlogContenido />} />
+            <Route path="/selladora" element={<DetalleSelladora />} />
+           <Route path="/maquina" element={<DetalleMaquina />} />
+            <Route path="/bambu" element={<DetalleBambu />} />
           </Routes>
         </div>
       </div>

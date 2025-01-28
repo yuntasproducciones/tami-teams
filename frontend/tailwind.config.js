@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,7 +8,10 @@ export default {
     extend: {
       colors: {
         "verde_turquesa": "#009e9c",
+        mediumturquoise: '#289190',
         "verde2": "#037070"
+
+
 
       }
     },

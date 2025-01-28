@@ -1,0 +1,117 @@
+.blogHeader {
+    position: relative; /* Hacer que el contenedor sea un elemento posicionado */
+    display: flex;
+    align-items: flex-start; /* Alinear los elementos a la izquierda */
+}
+
+.rayos {
+    position: absolute;
+    width: 30%;
+    height: 140%;
+    z-index: -1;
+    top: -15rem;
+    left: -21rem;
+    opacity: 20 ;  /* Set the opacity to 1 for full opacity */
+
+}
+
+.blogIcon {
+    position: absolute; /* Posicionar el logo de manera absoluta dentro del contenedor */
+    left: 22%; /* Mover el logo un poco más a la derecha */
+    width: 15rem; /* 1rem = 16px por defecto, así que 50rem = 800px */
+    height: 15.75rem; /* 30.75rem = 492px */
+    top:190px;
+}
+.blogTitleContainer {
+    margin-left: 10%; /* Mover el contenedor del título a la izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear el título a la izquierda */
+}
+
+.blogTitle {
+    font-size: 9rem;
+    margin-left: 0; /* Restablecer el margen del título */
+    margin-top: 250px;
+    font-style: italic;
+    color: #359a95; /* Cambiar el color del texto si es necesario */
+}
+
+
+
+.blogSubtitle {
+    font-size: 12.5rem;
+    margin-left: 0; /* Restablecer el margen del subtítulo */
+    font-weight: bold;
+    margin-top: -110px;
+    color: #359a95;
+}
+.blogImage {
+    width: 45%; /* Adjust the width to make the image smaller */
+    position: absolute; /* Ensure the image stays in place */
+    right: 0rem; /* Move the image further to the right */
+    top: 8.70rem; /* Move the image further up */
+    border-radius: 80px; /* Add rounded corners */
+}
+
+.blogImage2 {
+    width: 21%; /* Adjust the width to make the image smaller */
+    position: absolute; /* Ensure the image stays in place */
+    top: 15.25rem; /* Move the image further up */
+    right: 69rem ;
+    z-index: 10; /* Ensure the image appears in front */
+    border-radius: 80px;
+
+}
+.blogImage3 {
+    width: 29%; /* Adjust the width to make the image smaller */
+    position: absolute; /* Ensure the image stays in place */
+    right: 29rem ;
+    z-index: 10; /* Ensure the image appears in front */
+    border-radius: 70px;
+    top: 58rem; /* Move the image further up */
+
+
+}
+
+.blogDescription {
+    margin-left: 10%; /* Mueve la descripción hacia la derecha */
+    max-width: 60%; /* Limita el ancho para mantener la legibilidad */
+    padding: 20px; /* Añade algo de espacio interno */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
+
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .blogHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blogIcon {
+        position: relative;
+        width: 30rem; /* Ajustado para pantallas más pequeñas */
+        height: 18.75rem; /* Ajustado para pantallas más pequeñas */
+        margin-bottom: -7rem;
+        margin-top: 1rem; /* Move the icon further down */
+        margin-left: -3rem;
+
+    }
+
+    .blogTitleContainer {
+        margin-left: 0;
+    }
+
+    .blogTitle {
+        font-size: 5rem;
+        margin-top: 0;
+    }
+
+    .blogSubtitle {
+        font-size: 7rem;
+        margin-top: -60px;
+    }
+}
+
