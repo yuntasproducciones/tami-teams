@@ -3,6 +3,7 @@ import imgT from "../../../../public/assets/images/home_carrusell_1.webp";
 import imgA from "../../../../public/assets/images/home_carrusell_2.webp";
 import imgD from "../../../../public/assets/images/home_carrusell_3.webp";
 
+
 interface Slide {
   image: string;
   title: string;

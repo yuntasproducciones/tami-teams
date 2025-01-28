@@ -57,7 +57,7 @@ const Login = () => {
                     </Link>
 
                     {/* Título de bienvenida */}
-                    <h1 className="text-4xl font-bold -mt-12 mb-8 text-center text-white">BIENVENIDO</h1>
+                    <h1 className="text-4xl font-bold mt-8 mb-8 text-center text-white">BIENVENIDO</h1>
 
                     {/* Formulario de login */}
                     <form className="w-full max-w-md">
