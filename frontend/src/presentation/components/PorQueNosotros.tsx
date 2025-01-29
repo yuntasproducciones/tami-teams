@@ -1,4 +1,4 @@
-import logo from "../../../public/assets/logos/logo_blanco.webp";
+import logo from "../../../public/assets/images/Logos/logo_blanco.webp";
 import fondo from "../../../public/assets/images/SECCION COMENTARIO/fondo_nosotros.webp";
 
 const PorQueNosotros = () => {

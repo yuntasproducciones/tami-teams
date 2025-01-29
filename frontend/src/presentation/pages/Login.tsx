@@ -1,7 +1,7 @@
 // Importaciones necesarias
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import logoTami from '../../../public/assets/logos/logoprincipal.gif';
+import logoTami from '../../../public/assets/images/Logos/logoprincipal.gif';
 import mundo from '../../../public/assets/images/mundo.webp';
 import '../../styles/Login.css';
 import fondoTami from '../../../public/assets/images/fondo_tami.webp';

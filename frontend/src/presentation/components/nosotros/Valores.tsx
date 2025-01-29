@@ -1,7 +1,7 @@
-import img11 from "../../../../public/assets/images/img1.png";
-import img12 from "../../../../public/assets/images/img2.png";
-import img13 from "../../../../public/assets/images/img3.png";
-import img14 from "../../../../public/assets/images/img4.png";
+import img11 from "../../../../public/assets/images/Nosotros/img1.png";
+import img12 from "../../../../public/assets/images/Nosotros/img2.png";
+import img13 from "../../../../public/assets/images/Nosotros/img3.png";
+import img14 from "../../../../public/assets/images/Nosotros/img4.png";
 
 
 type Valor = {

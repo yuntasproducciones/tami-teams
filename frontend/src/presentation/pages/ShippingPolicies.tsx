@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import SP_Hero from "../components/ShippingPolicies/SP_Hero";
 import InfoEnvios from "../components/ShippingPolicies/InfoEnvios";
 
-const ShippingPage = () => {
+const ShippingPolicies = () => {
   return (
     <>
       <Navbar />
@@ -14,4 +14,4 @@ const ShippingPage = () => {
   );
 };
 
-export default ShippingPage;
+export default ShippingPolicies;

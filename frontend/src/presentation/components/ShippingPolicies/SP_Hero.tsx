@@ -1,4 +1,4 @@
-import enviosImage from "../../../../public/assets/images/Envios.webp";
+import enviosImage from "../../../../public/assets/images/politicas/Envios.webp";
 
 const SP_Hero = () => {
   return (

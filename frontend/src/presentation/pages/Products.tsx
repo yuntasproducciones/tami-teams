@@ -5,7 +5,7 @@ import Emprendimiento from "../components/productos/Emprendimiento";
 import Decoracion from "../components/productos/Decoracion";
 import Trabajo from "../components/productos/Trabajo";
 
-const ProductsPage = () => {
+const Products = () => {
   return (
     <div>
       <Navbar />
@@ -26,4 +26,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default Products;

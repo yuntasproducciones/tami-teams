@@ -1,4 +1,4 @@
-import imgfon from "../../../../public/assets/images/productos.png";
+import imgfon from "../../../../public/assets/images/Nosotros/productos.png";
 
 function PropositosYMetas() {
   return (

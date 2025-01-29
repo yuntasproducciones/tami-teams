@@ -1,6 +1,6 @@
-import gt1 from "../../../../public/assets/images/Filtrador_de_Agua.png";
-import gt2 from "../../../../public/assets/images/imagen_5.png";
-import hi from "../../../../public/assets/images/productos.png";
+import gt1 from "../../../../public/assets/images/Productos/TANQUE_DE_GAS.webp";
+import gt2 from "../../../../public/assets/images/Productos/MAQUINAS2.webp.webp";
+import hi from "../../../../public/assets/images/Productos/productos.png";
 
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
