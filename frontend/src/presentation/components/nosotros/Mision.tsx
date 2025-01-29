@@ -1,4 +1,4 @@
-import mision from "../../../../public/assets/images/mision.jpeg";
+import mision from "../../../../public/assets/images/Nosotros/mision.jpeg";
 
 const Mision = () => {
   return (

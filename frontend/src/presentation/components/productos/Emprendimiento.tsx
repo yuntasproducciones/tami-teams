@@ -1,11 +1,11 @@
-import gt1 from "../../../../public/assets/images/Filtrador_de_Agua.png";
-import gt2 from "../../../../public/assets/images/imagen_5.png";
-import gt3 from "../../../../public/assets/images/imagen_2.png";
-import gt4 from "../../../../public/assets/images/image-removebg.png";
-import gt5 from "../../../../public/assets/images/imagen.png";
-import gt6 from "../../../../public/assets/images/SBotellas 3-Photoroom.png";
-import gt7 from "../../../../public/assets/images/SVasos_2.png";
-import hi from "../../../../public/assets/images/productos.png";
+import gt1 from "../../../../public/assets/images/Productos/Filtrador_de_Agua.png";
+import gt2 from "../../../../public/assets/images/Productos/imagen_5.png";
+import gt3 from "../../../../public/assets/images/Productos/imagen_2.png";
+import gt4 from "../../../../public/assets/images/Productos/image-removebg.png";
+import gt5 from "../../../../public/assets/images/Productos/loza.webp.webp";
+import gt6 from "../../../../public/assets/images/Productos/SBotellas 3-Photoroom.png";
+import gt7 from "../../../../public/assets/images/Productos/SVasos_2.png";
+import hi from "../../../../public/assets/images/Productos/productos.png";
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
 

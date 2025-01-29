@@ -1,5 +1,5 @@
 import { useState } from "react";
-import imgT from "../../../../public/assets/images/imagen_productos.png";
+import imgT from "../../../../public/assets/images/Productos/imagen_productos.png";
 
 interface Slide {
   image: string;

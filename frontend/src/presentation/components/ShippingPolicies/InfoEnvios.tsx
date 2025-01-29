@@ -1,6 +1,6 @@
-import mapa from "../../../../public/assets/images/mapa-peru.webp";
-import redUbi from "../../../../public/assets/images/ubicacion_icono.webp";
-import greenUbi from "../../../../public/assets/images/ubicacion-icono2.webp";
+import mapa from "../../../../public/assets/images/politicas/mapa-peru.webp";
+import redUbi from "../../../../public/assets/images/politicas/ubicacion_icono.webp";
+import greenUbi from "../../../../public/assets/images/politicas/ubicacion-icono2.webp";
 
 const InfoEnvios = () => {
   return (

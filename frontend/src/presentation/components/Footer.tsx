@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import logoTami from "../../../public/assets/logos/logoprincipal.gif";
+import logoTami from "../../../public/assets/images/Logos/logoprincipal.gif";
 import whatsappIcon from "../../../public/assets/icons/WHATSAPP.svg";
 import emailIcon from "../../../public/assets/icons/EMAIL.svg";
 import tiktokIcon from "../../../public/assets/icons/TIKTOK.svg";
 import twitterIcon from "../../../public/assets/icons/TWITTER.svg";
 import facebookIcon from "../../../public/assets/icons/FACEBOOK.svg";
 import instagramIcon from "../../../public/assets/icons/INSTAGRAM.svg";
-import mascotaTami from "../../../public/assets/logos/mascota_tami.webp";
+import mascotaTami from "../../../public/assets/images/Logos/mascota_tami.webp";
 
 const Footer = () => {
   return (
@@ -123,9 +123,11 @@ const Footer = () => {
             alt="Mascota Tami"
             className="w-2/5 sm:w-1/4 lg:w-3/4 2xl:w-4/6 mb-4"
           />
-          <button className="bg-teal-700 hover:bg-teal-800 text-white font-bold py-2 px-6 rounded-full">
-            ¡CONTÁCTANOS!
-          </button>
+          <a href="https://api.whatsapp.com/send?phone=51978883199">
+            <button className="bg-teal-700 hover:bg-teal-800 text-white font-bold py-2 px-6 rounded-full">
+              ¡CONTÁCTANOS!
+            </button>
+          </a>
         </div>
       </div>
     </footer>

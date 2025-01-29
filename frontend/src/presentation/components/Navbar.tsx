@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import logoTami from '../../../public/assets/logos/logoprincipalrecortado.gif';
+import logoTami from '../../../public/assets/images/Logos/logoprincipalrecortado.gif';
 import menuHamburguesa from "../../../public/assets/icons/navigation-bar.png";
 import usuarioIcono from "../../../public/assets/icons/USUARIO_Mesa_de_trabajo_1.png"
 import whatsappIcon from '../../../public/assets/icons/WHATSAPP.svg';

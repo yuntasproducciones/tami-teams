@@ -1,4 +1,4 @@
-import imgT from "../../../../public/assets/images/Nosotros.jpg";
+import imgT from "../../../../public/assets/images/Nosotros/Nosotros.jpg";
 
 const ImageSection = () => {
   return (

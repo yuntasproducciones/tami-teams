@@ -1,4 +1,4 @@
-import logoTami from '../../../public/assets/images/logo aniamdo 2.gif';
+import logoTami from '../../../public/assets/images/Logos/logo_animado2.gif';
 
 function Figure_load() {
     return (

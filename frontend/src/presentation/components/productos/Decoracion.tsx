@@ -1,7 +1,7 @@
-import gt1 from "../../../../public/assets/images/imagen_4.png";
-import gt2 from "../../../../public/assets/images/imagen_3.png";
-import gt3 from "../../../../public/assets/images/ventilador_45.png";
-import hi from "../../../../public/assets/images/productos.png";
+import gt1 from "../../../../public/assets/images/Productos/imagen_4.png";
+import gt2 from "../../../../public/assets/images/Productos/imagen_3.png";
+import gt3 from "../../../../public/assets/images/Productos/ventilador_45.png";
+import hi from "../../../../public/assets/images/Productos/productos.png";
 
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
