@@ -36,8 +36,7 @@ const Bienvenida = () => {
         <img
           src={circuitos}
           alt="circuitos"
-          className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-full object-cover"
-        />
+          className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-full object-cover 2xl:object-fill 2xl:h-full"  />
         {/* Imagen de mano robótica */}
         <img
           src={manoIA}
