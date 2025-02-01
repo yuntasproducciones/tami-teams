@@ -9,7 +9,7 @@ import twitterIcon from '../../../public/assets/icons/TWITTER.svg';
 import facebookIcon from '../../../public/assets/icons/FACEBOOK.svg';
 import instagramIcon from '../../../public/assets/icons/INSTAGRAM.svg';
 import emailIcon from '../../../public/assets/icons/EMAIL.svg';
-// import "../../styles/prueba.css"
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
