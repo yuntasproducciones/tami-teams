@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -10,10 +9,10 @@ export default {
         "verde_turquesa": "#009e9c",
         mediumturquoise: '#289190',
         "verde2": "#037070"
-
-
-
-      }
+      },
+      screens: {
+        'custom': '1026px',
+      },
     },
   },
   plugins: [],

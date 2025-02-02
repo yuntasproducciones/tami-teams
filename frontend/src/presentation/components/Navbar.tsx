@@ -2,14 +2,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import logoTami from '../../../public/assets/images/Logos/logoprincipalrecortado.gif';
 import menuHamburguesa from "../../../public/assets/icons/navigation-bar.png";
-import usuarioIcono from "../../../public/assets/icons/USUARIO_Mesa_de_trabajo_1.png"
+import usuarioIcono from "../../../public/assets/icons/USUARIO_Mesa_de_trabajo_1.png";
 import whatsappIcon from '../../../public/assets/icons/WHATSAPP.svg';
 import tiktokIcon from '../../../public/assets/icons/TIKTOK.svg';
 import twitterIcon from '../../../public/assets/icons/TWITTER.svg';
 import facebookIcon from '../../../public/assets/icons/FACEBOOK.svg';
 import instagramIcon from '../../../public/assets/icons/INSTAGRAM.svg';
-import emailIcon from '../../../public/assets/icons/EMAIL.svg';
-// import "../../styles/prueba.css"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,215 +29,197 @@ const Navbar = () => {
   }, []);
 
   const activarSidebar = () => {
-    setIsSidebarOpen((x) => {
-      return !x;
-    });
+    setIsSidebarOpen((x) => !x);
   };
 
   return (
-      <header
-          className={`lg:p-[65px] fixed w-full h-32 transition-all z-50 bg-top duration-1000 ${
-              isScrolled ? "bg-teal-700 shadow-lg" : "border-b border-white"
+    <header
+      className={`fixed w-full h-32 transition-all z-50 bg-top duration-1000 ${
+        isScrolled ? "bg-teal-700 shadow-lg" : "border-b border-white"
+      }`}
+    >
+      <div className="mx-auto flex items-center justify-between h-full px-4">
+        <div
+          className={`fixed top-[8rem] left-0 z-[1] h-[700px] w-[500px] bg-white px-[30px] py-[30px] max-w-[400px] rounded-tl-none rounded-tr-[50px] rounded-br-[50px] rounded-bl-none ${
+            isSidebarOpen ? "" : "hidden"
           }`}
-      >
-        <div className="mx-auto flex items-center justify-evenly h-full max-[1024px]:pl-[100px]">
-
-          <div
-              className={`fixed top-[8rem] left-0 z-[1] h-[700px] w-[500px] bg-white px-[30px] py-[30px] max-w-[400px] rounded-tl-none rounded-tr-[50px] rounded-br-[50px] rounded-bl-none ${
-                  isSidebarOpen ? "" : "hidden"
-              }`}
-          >
-            <div className="border-b-4 border-verde_turquesa pb-[20px]">
-              <div className="flex pl-[20px]">
-                <img
-                    src={usuarioIcono}
-                    className="max-w-[100px]"
-                    alt="Ícono de usuario"
-                />
-                <div className="flex flex-col justify-center">
-                  <p className="font-medium text-3xl">HOLA!</p>
-                  <p className="font-medium text-3xl">Usuario</p>
-                </div>
+        >
+          <div className="border-b-4 border-verde_turquesa pb-[20px]">
+            <div className="flex pl-[20px]">
+              <img
+                src={usuarioIcono}
+                className="max-w-[100px]"
+                alt="Ícono de usuario"
+              />
+              <div className="flex flex-col justify-center">
+                <p className="font-bold text-4xl">HOLA!</p>
+                <p className="font-bold text-4xl">Usuario</p>
               </div>
             </div>
-            <div className="pl-[15px]">
-              <Link
-                  to="/"
-                  className="text-verde_turquesa hover:underline font-bold text-3xl block pb-[20px] pt-[20px]"
-              >
-                Inicio
-              </Link>
-              <Link
-                  to="/about"
-                  className="text-verde_turquesa hover:underline font-bold text-3xl block pb-[20px]"
-              >
-                Nosotros
-              </Link>
-              <Link
-                  to="/products"
-                  className="text-verde_turquesa hover:underline font-bold text-3xl block pb-[20px]"
-              >
-                Productos
-              </Link>
-              <Link
-                  to="/shipping-policies"
-                  className="text-verde_turquesa hover:underline font-bold text-3xl block pb-[20px]"
-              >
-                Políticas de envíos
-              </Link>
-              <Link
-                  to="/shipping-policies"
-                  className="text-verde_turquesa hover:underline font-bold text-3xl block pb-[20px]"
-              >
-                Blog
-              </Link>
-            </div>
-
-            <div>
-              <p className="border-t-4 border-verde_turquesa text-verde_turquesa font-medium text-center pt-[5px]">
-                Síguenos en
-              </p>
-              <div className="mt-3 flex justify-around space-x-4 border-b-4 border-verde_turquesa pb-[10px]">
-                <a href="#" className="w-8 h-8">
-                  <img
-                      src={tiktokIcon}
-                      alt="TikTok"
-                      className="w-full h-full bg-verde_turquesa rounded-tl-[25px] rounded-tr-[25px] rounded-br-[25px] rounded-bl-[25px] p-[5px]"
-                  />
-                </a>
-                <a href="#" className="w-8 h-8">
-                  <img
-                      src={instagramIcon}
-                      alt="Instagram"
-                      className="w-full h-full bg-verde_turquesa rounded-tl-[25px] rounded-tr-[25px] rounded-br-[25px] rounded-bl-[25px] p-[5px]"
-                  />
-                </a>
-                <a href="#" className="w-8 h-8">
-                  <img
-                      src={twitterIcon}
-                      alt="Twitter"
-                      className="w-full h-full bg-verde_turquesa rounded-tl-[25px] rounded-tr-[25px] rounded-br-[25px] rounded-bl-[25px] p-[5px]"
-                  />
-                </a>
-                <a href="#" className="w-8 h-8">
-                  <img
-                      src={facebookIcon}
-                      alt="Facebook"
-                      className="w-full h-full bg-verde_turquesa rounded-tl-[25px] rounded-tr-[25px] rounded-br-[25px] rounded-bl-[25px] p-[5px]"
-                  />
-                </a>
-                <a
-                    href="https://api.whatsapp.com/send?phone=51978883199"
-                    className="w-8 h-8"
-                >
-                  <img
-                      src={whatsappIcon}
-                      alt="WhatsApp"
-                      className="w-full h-full bg-verde_turquesa rounded-tl-[25px] rounded-tr-[25px] rounded-br-[25px] rounded-bl-[25px] p-[5px]"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <p className="text-verde_turquesa font-medium pt-[2vh]">
-              Horario de atención
-            </p>
-            <p>Lunes a Viernes</p>
-            <p>9:00 am a 9:00 pm</p>
           </div>
-          {/* Logo */}
-          <div className="flex w-full justify-between max-[1024px]:pr-[10px] lg:w-[100px] lg:pr[0px] h-full items-center">
-            <div className="flex items-center justify-between w-1/4 lg:w-full lg:h-full">
-              <img src={menuHamburguesa} alt="Menú hamburguesa" className="w-[50px] max-[1024px]:block hidden" onClick={activarSidebar} />
-              <img src={logoTami} alt="logo-tami" className="h-[100px] lg:w-full" />
-            </div>
-            <div className="flex items-center lg:hidden">
-              <a
-                  href="https://api.whatsapp.com/send?phone=51978883199"
-                  className="w-14 h-14"
-              >
-                <img
-                    src={whatsappIcon}
-                    alt="WhatsApp"
-                    className="w-full h-full rounded-tl-[25px] rounded-tr-[25px] rounded-br-[25px] rounded-bl-[25px] p-[5px]"
-                />
-              </a>
-              <a className="w-20 h-20">
-                <img
-                    src={emailIcon}
-                    alt="Email"
-                    className="w-full h-full rounded-tl-[25px] rounded-tr-[25px] rounded-br-[25px] rounded-bl-[25px] p-[5px]"
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Menú del topnav para desktop*/}
-          <div className="w-3/5 max-[1024px]:hidden">
-            <nav className="flex justify-around items-center">
-              <Link
-                  to="/"
-                  className="text-white hover:underline font-medium lg:text-xl 2xl:text-3xl"
-              >
-                Inicio
-              </Link>
-              <Link
-                  to="/about"
-                  className="text-white hover:underline font-medium lg:text-xl 2xl:text-3xl"
-              >
-                Nosotros
-              </Link>
-              <Link
-                  to="/products"
-                  className="text-white hover:underline font-medium lg:text-xl 2xl:text-3xl"
-              >
-                Productos
-              </Link>
-              <Link
-                  to="/shipping-policies"
-                  className="text-white hover:underline font-medium lg:text-xl 2xl:text-3xl"
-              >
-                Políticas de envíos
-              </Link>
-
-              {/* Dropdown */}
-              <div className="relative group">
-              <span className="text-white cursor-pointer pt-1 px-5 font-medium lg:text-xl 2xl:text-3xl">
-                Más
-              </span>
-                <div className="absolute hidden group-hover:block bg-teal-700 text-white shadow-md rounded-md">
-                  <Link
-                      to="/blog"
-                      className="block px-4 py-2 hover:text-white font-medium text-2xl"
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                      to="/login"
-                      className="block px-4 py-2  hover:text-white font-medium text-2xl"
-                  >
-                    Login
-                  </Link>
-                </div>
-              </div>
-            </nav>
-          </div>
-
-          {/* Botón de contacto */}
-          <div className="flex items-center bg-white border-2 py-3 px-6 rounded-2xl">
-            <a
-                href="https://api.whatsapp.com/send?phone=51978883199"
-                className="flex items-center space-x-3 rounded-lg"
+          <div className="pl-[15px]">
+            <Link
+              to="/"
+              className="text-verde_turquesa hover:underline text-4xl block pb-[20px] pt-[20px] md:font-normal"
             >
-              <div>
-                <p className="text-verde_turquesa text-2xl font-medium">
-                  Contáctanos
-                </p>
-              </div>
-            </a>
+              Inicio
+            </Link>
+            <Link
+              to="/about"
+              className="text-verde_turquesa hover:underline text-4xl block pb-[20px] md:font-normal"
+            >
+              Nosotros
+            </Link>
+            <Link
+              to="/products"
+              className="text-verde_turquesa hover:underline text-4xl block pb-[20px] md:font-normal"
+            >
+              Productos
+            </Link>
+            <Link
+              to="/shipping-policies"
+              className="text-verde_turquesa hover:underline text-4xl block pb-[20px] md:font-normal"
+            >
+              Políticas de envíos
+            </Link>
+            <Link
+              to="/shipping-policies"
+              className="text-verde_turquesa hover:underline text-4xl block pb-[20px] md:font-normal"
+            >
+              Blog
+            </Link>
           </div>
+
+          <div>
+            <p className="border-t-4 border-verde_turquesa text-verde_turquesa font-bold text-center pt-[5px]">
+              Síguenos en
+            </p>
+            <div className="mt-3 flex justify-around space-x-4 border-b-4 border-verde_turquesa pb-[10px]">
+              <a href="#" className="w-8 h-8">
+                <img
+                  src={tiktokIcon}
+                  alt="TikTok"
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
+                />
+              </a>
+              <a href="#" className="w-8 h-8">
+                <img
+                  src={instagramIcon}
+                  alt="Instagram"
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
+                />
+              </a>
+              <a href="#" className="w-8 h-8">
+                <img
+                  src={twitterIcon}
+                  alt="Twitter"
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
+                />
+              </a>
+              <a href="#" className="w-8 h-8">
+                <img
+                  src={facebookIcon}
+                  alt="Facebook"
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
+                />
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=51978883199"
+                className="w-8 h-8"
+              >
+                <img
+                  src={whatsappIcon}
+                  alt="WhatsApp"
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
+                />
+              </a>
+            </div>
+          </div>
+
+          <p className="text-verde_turquesa font-bold pt-[2vh]">
+            Horario de atención
+          </p>
+          <p className="font-bold text-xl">Lunes a Viernes</p>
+          <p className="font-bold text-xl">9:00 am a 9:00 pm</p>
         </div>
-      </header>
+
+        <div className="flex items-center space-x-4 below1026:ml-auto">
+          <img
+            src={menuHamburguesa}
+            alt="Menú hamburguesa"
+            className="w-[50px] block custom:hidden"
+            onClick={activarSidebar}
+          />
+          <img src={logoTami} alt="logo-tami" className="h-[100px] w-full" />
+        </div>
+
+        <div className="w-full hidden custom:block">
+          <nav className="flex flex-wrap justify-around items-center">
+            <Link
+              to="/"
+              className="text-white hover:text-teal-300 transition-colors duration-500 text-lg font-bold relative group"
+            >
+              Inicio
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-teal-300 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
+            </Link>
+            <Link
+              to="/about"
+              className="text-white hover:text-teal-300 transition-colors duration-500 text-lg font-bold relative group"
+            >
+              Nosotros
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-teal-300 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
+            </Link>
+            <Link
+              to="/products"
+              className="text-white hover:text-teal-300 transition-colors duration-500 text-lg font-bold relative group"
+            >
+              Productos
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-teal-300 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
+            </Link>
+            <Link
+              to="/shipping-policies"
+              className="text-white hover:text-teal-300 transition-colors duration-500 text-lg font-bold relative group"
+            >
+              Políticas de envíos
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-teal-300 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
+            </Link>
+            <div className="relative group">
+              <span className="text-white hover:text-teal-300 cursor-pointer pt-1 px-1 font-bold text-lg relative group">
+                Más
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-teal-300 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
+              </span>
+              <div className="absolute hidden group-hover:block bg-teal-700 text-white shadow-md rounded-md hover:bg-opacity-75">
+                <Link
+                  to="/blog"
+                  className="block px-4 py-2 hover:text-white font-bold text-2xl"
+                >
+                  Blog
+                </Link>
+                <Link
+                  to="/login"
+                  className="block px-4 py-2 hover:text-white font-bold text-2xl"
+                >
+                  Login
+                </Link>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div className="flex items-center bg-white border-2 py-3 px-6 rounded-2xl hidden custom:block">
+          <a
+            href="https://api.whatsapp.com/send?phone=51978883199"
+            className="flex items-center space-x-3 rounded-lg"
+          >
+            <div>
+              <p className="text-verde_turquesa text-2xl font-bold">
+                Contáctanos
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </header>
   );
 };
 
