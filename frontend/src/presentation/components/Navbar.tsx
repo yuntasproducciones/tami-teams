@@ -52,8 +52,8 @@ const Navbar = () => {
                 alt="Ícono de usuario"
               />
               <div className="flex flex-col justify-center">
-                <p className="font-bold text-4xl">HOLA!</p>
-                <p className="font-bold text-4xl">Usuario</p>
+                <p className="font-semibold text-4xl">HOLA!</p>
+                <p className="font-semibold  text-4xl">Usuario</p>
               </div>
             </div>
           </div>
@@ -139,8 +139,8 @@ const Navbar = () => {
           <p className="text-verde_turquesa font-bold pt-[2vh]">
             Horario de atención
           </p>
-          <p className="font-bold text-xl">Lunes a Viernes</p>
-          <p className="font-bold text-xl">9:00 am a 9:00 pm</p>
+          <p className="font-semibold text-xl">Lunes a Viernes</p>
+          <p className="font-semibold text-xl">9:00 am a 9:00 pm</p>
         </div>
 
         <div className="flex items-center space-x-4 below1026:ml-auto">
@@ -206,7 +206,7 @@ const Navbar = () => {
           </nav>
         </div>
 
-        <div className="flex items-center bg-white border-2 py-3 px-6 rounded-2xl hidden custom:block">
+        <div className={"flex items-center bg-white border-2 py-3 px-6 rounded-2xl hidden custom:block"}>
           <a
             href="https://api.whatsapp.com/send?phone=51978883199"
             className="flex items-center space-x-3 rounded-lg"
