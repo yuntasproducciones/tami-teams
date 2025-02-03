@@ -4,9 +4,10 @@ import styles from "../../../styles/Blog.module.css";
 import Blog1 from '../../../../public/assets/images/blog/Blog1.jpg';
 import Blog2 from '../../../../public/assets/images/blog/Blog2.jpg';
 import Blog3 from '../../../../public/assets/images/blog/Blog3.jpg';
-import mascota from '../../../../public/assets/logos/mascota_tami.webp';
+import mascota from '../../../../public/assets/images/blog/LOGO.png';
 import rayos from '../../../../public/assets/images/blog/BLOG PORTDADA.png';
 
+{/* Comentario */}
 const Blog: React.FC = () => {
     return (
         <div className={styles.pageContainer}>
