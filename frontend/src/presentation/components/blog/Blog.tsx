@@ -7,6 +7,7 @@ import Blog3 from '../../../../public/assets/images/blog/Blog3.jpg';
 import mascota from '../../../../public/assets/images/Logos/mascota_tami.webp';
 import rayos from '../../../../public/assets/images/blog/BLOG PORTDADA.png';
 
+{/* Comentario */}
 const Blog: React.FC = () => {
     return (
         <div className={styles.pageContainer}>
