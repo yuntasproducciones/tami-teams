@@ -1,5 +1,9 @@
 import { useState } from "react";
 import img1 from "../../../../public/assets/images/Productos/imagen_productos.png";
+import img2 from "../../../../public/assets/images/Productos/Pagina_web113.png";
+import img3 from "../../../../public/assets/images/Productos/Pagina_web.png";
+import img4 from "../../../../public/assets/images/Productos/Pagina_web33.png";
+import img5 from "../../../../public/assets/images/Productos/Pagina_web444.png";
 
 interface Slide {
   image: string;
@@ -17,28 +21,28 @@ const ImgSect = () => {
       items: [],
     },
     {
-      image: img1,
+      image: img2,
       subTitulo1: "EMPRENDIMIENTO",
       title: "SELLADORA \n DE VASOS",
       subTitulo2: "Los derrames jamás volverán \n a ser un problema",
       items: [],
     },
     {
-      image: img1,
+      image: img3,
       subTitulo1: "TRABAJO",
       title: "SOLDADORA \n SPARK",
       subTitulo2: "Potencia, versatilidad y resultados \n de calidad con la soldadura SPARK",
       items: [],
     },
     {
-      image: img1,
+      image: img4,
       subTitulo1: "DECORACIÓN",
       title: "VENTILADOR \n HOLOGRÁFICO",
       subTitulo2: "Impulsa tu marca con \n nuestros hologramas",
       items: [],
     },
     {
-      image: img1,
+      image: img5,
       subTitulo1: "EMPRENDIMIENTO",
       title: "SELLADORA \n DE BOTELLAS",
       subTitulo2: "Sella, protege y asegura \n cada botella con presión.",
