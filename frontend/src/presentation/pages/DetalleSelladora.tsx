@@ -4,12 +4,24 @@ import BANNERB from "../../../public/assets/images/blog/SELLADORA BANNER.jpg";
 import Mpanel from "../../../public/assets/images/blog/maquina de embalaje beneficios.jpg";
 import Botellas from "../../../public/assets/images/blog/BOTELLAS.webp";
 import bambu from "../../../public/assets/images/blog/Interior_decoration_panel_made_with_real_3.jpg";
+import imagenGrande from "../../../public/assets/images/Productos/SBotellas 3-Photoroom.png"
+import imagenpequeña1 from "../../../public/assets/images/Productos/Filtrador_de_Agua.png"
+import imagenpequeña2 from "../../../public/assets/images/Productos/imagen_2.png"
+import imagenpequeña3 from "../../../public/assets/images/Productos/imagen_3.png"
+import iconoMas from "../../../public/assets/icons/icono_mas.png"
+import iconoMenos from "../../../public/assets/icons/icono_menos.png"
+import { IoIosStar } from "react-icons/io";
+import { IoIosStarHalf } from "react-icons/io";
+import { IoIosStarOutline } from "react-icons/io";
+import { IoMdSearch } from "react-icons/io";
+import cubo from "../../../public/assets/icons/cube_svgrepo_com.svg"
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const DetalleSelladora = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow">
+            <main className="">
                 <section className="text-center">
                     {/* Banner Section */}
                     <div className="relative w-full max-w-6xl h-[20rem] md:h-[30rem] lg:h-[40rem] xl:h-[50rem] mx-auto my-40">
@@ -17,65 +29,111 @@ const DetalleSelladora = () => {
                         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center "></div>
                     </div>
 
-                    {/* Article Content */}
-                    <div className="max-w-6xl mx-auto px-4 py text-left -mt-20">
-                        <p className="text-verde_turquesa text-3xl mb-6">
-                            En un mundo donde la calidad y la seguridad de los productos son esenciales, los selladores de botellas juegan un papel fundamental. Estos dispositivos garantizan que los contenidos permanezcan frescos,
-                            seguros y libres de contaminantes. En este artículo, explicaremos qué son los selladores de botellas, sus beneficios y cómo pueden mejorar los procesos de envasado en distintas industrias.
-                        </p>
-                        <h2 className="text-5xl font-bold text-verde_turquesa mb-4">¿Qué son los selladores de botellas?</h2>
-                        <p className="text-gray-700 text-3xl mb-6">
-                            Los selladores de botellas son máquinas diseñadas para cerrar herméticamente botellas de diversos materiales, como vidrio o plástico.
-                            Este proceso asegura que el contenido se conserve en óptimas condiciones, evitando derrames, fugas o contaminación externa. Los selladores se utilizan ampliamente en sectores como alimentos,
-                            bebidas, productos farmacéuticos y cosméticos.
+                    {/* Detalle de producto ------------------------------------INICIO--------------------------------- Section*/}
+                    <div className="flex flex-col items-center lg:justify-between lg:w-full">
+                        <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-evenly mb-[100px] lg:w-full">
+                            {/* contenedor izquierdo */}
+                            <div className="max-w-[350px] mx-[20px] sm:mx-[0px] sm:max-w-[500px] lg:max-w-[450px] lg:max-h-[450px] mb-[40px] xl:max-w-[500px] 2xl:max-w-[600px]">
+                                {/* imagenes de la izquierda */}
+                                <div className="max-w-full max-h-full lg:flex flex-row-reverse">
+                                    {/* imagen grande */}
+                                    <div className="lg:max-h-[375px] lg:max-w-[375px]">
+                                        <img className="lg:max-w-full lg:max-h-full" src={imagenGrande} />
+                                    </div>
 
-                        </p>
-                        <div className="flex justify-center">
-                            <img className="w-1/2 h-full object-cover mb-10 rounded-xl" src={Mpanel} alt="Panel de fibra de bambú" />
-                        </div>
-                        <div className="bg-teal-100 p-6 rounded-lg mb-6">
-                            <h2 className="text-5xl font-bold text-verde_turquesa mb-8">Beneficios de usar selladores de botellas</h2>
-                            <ul className="list-disc list-inside text-teal-800 text-3xl mb-6">
-                                <li className="mb-4">
-                                    <span className="text-mediumturquoise">Conservación:</span>
-                                    <span style={{color: 'black'}}>Garantizan que el producto se mantenga fresco y seguro durante más tiempo.
-                                    </span>
-                                </li>
-                                <li className="mb-4">
-                                    <span className="text-mediumturquoise">Protección:</span>:
-                                    <span style={{color: 'black'}}> Previenen la entrada de contaminantes, como polvo, bacterias o humedad.</span>
-                                </li>
-                                <li className="mb-4">
-                                    <span className="text-mediumturquoise">Eficiencia:</span>:
-                                    <span style={{color: 'black'}}> Automatizan el proceso de sellado, reduciendo tiempos y costos operativos.</span>
-                                </li>
-                                <li className="mb-4">
-                                    <span className="text-mediumturquoise">Versatilidad:</span>:
-                                    <span style={{color: 'black'}}>Puede adaptarse a diferentes tipos y tamaños de botellas, según las necesidades del negocio.</span>
-                                </li>
-                                <li className="mb-4">
-                                    <span className="text-mediumturquoise">Presentación profesional:</span>
-                                    <span style={{color: 'black'}}>Mejoran la apariencia del producto al proporcionar un acabado limpio y uniforme.</span>
-                                </li>
+                                    {/* imagenes pequeñas */}
+                                    <div className="flex flex-row lg:flex-col lg:max-w-[125px]">
+                                        <div className="">
+                                            <img className="" src={imagenpequeña1} />
+                                        </div>
+                                        <div className="">
+                                            <img className="" src={imagenpequeña2} />
+                                        </div>
+                                        <div className="">
+                                            <img className="" src={imagenpequeña3} />
+                                        </div>
+                                    </div>
 
-                            </ul>
-                            <div className="flex justify-center">
-                                <img className="w-1/2 h-88 object-cover mb-6 rounded-2xl" src={Botellas}
-                                     alt="Máquina de embalaje"/>
+                                </div>
+                                {/* iconos de zoom */}
+                                <div className="flex row justify-end max-w-full max-h-full">
+                                    <div>
+                                        <IoMdSearch className="w-[35px] h-[35px]" />
+                                    </div>
+                                    <div>
+                                        <img className="w-[35px]" src={iconoMas} />
+                                    </div>
+                                    <div>
+                                        <img className="w-[35px]" src={iconoMenos} />
+                                    </div>
+                                </div>
                             </div>
-                            <p className="text-gray-700 text-3xl">
-                                Los selladores de botellas son una herramienta esencial para cualquier negocio que busque garantizar la calidad y seguridad de sus productos.
-                                Invertir en esta tecnología no solo optimiza los procesos de envasado, sino que también refuerza la confianza de los consumidores.
 
-                            </p>
+                            {/* contenedor derecho */}
+                            <div className="flex flex-col w-full max-w-[375px] sm:max-w-[550px] lg:max-w-[450px] xl:max-w-[500px] 2xl:max-w-[600px]">
+
+                                <div className="flex justify-start text-verde_turquesa font-bold mb-[30px] lg:hidden">
+                                    <h1 className="text-3xl sm:text-4xl">SELLADORA DE BOTELLAS</h1>
+                                </div>
+                                {/* rating de estrellas */}
+                                <div className="flex items-center justify-start text-xl sm:text-2xl lg:mb-[20px]">
+                                    <span>3.8</span>
+                                    <IoIosStar />
+                                    <IoIosStar />
+                                    <IoIosStar />
+                                    <IoIosStarHalf />
+                                    <IoIosStarOutline />
+                                </div>
+                                {/* subtitulo */}
+                                <div className="flex flex-col items-start text-start mb-[40px]">
+                                    <h2 className="font-bold text-lg sm:text-xl">Información del producto</h2>
+                                    <p>Utiliza el principio de inducción electromagnética para producir un alto calor instantáneo para derretir el papel de aluminio que luego se adhiere al agujero de la Botella</p>
+                                </div>
+                                {/* botones */}
+                                <div className="flex justify-between font-bold">
+                                    <button className="bg-gray-200 rounded-tl-2xl rounded-tr-2xl py-[10px] px-[15px] sm:px-[20px] flex flex-row items-center">
+                                        <span>Detalles del producto</span>
+                                        <RiArrowDropDownLine className="text-3xl pt-[4px]" />
+                                    </button>
+                                    <button className="flex flex-row items-center">
+                                        <span>Cotización</span>
+                                        <RiArrowDropDownLine className="text-3xl pt-[4px]" />
+                                    </button>
+                                </div>
+                                {/* descripcion adicional del producto */}
+                                <div className="flex flex-col items-start text-start bg-gray-200 rounded-tr-2xl px-[15px] sm:px-[20px]">
+                                    <p className="font-bold">Descripción:</p>
+                                    <p>Modelo: DCGY-F200</p>
+                                    <p>Potencia: AC220V/50HZ-80HZ</p>
+                                    <p>Temperatura ambiente: 10 - 400 °C</p>
+                                    <p>Diámetro del sello: 2 - 8 (cm)</p>
+                                    <p>Flujo de trabajo: 25 Botellas/min</p>
+                                </div>
+                                {/* dimensiones */}
+                                <div className="flex flex-col items-start text-start bg-gray-200 px-[15px] sm:px-[20px]">
+                                    <p className="font-bold">Dimensiones:</p>
+                                </div>
+                                <div className="flex flex-row items-start text-start bg-gray-200 rounded-bl-2xl rounded-br-2xl p-[15px] sm:p-[20px]">
+                                    <div className="mr-[20px]">
+                                        <img src={cubo} className="w-[75px]" />
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <span className="bg-verde_turquesa text-white text-[8px] px-[8px] py-[5px] rounded-2xl">H</span> Altura: 11.5 cm
+                                        </p>
+                                        <p>
+                                            <span className="bg-verde_turquesa text-white text-[8px] px-[9px] py-[5px] rounded-2xl">L</span> Longitud: 28 cm
+                                        </p>
+                                        <p>
+                                            <span className="bg-verde_turquesa text-white text-[8px] px-[8px] py-[5px] rounded-2xl">A</span> Ancho: 23 cm
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    {/* Call to Action */}
-                    <div className="text-verde_turquesa mt-20">
-                        <h2 className="text-5xl font-bold">¡Asegura el éxito de tus productos con selladores de botellas y lleva tu negocio al siguiente nivel!
-                        </h2>
-                    </div>
+                    {/* Detalle de producto ------------------------------------FIN--------------------------------- Section*/}
+                    
 
                     {/* Other Articles Section */}
                     <div className="py-10 px-4 mt-24">
@@ -108,5 +166,5 @@ const DetalleSelladora = () => {
         </div>
     );
 };
-export default DetalleSelladora;
 
+export default DetalleSelladora;
