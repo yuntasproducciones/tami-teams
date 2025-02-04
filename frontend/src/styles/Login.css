@@ -1,23 +1,26 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .fondo-container {
-    background: linear-gradient(to bottom right, rgb(153, 247, 236) 0%, #17A291 45%);
+  background: linear-gradient(to bottom right, rgb(153, 247, 236) 0%, #17A291 45%);
 }
 
-.mov-login {
+/* Aplicar las reglas del contenedor del formulario solo en pantallas a partir de 768px */
+@media (min-width: 768px) {
+  .mov-login {
     position: absolute;
-    width: 40%;
+    width: 50%; /* Ocupa la mitad de la pantalla */
     right: 0;
-    transform: translateX(120%);
+    transform: translateX(-10%);
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 1s ease-in-out;
-}
+  }
 
-.mov-login.active {
+  .mov-login.active {
     transform: translateX(0); 
   }
+}
