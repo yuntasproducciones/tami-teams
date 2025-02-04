@@ -12,8 +12,9 @@ export default {
       },
       screens: {
         'custom': '1026px',
-        'above1026': {'min': '1027px'},
-
+        'above1026': { 'min': '1027px' },
+        'img-xs': { min: '325px', max: '767px' },
+        'xs': '325px'
       },
     },
   },
