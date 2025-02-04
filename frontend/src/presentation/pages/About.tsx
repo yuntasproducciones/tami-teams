@@ -7,14 +7,14 @@ import Valores from "../components/nosotros/Valores";
 
 const About = () => {
   return (
-      <div>
-        <Navbar />
-        <ImageSection />
-        <PropositosSection />
-        <Mision />
-        <Valores />
-        <Footer />
-      </div>
+    <>
+      <Navbar />
+      <ImageSection />
+      <PropositosSection />
+      <Mision />
+      <Valores />
+      <Footer />
+    </>
   );
 };
 
