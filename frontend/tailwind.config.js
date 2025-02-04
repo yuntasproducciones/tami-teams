@@ -13,6 +13,7 @@ export default {
       screens: {
         'custom': '1026px',
         'above1026': {'min': '1027px'},
+        "xs": "300px",
 
       },
     },
