@@ -8,8 +8,10 @@ function PropositosYMetas() {
         backgroundImage: `url(${imgfon})`,
       }}
     >
-      <div className="bg-teal-400 text-white text-2xl sm:text-3xl md:text-4xl py-6 sm:py-8 px-8 sm:px-14 rounded-full shadow-lg text-center">
-        Acerca de nuestros <br /><span className="font-bold">propósitos y metas</span>
+      <div className="bg-verde_turquesa text-white text-2xl sm:text-3xl md:text-4xl py-6 sm:py-8 px-8 sm:px-14 rounded-full shadow-lg text-center">
+        Acerca de nuestros
+        <br />
+        <span className="font-bold">propósitos y metas</span>
       </div>
     </section>
   );
