@@ -1,52 +1,59 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Load_main } from "../presentation/components/Load_main.tsx";
+import ScrollToTop from "./ScrollToTop.tsx";
 import Home from "../presentation/pages/Home";
 import Products from "../presentation/pages/Products";
 import About from "../presentation/pages/About";
 import ShippingPolicies from "../presentation/pages/ShippingPolicies";
 import Login from "../presentation/pages/Login.tsx";
-import { Load_main } from '../presentation/components/Load_main.tsx';
 import BlogContenido from "../presentation/pages/BlogContenido";
 import DetalleSelladora from "../presentation/pages/DetalleSelladora";
 import DetalleMaquina from "../presentation/pages/DetalleMaquina";
 import DetalleBambu from "../presentation/pages/DetalleBambu";
 
-
-
-
 const AppRoutes = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     const handleLoad = () => {
       setTimeout(() => {
         setIsLoading(false);
+        setTimeout(() => {
+          setIsHidden(true);
+        }, 500);
       }, 2000); // Tiempo de espera adicional si es necesario
     };
 
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       handleLoad();
     } else {
-      window.addEventListener('load', handleLoad);
+      window.addEventListener("load", handleLoad);
     }
 
-    return () => window.removeEventListener('load', handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   return (
     <BrowserRouter>
-      <div className={`relative ${isLoading ? 'overflow-hidden' : ''}`}>
+      <ScrollToTop />
+      <div className={`relative ${isLoading ? "overflow-hidden" : ""}`}>
         {isLoading && (
           <div
             className={`absolute top-0 left-0 w-full h-full bg-white z-10 transition-opacity duration-500 ${
               !isLoading ? "opacity-0" : "opacity-100"
-            }`}
+            } ${isHidden ? "hidden" : ""}`}
           >
             <Load_main />
           </div>
         )}
-        
-        <div className={`${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}>
+
+        <div
+          className={`${
+            isLoading ? "opacity-0" : "opacity-100"
+          } transition-opacity duration-500`}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -55,7 +62,7 @@ const AppRoutes = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/blog" element={<BlogContenido />} />
             <Route path="/selladora" element={<DetalleSelladora />} />
-           <Route path="/maquina" element={<DetalleMaquina />} />
+            <Route path="/maquina" element={<DetalleMaquina />} />
             <Route path="/bambu" element={<DetalleBambu />} />
           </Routes>
         </div>
