@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import logoTami from '../../../public/assets/images/Logos/logoprincipalrecortado.gif';
+import logoTami from '../../../public/assets/images/Logos/logo_movil-02.webp';
 import menuHamburguesa from "../../../public/assets/icons/navigation-bar.png";
 import usuarioIcono from "../../../public/assets/icons/USUARIO_Mesa_de_trabajo_1.png";
 import whatsappIcon from '../../../public/assets/icons/WHATSAPP.svg';
@@ -43,7 +43,7 @@ const Navbar = () => {
 
         {/* Contenido del Menú hamburguesa desplegable solo para celulares (menor que lg 64rem (1024px)) -------------INCIO------------- */}
         <div
-          className={`fixed top-[8rem] left-0 z-[1] h-[700px] bg-white px-[5px] xs:px-[30px] py-[30px] w-full xs:max-w-[425px] rounded-tl-none rounded-tr-[50px] rounded-br-[50px] rounded-bl-none ${
+          className={`fixed top-[8rem] left-0 z-[1] min-h-[calc(100vh-8rem)] max-h-[calc(100vh-8rem)] bg-white px-[5px] xs:px-[30px] py-[30px] w-full xs:max-w-[425px] rounded-tl-none rounded-tr-[50px] rounded-br-[50px] rounded-bl-none overflow-scroll ${
             isSidebarOpen ? "" : "hidden"
           }`}
         >
@@ -138,12 +138,14 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-
-          <p className="text-verde_turquesa font-bold pt-[2vh]">
-            Horario de atención
-          </p>
-          <p className="font-semibold xs:text-xl">Lunes a Viernes</p>
-          <p className="font-semibold xs:text-xl">9:00 am a 9:00 pm</p>
+          <div className="pl-[15px]">
+            <p className="text-verde_turquesa font-bold pt-[2vh]">
+              Horario de atención
+            </p>
+            <p className="font-semibold xs:text-xl">Lunes a Viernes</p>
+            <p className="font-semibold xs:text-xl">9:00 am a 9:00 pm</p>
+          </div>
+          
         </div>
         {/* Contenido del Menú hamburguesa desplegable solo para celulares (menor que lg 64rem (1024px)) -------------FIN------------- */}
 
@@ -155,7 +157,7 @@ const Navbar = () => {
             className="w-[25px] xs:w-[50px] block lg:hidden"
             onClick={activarSidebar}
           />
-          <img src={logoTami} alt="logo-tami" className="xs:h-[100px] max-w-[50px] xs:max-w-[100px]" />
+          <img src={logoTami} alt="logo-tami" className="max-w-[50px] xs:max-w-[120px]" />
         </div>
         {/* Íconos tami y menú hamburguesa -------------FIN------------- */}
 
@@ -215,7 +217,7 @@ const Navbar = () => {
         {/* Links de navegación solo para computadora (mayor que lg 64rem (1024px)) -------------FIN------------- */}
 
         {/* Botón contáctanos -------------INICIO------------- */}
-        <div className={"flex items-center bg-white border-2 py-3 px-6 rounded-2xl hidden lg:block"}>
+        <div className={"flex items-center bg-white border-2 py-[1em] px-6 rounded-2xl hidden lg:block"}>
           <a
             href="https://api.whatsapp.com/send?phone=51978883199"
             className="flex items-center space-x-3 rounded-lg"
