@@ -7,22 +7,14 @@ import Trabajo from "../components/productos/Trabajo";
 
 const Products = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <section>
-        <ImgSec />
-      </section>
-      <section>
-        <Emprendimiento />
-      </section>
-      <section>
-        <Decoracion />
-      </section>
-      <section>
-        <Trabajo />
-      </section>
+      <ImgSec />
+      <Emprendimiento />
+      <Decoracion />
+      <Trabajo />
       <Footer />
-    </div>
+    </>
   );
 };
 
