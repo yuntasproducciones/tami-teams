@@ -8,6 +8,7 @@ import gt7 from "../../../../public/assets/images/Productos/SVasos_2.png";
 import hi from "../../../../public/assets/images/Productos/productos.png";
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
+import { Link } from "react-router-dom";
 
 type CardItem = {
   id: number;
@@ -51,9 +52,11 @@ const Emprendimiento = () => {
                 />
               </div>
               <div className="flex justify-center">
-                <Button className="w-40 max-w-xs bg-white hover:bg-gray-200 text-teal-600 border-4 border-gray-300 font-bold text-base sm:text-lg">
-                  {item.title}
-                </Button>
+                <Link to={`/detalle-producto/${item.id}`}>
+                  <Button className="w-40 max-w-xs bg-white hover:bg-gray-200 text-teal-600 border-4 border-gray-300 font-bold text-base sm:text-lg">
+                    {item.title}
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
@@ -64,4 +67,3 @@ const Emprendimiento = () => {
 };
 
 export default Emprendimiento;
-
