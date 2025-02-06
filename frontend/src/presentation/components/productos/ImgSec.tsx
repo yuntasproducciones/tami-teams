@@ -1,11 +1,12 @@
 import { useState } from "react";
-import todosLosProductos from "../../../../public/assets/images/Productos/imagen_productos.png";
-import fondoSlider from "../../../../public/assets/images/Productos/fondoProductoSlider.webp";
+import todosLosProductos from "/Productos/imagen_productos.png";
+import fondoSlider from "/Productos/fondoProductoSlider.webp";
+
 /* Productos */
-import selladoraVasos from "../../../../public/assets/images/Productos/Selladora de Vasos.webp";
-import soldadoraSpark from "../../../../public/assets/images/Productos/Soldadora Spark.webp";
-import ventiladorHolografico from "../../../../public/assets/images/Productos/Ventilador Holografico.webp";
-import selladoraBotellas from "../../../../public/assets/images/Productos/Selladora de Botellas.webp";
+import selladoraVasos from "/Productos/Selladora de Vasos.webp";
+import soldadoraSpark from "/Productos/Soldadora Spark.webp";
+import ventiladorHolografico from "/Productos/Ventilador Holografico.webp";
+import selladoraBotellas from "/Productos/Selladora de Botellas.webp";
 
 interface Slide {
   image: string;
