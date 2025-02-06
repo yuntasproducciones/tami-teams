@@ -3,8 +3,8 @@ import gt2 from "../../../../public/assets/images/Productos/imagen_5.png";
 import gt3 from "../../../../public/assets/images/Productos/imagen_2.png";
 import gt4 from "../../../../public/assets/images/Productos/image-removebg.png";
 import gt5 from "../../../../public/assets/images/Productos/loza.webp.webp";
-import gt6 from "../../../../public/assets/images/Productos/SBotellas 3-Photoroom.png";
-import gt7 from "../../../../public/assets/images/Productos/SVasos_2.png";
+import gt6 from "../../../../public/assets/images/Productos/Selladora de Botellas.webp";
+import gt7 from "../../../../public/assets/images/Productos/Selladora de Vasos.webp";
 import hi from "../../../../public/assets/images/Productos/productos.png";
 import { Card, CardContent } from "../ui/produc/card";
 import { Button } from "../ui/produc/Button";
@@ -41,7 +41,10 @@ const Emprendimiento = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {cardItems.map((item) => (
-          <Card key={item.id} className="transform hover:scale-105 transition-transform duration-300">
+          <Card
+            key={item.id}
+            className="transform hover:scale-105 transition-transform duration-300"
+          >
             <CardContent className="p-4 sm:p-6">
               <div className="bg-gray-200 rounded-3xl p-6 sm:p-8 mb-4">
                 <img
@@ -64,4 +67,3 @@ const Emprendimiento = () => {
 };
 
 export default Emprendimiento;
-

@@ -1,6 +1,6 @@
 import gt1 from "../../../../public/assets/images/Productos/imagen_4.png";
 import gt2 from "../../../../public/assets/images/Productos/imagen_3.png";
-import gt3 from "../../../../public/assets/images/Productos/ventilador_45.png";
+import gt3 from "../../../../public/assets/images/Productos/Ventilador Holografico.webp";
 import hi from "../../../../public/assets/images/Productos/productos.png";
 
 import { Card, CardContent } from "../ui/produc/card";
@@ -34,7 +34,10 @@ const Decoracion = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {cardItems.map((item) => (
-          <Card key={item.id} className="transform hover:scale-105 transition-transform duration-300">
+          <Card
+            key={item.id}
+            className="transform hover:scale-105 transition-transform duration-300"
+          >
             <CardContent className="p-4 sm:p-6">
               <div className="bg-gray-200 rounded-3xl p-6 sm:p-8 mb-4">
                 <img
