@@ -7,7 +7,7 @@ const BtnSaberMas = () => {
   return (
     <div className="flex justify-between text-verde2">
       <svg
-        width="70"
+        width="50"
         height="50"
         viewBox="0 0 25 25"
         fill="none"
@@ -22,7 +22,7 @@ const BtnSaberMas = () => {
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          transform="translate(-10, 0)"
+          transform="translate(-2, 0)"
         />
         <path
           d="M16 4L8 12L16 20"
@@ -30,14 +30,7 @@ const BtnSaberMas = () => {
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-        />
-        <path
-          d="M16 4L8 12L16 20"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          transform="translate(10, 0)"
+          transform="translate(5, 0)"
         />
       </svg>
       <button
@@ -52,7 +45,7 @@ const BtnSaberMas = () => {
         Saber Más
       </button>
       <svg
-        width="70"
+        width="50"
         height="50"
         viewBox="0 0 25 25"
         fill="none"
@@ -67,7 +60,7 @@ const BtnSaberMas = () => {
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          transform="translate(10, 0)"
+          transform="translate(2, 0)"
         />
         <path
           d="M8 4L16 12L8 20"
@@ -75,14 +68,7 @@ const BtnSaberMas = () => {
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-        />
-        <path
-          d="M8 4L16 12L8 20"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          transform="translate(-10, 0)"
+          transform="translate(-5, 0)"
         />
       </svg>
     </div>
@@ -91,7 +77,7 @@ const BtnSaberMas = () => {
 
 const ProductCard = (producto: Producto) => {
   return (
-    <div className="place-self-center my-10">
+    <div className="my-10">
       <div className="bg-gray-300 rounded-[15%] place-self-center h-56 w-56 px-3 py-3 mb-6">
         <img
           src={`/Productos/${producto.nombreProducto}.webp`}
