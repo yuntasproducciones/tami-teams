@@ -1,4 +1,11 @@
-const ArticuloCarrusel = () => {
+
+
+
+type ArticuloCarruselProps = {
+  id: string;  
+};
+
+const ArticuloCarrusel = ({ id }: ArticuloCarruselProps) => {
     const variables = [
       {
         id: 1,
@@ -132,51 +139,53 @@ const ArticuloCarrusel = () => {
         p4: "PURIFICADOR DE AGUA",
       },
     ];
+
+  const imagenes = variables.find((item) => item.id === parseInt(id));
+
+  if (!imagenes) {
+    return <div>Producto no encontrado</div>; 
+  }
   
     return (
       <article className="p-8 bg-gray-50">
         <h2 className="text-2xl font-bold text-teal-600 mb-6">Artículos Similares</h2>
   
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-          {variables.map((variable) => (
-            <>
-              <figure key={`${variable.id}-1`} className="flex flex-col items-center">
-                <img
-                  src={variable.img1}
-                  alt={variable.p1}
-                  className="w-32 h-32 object-cover rounded-xl"
-                />
-                <p className="text-center text-gray-700 mt-2">{variable.p1}</p>
-              </figure>
+            <figure key={`${imagenes.id}-1`} className="flex flex-col items-center">
+              <img
+                src={imagenes.img1}
+                alt={imagenes.p1}
+                className="w-32 h-32 object-cover rounded-xl"
+              />
+              <p className="text-center text-gray-700 mt-2">{imagenes.p1}</p>
+            </figure>
 
-              <figure key={`${variable.id}-2`} className="flex flex-col items-center">
-                <img
-                  src={variable.img2}
-                  alt={variable.p2}
-                  className="w-32 h-32 object-cover rounded-xl"
-                />
-                <p className="text-center text-gray-700 mt-2">{variable.p2}</p>
-              </figure>
+            <figure key={`${imagenes.id}-2`} className="flex flex-col items-center">
+              <img
+                src={imagenes.img2}
+                alt={imagenes.p2}
+                className="w-32 h-32 object-cover rounded-xl"
+              />
+              <p className="text-center text-gray-700 mt-2">{imagenes.p2}</p>
+            </figure>
 
-              <figure key={`${variable.id}-3`} className="flex flex-col items-center">
-                <img
-                  src={variable.img3}
-                  alt={variable.p3}
-                  className="w-32 h-32 object-cover rounded-xl"
-                />
-                <p className="text-center text-gray-700 mt-2">{variable.p3}</p>
-              </figure>
+            <figure key={`${imagenes.id}-3`} className="flex flex-col items-center">
+              <img
+                src={imagenes.img3}
+                alt={imagenes.p3}
+                className="w-32 h-32 object-cover rounded-xl"
+              />
+              <p className="text-center text-gray-700 mt-2">{imagenes.p3}</p>
+            </figure>
 
-              <figure key={`${variable.id}-4`} className="flex flex-col items-center">
-                <img
-                  src={variable.img4}
-                  alt={variable.p4}
-                  className="w-32 h-32 object-cover rounded-xl"
-                />
-                <p className="text-center text-gray-700 mt-2">{variable.p4}</p>
-              </figure>
-            </>
-          ))}
+            <figure key={`${imagenes.id}-4`} className="flex flex-col items-center">
+              <img
+                src={imagenes.img4}
+                alt={imagenes.p4}
+                className="w-32 h-32 object-cover rounded-xl"
+              />
+              <p className="text-center text-gray-700 mt-2">{imagenes.p4}</p>
+            </figure>
         </div>
       </article>
     );

@@ -1,6 +1,11 @@
 
 
-const ArticuloInfoProductos = () => {
+
+type ArticuloInfoProductosProps = {
+  id: string;  
+};
+
+const ArticuloInfoProductos = ({ id }: ArticuloInfoProductosProps) => {
     const variables = [
       {
         id: 1,
@@ -177,48 +182,50 @@ const ArticuloInfoProductos = () => {
         width: "Ancho: 32 cm",
       },
     ];
+
+    const informacion = variables.find((item) => item.id === parseInt(id));
+
+  if (!informacion) {
+    return <div>Producto no encontrado</div>; 
+  }
   
     return (
       <article className="p-8 bg-gray-50">
+          <div key={informacion.id}>
 
-        {variables.map((variable) => (
-
-          <div key={variable.id}>
-
-            <h2 className="text-3xl font-bold text-teal-600">{variable.title}</h2>
-            <h2 className="text-xl font-semibold text-gray-800 mt-2">{variable.subtitle}</h2>
-            <p className="mt-4 text-gray-600">{variable.paragraph}</p>
+            <h2 className="text-3xl font-bold text-teal-600">{informacion.title}</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mt-2">{informacion.subtitle}</h2>
+            <p className="mt-4 text-gray-600">{informacion.paragraph}</p>
   
             <div className="mt-6">
-              <h3 className="text-lg font-bold">{variable.details}</h3>
+              <h3 className="text-lg font-bold">{informacion.details}</h3>
 
               <button className="bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 mt-2">
                 Cotiza aquí
               </button>
   
-              <h3 className="text-lg font-bold mt-6">{variable.description}</h3>
+              <h3 className="text-lg font-bold mt-6">{informacion.description}</h3>
 
-              <p className="mt-2 text-gray-600">{variable.data}</p>
+              <p className="mt-2 text-gray-600">{informacion.data}</p>
   
-              <h3 className="text-lg font-bold mt-6">{variable.proportions}</h3>
+              <h3 className="text-lg font-bold mt-6">{informacion.proportions}</h3>
   
               <div className="flex gap-4 mt-4">
 
                 <figure>
-                  <img src="/path/to/image1.jpg" alt={variable.alt} className="w-32 h-32 object-cover" />
+                  <img src="/path/to/image1.jpg" alt="" className="w-32 h-32 object-cover" />
                 </figure>
                 <figure>
-                  <img src="/path/to/image2.jpg" alt={variable.long} className="w-32 h-32 object-cover" />
+                  <img src="/path/to/image2.jpg" alt="" className="w-32 h-32 object-cover" />
                 </figure>
                 <figure>
-                  <img src="/path/to/image3.jpg" alt={variable.width} className="w-32 h-32 object-cover" />
+                  <img src="/path/to/image3.jpg" alt="" className="w-32 h-32 object-cover" />
                 </figure>
-
               </div>
   
-              <p className="mt-2">{variable.alt}</p>
-              <p>{variable.long}</p>
-              <p>{variable.width}</p>
+              <p className="mt-2">{informacion.alt}</p>
+              <p>{informacion.long}</p>
+              <p>{informacion.width}</p>
   
               <button className="bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 mt-6">
                 Comprar ahora
@@ -226,7 +233,6 @@ const ArticuloInfoProductos = () => {
 
             </div>
           </div>
-        ))}
       </article>
     );
   };

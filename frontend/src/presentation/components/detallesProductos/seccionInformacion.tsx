@@ -2,16 +2,18 @@ import ArticuloImagenes from './articuloImagenes';
 import ArticuloInfoProductos from './articuloInfoProducto';
 import ArticuloCarrusel from './articuloCarrusel';
 
-const seccionInformacion = () => {
+type SeccionInformacionProps = {
+  id: string;  
+};
+
+const SeccionInformacion = ({ id }: SeccionInformacionProps) => {
     return (
         <section>
-            <ArticuloImagenes/>
-
-            <ArticuloInfoProductos/>
-            
-            <ArticuloCarrusel/>
+            <ArticuloImagenes id={id}/>  
+            <ArticuloInfoProductos id={id}/>
+            <ArticuloCarrusel id={id}/>
         </section>
     );
 };
 
-export default seccionInformacion;
+export default SeccionInformacion;

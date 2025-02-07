@@ -1,4 +1,10 @@
-const ArticuloImagenes = () => {
+
+
+type ArticuloImagenesProps = {
+  id: string;  
+};
+
+const ArticuloImagenes = ({ id }: ArticuloImagenesProps) => {
     const variables = [
       {
         id: 1,
@@ -90,31 +96,33 @@ const ArticuloImagenes = () => {
       },
     ];
     
-    return (
-      <section>
-        {variables.map((item) => (
-          <article key={item.id}>
-            <h2>Conjunto de imágenes {item.id}</h2>
-            <figure>
-              <img src={item.img1} alt={`Imagen ${item.id}-1`} />
-            </figure>
-            <figure>
-              <img src={item.img2} alt={`Imagen ${item.id}-2`} />
-            </figure>
-            <figure>
-              <img src={item.img3} alt={`Imagen ${item.id}-3`} />
-            </figure>
-            <figure>
-              <img src={item.img4} alt={`Imagen ${item.id}-4`} />
-            </figure>
-            <figure>
-              <img src={item.img5} alt={`Imagen ${item.id}-5`} />
-            </figure>
-          </article>
-        ))}
-      </section>
-    );
-  };
-  
-  export default ArticuloImagenes;
+  const producto = variables.find((item) => item.id === parseInt(id));
+
+  if (!producto) {
+    return <div>Producto no encontrado</div>; 
+  }
+
+  return (
+    <section>
+      <h2>Conjunto de imágenes {producto.id}</h2>
+      <figure>
+        <img src={producto.img1} alt={`Imagen ${producto.id}-1`} />
+      </figure>
+      <figure>
+        <img src={producto.img2} alt={`Imagen ${producto.id}-2`} />
+      </figure>
+      <figure>
+        <img src={producto.img3} alt={`Imagen ${producto.id}-3`} />
+      </figure>
+      <figure>
+        <img src={producto.img4} alt={`Imagen ${producto.id}-4`} />
+      </figure>
+      <figure>
+        <img src={producto.img5} alt={`Imagen ${producto.id}-5`} />
+      </figure>
+    </section>
+  );
+};
+
+export default ArticuloImagenes;
   
