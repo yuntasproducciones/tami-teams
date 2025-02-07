@@ -18,13 +18,7 @@ const SeccionLayer = (seccion: Seccion) => {
           <h2 className="text-white bg-verde_turquesa px-6 py-2 w-fit rounded-full text-3xl font-bold">
             {seccion.nombreSeccion}
           </h2>
-          <div
-            className={`grid ${
-              seccion.productosDeLaSeccion.length <= 3
-                ? "grid-flow-col auto-cols-auto"
-                : "grid-cols-3 auto-rows-auto"
-            }`}
-          >
+          <div className={`flex flex-wrap justify-between`}>
             {seccion.productosDeLaSeccion.map((producto) => {
               return <ProductCard {...producto} />;
             })}
