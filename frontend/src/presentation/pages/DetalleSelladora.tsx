@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BANNERB from "../../../public/assets/images/blog/SELLADORA BANNER.jpg";
 import Mpanel from "../../../public/assets/images/blog/maquina de embalaje beneficios.jpg";
-import Botellas from "../../../public/assets/images/blog/BOTELLAS.webp";
+// import Botellas from "../../../public/assets/images/blog/BOTELLAS.webp";
 import bambu from "../../../public/assets/images/blog/Interior_decoration_panel_made_with_real_3.jpg";
 import imagenGrande from "../../../public/assets/images/Productos/SBotellas 3-Photoroom.png"
 import imagenpequeña1 from "../../../public/assets/images/Productos/Filtrador_de_Agua.png"
