@@ -8,7 +8,13 @@ import About from "../presentation/pages/About";
 import ShippingPolicies from "../presentation/pages/ShippingPolicies";
 import Login from "../presentation/pages/Login.tsx";
 import BlogContenido from "../presentation/pages/BlogContenido";
+
 import DetalleLayer from "../presentation/pages/DetalleLayer.tsx";
+
+import DetalleSelladora from "../presentation/pages/DetalleSelladora";
+import DetalleMaquina from "../presentation/pages/DetalleMaquina.tsx";
+import DetalleBambu from "../presentation/pages/DetalleBambu.tsx";
+import Details from "../presentation/pages/DetalleProductos.tsx";
 
 const AppRoutes = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -59,7 +65,13 @@ const AppRoutes = () => {
             <Route path="/shipping-policies" element={<ShippingPolicies />} />
             <Route path="/login" element={<Login />} />
             <Route path="/blog" element={<BlogContenido />} />
+
             <Route path="/blog/detalle/:producto" element={<DetalleLayer />} />
+
+            <Route path="/selladora" element={<DetalleSelladora />} />
+            <Route path="/maquina" element={<DetalleMaquina />} />
+            <Route path="/bambu" element={<DetalleBambu />} />
+            <Route path="/detalle-producto/:id" element={<Details />} />
           </Routes>
         </div>
       </div>
