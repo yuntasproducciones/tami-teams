@@ -10,8 +10,7 @@ import BlogContenido from "../presentation/pages/BlogContenido";
 import DetalleSelladora from "../presentation/pages/DetalleSelladora";
 import DetalleMaquina from "../presentation/pages/DetalleMaquina";
 import DetalleBambu from "../presentation/pages/DetalleBambu";
-
-
+import Details from "../presentation/pages/DetalleProductos.tsx";
 
 
 const AppRoutes = () => {
@@ -57,6 +56,7 @@ const AppRoutes = () => {
             <Route path="/selladora" element={<DetalleSelladora />} />
            <Route path="/maquina" element={<DetalleMaquina />} />
             <Route path="/bambu" element={<DetalleBambu />} />
+            <Route path="/detalle-producto/:id" element={<Details />} />
           </Routes>
         </div>
       </div>
