@@ -22,38 +22,34 @@ const seccionesArray: Seccion[] = [
         stockProducto: 3,
         precioProducto: 10,
       },
-    ],
-  },
-  {
-    nombreSeccion: "Emprendimiento",
-    productosDeLaSeccion: [
       {
-        nombreProducto: "Ventilador 45",
+        nombreProducto: "imagen_2",
         stockProducto: 3,
         precioProducto: 5,
       },
       {
-        nombreProducto: "Tanque de Gas",
+        nombreProducto: "imagen_5",
         stockProducto: 12,
         precioProducto: 10,
       },
-      {
-        nombreProducto: "Ventilador 45",
-        stockProducto: 15,
-        precioProducto: 21.55,
-      },
-      {
-        nombreProducto: "Tanque de Gas",
-        stockProducto: 24,
-        precioProducto: 20,
-      },
     ],
   },
+
   {
     nombreSeccion: "Decoración",
     productosDeLaSeccion: [
       {
-        nombreProducto: "Loza",
+        nombreProducto: "Loza 1",
+        stockProducto: 12,
+        precioProducto: 2,
+      },
+      {
+        nombreProducto: "Loza 2",
+        stockProducto: 12,
+        precioProducto: 2,
+      },
+      {
+        nombreProducto: "Loza 3",
         stockProducto: 12,
         precioProducto: 2,
       },
