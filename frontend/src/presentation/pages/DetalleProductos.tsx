@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import ProductsJSON from "../components/detallesProductos/articulos.json";
 import BoxSize from "../components/detallesProductos/box-size.svg";
@@ -7,6 +7,13 @@ import Footer from "../components/Footer";
 
 const ProductDetail = () => {
   const { id } = useParams();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, [id]);
 
   console.log("ID recibido:", id);
 
