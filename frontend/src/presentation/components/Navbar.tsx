@@ -8,6 +8,7 @@ import tiktokIcon from "../../../public/assets/icons/TIKTOK.svg";
 import twitterIcon from "../../../public/assets/icons/TWITTER.svg";
 import facebookIcon from "../../../public/assets/icons/FACEBOOK.svg";
 import instagramIcon from "../../../public/assets/icons/INSTAGRAM.svg";
+// import "../../styles/estilos.css"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
