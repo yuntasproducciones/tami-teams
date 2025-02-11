@@ -1,12 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  root: 'src', // Cambia el directorio raíz a 'src'
+  root: 'src',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@public': path.resolve(__dirname, 'src/public')
+    }
+  },
   build: {
-    outDir: '../dist', // Directorio de salida
-    emptyOutDir: true, // Vaciar el directorio de salida antes de construir
+    outDir: '../dist',
+    emptyOutDir: true,
     sourcemap: false
   },
   server: {
