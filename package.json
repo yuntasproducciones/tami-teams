@@ -3,5 +3,8 @@
         "dev": "cd frontend && npm run dev",
         "build": "cd frontend && npm run build",
         "preview": "cd frontend && npm run preview"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.1"
     }
 }
