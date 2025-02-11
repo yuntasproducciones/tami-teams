@@ -90,7 +90,7 @@ const ProductDetail = () => {
 
               {/* Imagen principal grande */}
               <div className="col-span-4 row-span-5 flex flex-col gap-4">
-                <div className="w-full h-[500px] bg-black rounded-lg overflow-hidden relative">
+                <div className="w-full h-[500px] rounded-lg overflow-hidden relative">
                   <img
                     src={product.image}
                     alt="Product"
