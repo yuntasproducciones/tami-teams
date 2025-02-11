@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1,
+    "title": "SELLADORA DE BOTELLAS",
+    "subtitle": "Protege, conserva y destaca con cada botella",
+    "rating": 4.5,
+    "tagline": "¡Sella tus botellas con la mejor calidad!",
+    "description": "Sella botellas de diferentes tamaños de manera eficiente y segura.",
+    "specs": {
+      "power": "220V",
+      "capacity": "Varía según el modelo",
+      "material": "Acero inoxidable"
+    },
+    "dimensions": {
+      "height": "40 cm",
+      "length": "30 cm",
+      "width": "20 cm"
+    },
+    "relatedProducts": [2, 3],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-1",
+      "https://placehold.co/100x150/orange/white?text=producto-1-2",
+      "https://placehold.co/100x150/orange/white?text=producto-1-3",
+      "https://placehold.co/100x150/orange/white?text=producto-1-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-1"
+  },
+  {
+    "id": 2,
+    "title": "MÁQUINA DE EMBALAJE",
+    "subtitle": "Protege, conserva y destaca EN CADA EMBALAJE",
+    "rating": 4.2,
+    "tagline": "¡Embalaje perfecto para tus productos!",
+    "description": "Máquina de embalaje versátil para diferentes tipos de productos.",
+    "specs": {
+      "power": "110V/220V",
+      "capacity": "Hasta 500 unidades/hora",
+      "material": "Aluminio"
+    },
+    "dimensions": {
+      "height": "60 cm",
+      "length": "40 cm",
+      "width": "30 cm"
+    },
+    "relatedProducts": [1, 3],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-2",
+      "https://placehold.co/100x150/orange/white?text=producto-2-2",
+      "https://placehold.co/100x150/orange/white?text=producto-2-3",
+      "https://placehold.co/100x150/orange/white?text=producto-2-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-2"
+  },
+  {
+    "id": 3,
+    "title": "SELLADORA DE BOLSAS",
+    "subtitle": "Protege, conserva y destaca EN CADA SELLADO DE BOLSAS",
+    "rating": 4.0,
+    "tagline": "¡Conserva y mantén tus alimentos frescos por más tiempo!",
+    "description": "Empaca de manera eficiente al rellenar bolsas con chifles, harinas o líquidos con tres modelos de máquina. Se pueden sellar film de aluminio, papel de filtrante, film de plástico impreso.",
+    "specs": {
+      "power": "220-240V/50Hz",
+      "capacity": "1-100g (Según el modelo)",
+      "width": "3-20cm (Según el modelo)",
+      "flow": "10-20 bolsas/min"
+    },
+    "dimensions": {
+      "height": "150 cm",
+      "length": "55 cm",
+      "width": "56 cm"
+    },
+    "relatedProducts": [1, 2, 4, 6],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-3",
+      "https://placehold.co/100x150/orange/white?text=producto-3-2",
+      "https://placehold.co/100x150/orange/white?text=producto-3-3",
+      "https://placehold.co/100x150/orange/white?text=producto-3-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-3"
+  },
+  {
+    "id": 4,
+    "title": "SELLADORA DE BOLSAS de CHIFLES",
+    "subtitle": "¡MANTEN LOS CHIFLES FRESCOS Y CROCANTES!",
+    "rating": 4.3,
+    "tagline": "¡La mejor opción para mantener tus chifles siempre frescos!",
+    "description": "Sella bolsas de chifles de manera rápida y eficiente.",
+    "specs": {
+      "power": "220V",
+      "capacity": "Hasta 30 bolsas/min",
+      "material": "Plástico resistente"
+    },
+    "dimensions": {
+      "height": "35 cm",
+      "length": "25 cm",
+      "width": "15 cm"
+    },
+    "relatedProducts": [3, 5],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-4",
+      "https://placehold.co/100x150/orange/white?text=producto-4-2",
+      "https://placehold.co/100x150/orange/white?text=producto-4-3",
+      "https://placehold.co/100x150/orange/white?text=producto-4-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-4"
+  },
+  {
+    "id": 5,
+    "title": "SOLDADORA LINGBA",
+    "subtitle": "TUS SOLDADURAS SON MEJORES CON LA NUESTRA LINBGA",
+    "rating": 4.6,
+    "tagline": "¡Soldaduras perfectas con nuestra soldadora Lingba!",
+    "description": "Soldadora de alta calidad para trabajos profesionales.",
+    "specs": {
+      "power": "220V",
+      "amperage": "50-200A",
+      "material": "Acero"
+    },
+    "dimensions": {
+      "height": "50 cm",
+      "length": "40 cm",
+      "width": "25 cm"
+    },
+    "relatedProducts": [4, 6],
+    "images": [
+      "https://placehold.co/100x130/orange/white?text=producto-5",
+      "https://placehold.co/100x150/orange/white?text=producto-5-2",
+      "https://placehold.co/100x150/orange/white?text=producto-5-3",
+      "https://placehold.co/100x150/orange/white?text=producto-5-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-5"
+  },
+  {
+    "id": 6,
+    "title": "PURIFICADOR DE AGUA POR HOSMOSIS",
+    "subtitle": "Mejora la calidad del agua con nuestra purificadora de agua",
+    "rating": 4.4,
+    "tagline": "¡Agua pura y cristalina siempre!",
+    "description": "Purificador de agua por osmosis inversa para un agua más saludable.",
+    "specs": {
+      "power": "24V",
+      "capacity": "50 GPD",
+      "stages": "5 etapas de filtración"
+    },
+    "dimensions": {
+      "height": "45 cm",
+      "length": "35 cm",
+      "width": "20 cm"
+    },
+    "relatedProducts": [5, 7],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-6",
+      "https://placehold.co/100x150/orange/white?text=producto-6-2",
+      "https://placehold.co/100x150/orange/white?text=producto-6-3",
+      "https://placehold.co/100x150/orange/white?text=producto-6-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-6"
+  },
+  {
+    "id": 7,
+    "title": "VENTILADOR HOLOGRÁFICO",
+    "subtitle": "Proyecta sus imágenes y disfruta esta NUEVA experiencia",
+    "rating": 4.7,
+    "tagline": "¡La innovación que refresca tus espacios!",
+    "description": "Ventilador con proyección holográfica para publicidad y decoración.",
+    "specs": {
+      "power": "12V",
+      "resolution": "1024x768",
+      "diameter": "50 cm"
+    },
+    "dimensions": {
+      "height": "55 cm",
+      "length": "55 cm",
+      "width": "10 cm"
+    },
+    "relatedProducts": [6, 8],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-7",
+      "https://placehold.co/100x150/orange/white?text=producto-7-2",
+      "https://placehold.co/100x150/orange/white?text=producto-7-3",
+      "https://placehold.co/100x150/orange/white?text=producto-7-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-7"
+  },
+  {
+    "id": 8,
+    "title": "PANEL DE FIBRA DE BAMBO",
+    "subtitle": "Remodela tus espacio de manera fácil y sencilla",
+    "rating": 4.1,
+    "tagline": "¡Dale un toque natural a tus paredes!",
+    "description": "Paneles de fibra de bambú para revestimiento de paredes.",
+    "specs": {
+      "material": "Fibra de bambú",
+      "dimensions": "60x60 cm",
+      "thickness": "5 mm"
+    },
+    "dimensions": {
+      "height": "60 cm",
+      "length": "60 cm",
+      "width": "0.5 cm"
+    },
+    "relatedProducts": [7, 9],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-8",
+      "https://placehold.co/100x150/orange/white?text=producto-8-2",
+      "https://placehold.co/100x150/orange/white?text=producto-8-3",
+      "https://placehold.co/100x150/orange/white?text=producto-8-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-8"
+  },
+  {
+    "id": 9,
+    "title": "WPC FENCE PANEL",
+    "subtitle": "La revolución en la decoración de nuestro hogar",
+    "rating": 4.2,
+    "tagline": "¡La mejor opción para cercas duraderas y estéticas!",
+    "description": "Paneles de WPC para cercas y exteriores.",
+    "specs": {
+      "material": "WPC (Wood Plastic Composite)",
+      "dimensions": "180x30 cm",
+      "thickness": "2 cm"
+    },
+    "dimensions": {
+      "height": "180 cm",
+      "length": "30 cm",
+      "width": "2 cm"
+    },
+    "relatedProducts": [8, 10],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-9",
+      "https://placehold.co/100x150/orange/white?text=producto-9-2",
+      "https://placehold.co/100x150/orange/white?text=producto-9-3",
+      "https://placehold.co/100x150/orange/white?text=producto-9-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-9"
+  },
+  {
+    "id": 10,
+    "title": "WPC FENCE PANEL",
+    "subtitle": "Una revolución en la decoración de nuestros espacios",
+    "rating": 4.3,
+    "tagline": "¡Cercas modernas y resistentes!",
+    "description": "Paneles de WPC para cercas con diseño innovador.",
+    "specs": {
+      "material": "WPC (Wood Plastic Composite)",
+      "dimensions": "200x40 cm",
+      "thickness": "2.5 cm"
+    },
+    "dimensions": {
+      "height": "200 cm",
+      "length": "40 cm",
+      "width": "2.5 cm"
+    },
+    "relatedProducts": [9, 11],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-10",
+      "https://placehold.co/100x150/orange/white?text=producto-10-2",
+      "https://placehold.co/100x150/orange/white?text=producto-10-3",
+      "https://placehold.co/100x150/orange/white?text=producto-10-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-10"
+  },
+  {
+    "id": 11,
+    "title": "SELLADORA DE VASOS",
+    "subtitle": "Los derrames jamas volveran a ser un problema",
+    "rating": 4.8,
+    "tagline": "¡Sella tus vasos de forma rápida y segura!",
+    "description": "Selladora de vasos para evitar derrames en bebidas.",
+    "specs": {
+      "power": "220V",
+      "capacity": "300-500 vasos/hora",
+      "diameter": "90-95 mm"
+    },
+    "dimensions": {
+      "height": "60 cm",
+      "length": "30 cm",
+      "width": "25 cm"
+    },
+    "relatedProducts": [1, 3],
+    "images": [
+      "https://placehold.co/100x150/orange/white?text=producto-11",
+      "https://placehold.co/100x150/orange/white?text=producto-11-2",
+      "https://placehold.co/100x150/orange/white?text=producto-11-3",
+      "https://placehold.co/100x150/orange/white?text=producto-11-4"
+    ],
+    "image": "https://placehold.co/100x150/orange/white?text=producto-11"
+  }
+]
+
