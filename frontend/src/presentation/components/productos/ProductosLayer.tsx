@@ -1,74 +1,44 @@
-import { lazy, Suspense } from "react";
-import { Seccion } from "./SeccionLayer";
+import { lazy, Suspense, useMemo } from "react";
+import productos from "../detallesProductos/articulos.json";
 const LazySeccionLayer = lazy(() => import("./SeccionLayer"));
 
 export interface Producto {
+  id: number;         // Añadido id
   nombreProducto: string;
   stockProducto: number;
   precioProducto: number;
+  image: string;     // Añadida la propiedad image
 }
 
-const seccionesArray: Seccion[] = [
-  {
-    nombreSeccion: "Trabajo",
-    productosDeLaSeccion: [
-      {
-        nombreProducto: "Selladora de Vasos",
-        stockProducto: 12,
-        precioProducto: 5,
-      },
-      {
-        nombreProducto: "Selladora de Botellas",
-        stockProducto: 3,
-        precioProducto: 10,
-      },
-      {
-        nombreProducto: "imagen_2",
-        stockProducto: 3,
-        precioProducto: 5,
-      },
-      {
-        nombreProducto: "imagen_5",
-        stockProducto: 12,
-        precioProducto: 10,
-      },
-    ],
-  },
-
-  {
-    nombreSeccion: "Decoración",
-    productosDeLaSeccion: [
-      {
-        nombreProducto: "Loza 1",
-        stockProducto: 12,
-        precioProducto: 2,
-      },
-      {
-        nombreProducto: "Loza 2",
-        stockProducto: 12,
-        precioProducto: 2,
-      },
-      {
-        nombreProducto: "Loza 3",
-        stockProducto: 12,
-        precioProducto: 2,
-      },
-    ],
-  },
-];
-
 const ProductosLayer = () => {
+  const seccionesArray = useMemo(() => {
+    const secciones = productos.reduce((acc: { [key: string]: Producto[] }, producto) => {
+      if (!acc[producto.seccion]) {
+        acc[producto.seccion] = [];
+      }
+      acc[producto.seccion].push({
+        id: producto.id,  // Añadido id
+        nombreProducto: producto.nombreProducto,
+        stockProducto: producto.stockProducto,
+        precioProducto: producto.precioProducto,
+        image: producto.image
+      });
+      return acc;
+    }, {});
+
+    return Object.entries(secciones).map(([nombreSeccion, productosDeLaSeccion]) => ({
+      nombreSeccion,
+      productosDeLaSeccion
+    }));
+  }, []);
+
   return (
-    <section className="w-full grid grid-flow-row auto-rows-auto ">
-      {seccionesArray.map((seccion, index) => {
-        return (
-          <>
-            <Suspense>
-              <LazySeccionLayer key={index} {...seccion} />
-            </Suspense>
-          </>
-        );
-      })}
+    <section className="w-full grid grid-flow-row auto-rows-auto">
+      {seccionesArray.map((seccion, index) => (
+        <Suspense key={index}>
+          <LazySeccionLayer {...seccion} />
+        </Suspense>
+      ))}
     </section>
   );
 };

@@ -1,8 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Producto } from "./ProductosLayer";
 
-const BtnSaberMas = () => {
+const BtnSaberMas = ({ id }: { id: number }) => {
+  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleClick = () => {
+    navigate(`/detalle-producto/${id}`);
+  };
 
   return (
     <div className="flex justify-between text-verde2">
@@ -34,6 +40,7 @@ const BtnSaberMas = () => {
         />
       </svg>
       <button
+        onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => {
           setIsHovered(false);
@@ -77,15 +84,15 @@ const BtnSaberMas = () => {
 
 const ProductCard = (producto: Producto) => {
   return (
-    <div className="my-10">
-      <div className="bg-gray-300 rounded-[15%] place-self-center h-56 w-56 px-3 py-3 mb-6">
+    <div className="my-10 flex flex-col items-center">
+      <div className="bg-gray-300 rounded-[15%] place-self-center h-56 w-56 p-0 mb-3 overflow-hidden">
         <img
-          src={`/Productos/${producto.nombreProducto}.webp`}
+          src={producto.image || `https://placehold.co/100x150/orange/white?text=${producto.nombreProducto}`}
           alt={producto.nombreProducto}
-          className="h-full place-self-center"
+          className="h-full w-full object-cover"
         />
       </div>
-      <BtnSaberMas />
+      <BtnSaberMas id={producto.id} />
     </div>
   );
 };
