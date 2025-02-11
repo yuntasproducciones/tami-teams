@@ -34,10 +34,10 @@ const ProductDetail = () => {
       <Navbar />
       <div className="w-full">
         {/* Hero Banner */}
-        <div className="pt-40 pb-16 bg-gradient-to-b from-[#15988f] to-[#1cdfd5] text-white relative overflow-hidden">
-          <div className="max-w-6xl mx-auto px-6 py-12 relative z-10">
+        <div className="pt-32 md:pt-40 pb-1 md:pb-16 bg-gradient-to-b from-[#15988f] to-[#1cdfd5] text-white relative overflow-hidden">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12 relative z-10">
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-6 h-6">
+              <div className="w-5 md:w-6 h-5 md:h-6">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -46,51 +46,48 @@ const ProductDetail = () => {
                   <path d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold">{product.title}</h2>
+              <h2 className="text-xl md:text-2xl font-bold">{product.title}</h2>
             </div>
-            <h1 className="text-4xl font-bold max-w-xl mb-8">
+            <h1 className="text-2xl md:text-4xl font-bold max-w-xl mb-6 md:mb-8">
               {product.subtitle}
             </h1>
-            <button className="bg-white text-teal-500 px-12 py-3 rounded-full font-bold text-xl hover:bg-opacity-90 transition">
+            <button className="bg-white text-teal-500 px-8 md:px-12 py-2 md:py-3 rounded-full font-bold text-lg md:text-xl hover:bg-opacity-90 transition">
               ¡COTÍZALO!
             </button>
           </div>
-          <div className="mt-32 absolute right-0 top-0 w-1/2 h-full bg-white rounded-bl-[50%] rounded-tl-[60%] rounded-tr-[25%] flex items-center justify-center">
+          <div className="hidden md:block absolute right-0 top-32 w-full md:w-1/2 h-full bg-white rounded-bl-[30%] md:rounded-bl-[50%] rounded-tl-[40%] md:rounded-tl-[60%] rounded-tr-[15%] md:rounded-tr-[25%] flex items-center justify-center">
             <img
               src={product.image}
               alt={product.title}
-              className="w-4/5 h-4/5 object-contain"
+              className="w-3/4 md:w-4/5 h-3/4 md:h-4/5 object-contain mx-auto my-auto"
             />
-          </div>{" "}
+          </div>
         </div>
 
         {/* Main Content */}
-        <div className="max-w-6xl mx-auto px-6 py-8">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Column - Gallery */}
             <div className="grid grid-cols-5 grid-rows-5 gap-2">
               {/* Miniaturas alineadas en columna */}
-              <div className="col-span-1 row-span-5 flex flex-col gap-2">
-                {/* Miniaturas alineadas en columna */}
-                <div className="col-span-1 row-span-5 flex flex-col gap-2">
-                  {product.images?.map((image, index) => (
-                    <div
-                      key={index}
-                      className="w-full aspect-square bg-gray-100 rounded-lg overflow-hidden"
-                    >
-                      <img
-                        src={image}
-                        alt={`Thumbnail ${index + 1}`}
-                        className="w-full h-full object-cover cursor-pointer"
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div className="hidden md:flex col-span-1 row-span-5 flex-col gap-2">
+                {product.images?.map((image, index) => (
+                  <div
+                    key={index}
+                    className="w-full aspect-square bg-gray-100 rounded-lg overflow-hidden"
+                  >
+                    <img
+                      src={image}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover cursor-pointer"
+                    />
+                  </div>
+                ))}
               </div>
 
               {/* Imagen principal grande */}
-              <div className="col-span-4 row-span-5 flex flex-col gap-4">
-                <div className="w-full h-[500px] rounded-lg overflow-hidden relative">
+              <div className="col-span-5 md:col-span-4 row-span-5 flex flex-col gap-4">
+                <div className="w-full h-[300px] md:h-[500px] rounded-lg overflow-hidden relative">
                   <img
                     src={product.image}
                     alt="Product"
@@ -179,11 +176,11 @@ const ProductDetail = () => {
           </div>
 
           {/* Similar Products */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-6 text-teal-500">
+          <div className="mt-8 md:mt-12">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-teal-500">
               ARTÍCULOS SIMILARES
             </h2>
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
               {product.relatedProducts.map((relatedId) => {
                 const relatedProduct = ProductsJSON.find(
                   (p) => p.id === relatedId
@@ -201,7 +198,7 @@ const ProductDetail = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition"
                       />
                     </div>
-                    <h3 className="text-center font-bold text-sm">
+                    <h3 className="text-center font-bold text-xs md:text-sm">
                       {relatedProduct.title}
                     </h3>
                   </Link>
