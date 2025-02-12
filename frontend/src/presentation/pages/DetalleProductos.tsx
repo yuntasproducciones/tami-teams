@@ -11,7 +11,7 @@ const ProductDetail = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }, [id]);
 
@@ -68,57 +68,42 @@ const ProductDetail = () => {
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Column - Gallery */}
-            <div className="grid grid-cols-5 grid-rows-5 gap-2">
-              {/* Miniaturas alineadas en columna */}
-              <div className="hidden md:flex col-span-1 row-span-5 flex-col gap-2">
-                {product.images?.map((image, index) => (
+            <div className="space-y-4">
+              {/* Imagen principal */}
+              <div className=" md:max-w-[440px] aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                <img
+                  src={product.image}
+                  alt="Product"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Grid de miniaturas */}
+              <div className="grid grid-cols-4 gap-2 w-full md:max-w-[440px]">
+                {product.images?.slice(0, 4).map((image, index) => (
                   <div
                     key={index}
-                    className="w-full aspect-square bg-gray-100 rounded-lg overflow-hidden"
+                    className=" aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition"
                   >
                     <img
                       src={image}
                       alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-full object-cover cursor-pointer"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 ))}
-              </div>
-
-              {/* Imagen principal grande */}
-              <div className="col-span-5 md:col-span-4 row-span-5 flex flex-col gap-4">
-                <div className="w-full h-[300px] md:h-[500px] rounded-lg overflow-hidden relative">
-                  <img
-                    src={product.image}
-                    alt="Product"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Botones debajo de la imagen */}
-                <div className="flex justify-end gap-2">
-                  <button className="bg-teal-500 text-white rounded-full p-2 hover:bg-teal-600 transition">
-                    🔍
-                  </button>
-                  <button className="bg-teal-500 text-white rounded-full p-2 hover:bg-teal-600 transition">
-                    ➕
-                  </button>
-                  <button className="bg-teal-500 text-white rounded-full p-2 hover:bg-teal-600 transition">
-                    ➖
-                  </button>
-                </div>
               </div>
             </div>
 
             {/* Right Column - Product Info */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              {/* <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl font-bold">4.8</span>
                 <div className="flex text-yellow-400">
                   {"★".repeat(4)}
                   {"☆".repeat(1)}
                 </div>
-              </div>
+              </div> */}
 
               <div className="mb-6">
                 <h3 className="text-xl font-bold mb-2">
