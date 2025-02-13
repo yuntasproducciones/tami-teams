@@ -10,7 +10,7 @@ import facebookIcon from "../../../public/assets/icons/FACEBOOK.svg";
 import instagramIcon from "../../../public/assets/icons/INSTAGRAM.svg";
 // import "../../styles/estilos.css"
 
-const Navbar = () => {
+function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -35,24 +35,19 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed w-full h-32 transition-all z-50 bg-top duration-1000 ${
-        isScrolled ? "bg-teal-700 shadow-lg" : "border-b border-white"
-      }`}
+      className={`fixed w-full h-32 transition-all z-50 bg-top duration-1000 ${isScrolled ? "bg-teal-700 shadow-lg" : "border-b border-white"}`}
     >
       <div className="flex items-center justify-between h-full w-full px-4">
         {/* Contenido del Menú hamburguesa desplegable solo para celulares (menor que lg 64rem (1024px)) -------------INCIO------------- */}
         <div
-          className={`fixed top-[8rem] left-0 z-[1] min-h-[calc(100vh-8rem)] max-h-[calc(100vh-8rem)] bg-white px-[5px] xs:px-[30px] py-[30px] w-full xs:max-w-[425px] rounded-tl-none rounded-tr-[50px] rounded-br-[50px] rounded-bl-none overflow-scroll ${
-            isSidebarOpen ? "" : "hidden"
-          }`}
+          className={`fixed top-[8rem] left-0 z-[1] min-h-[calc(100vh-8rem)] max-h-[calc(100vh-8rem)] bg-white px-[5px] xs:px-[30px] py-[30px] w-full xs:max-w-[425px] rounded-tl-none rounded-tr-[50px] rounded-br-[50px] rounded-bl-none overflow-scroll ${isSidebarOpen ? "" : "hidden"}`}
         >
           <div className="border-b-4 border-verde_turquesa pb-[20px]">
             <div className="flex pl-[20px]">
               <img
                 src={usuarioIcono}
                 className="max-w-[50px] xs:max-w-[100px]"
-                alt="Ícono de usuario"
-              />
+                alt="Ícono de usuario" />
               <div className="flex flex-col justify-center">
                 <p className="font-semibold xs:text-4xl">HOLA!</p>
                 <p className="font-semibold xs:text-4xl">Usuario</p>
@@ -101,29 +96,25 @@ const Navbar = () => {
                 <img
                   src={tiktokIcon}
                   alt="TikTok"
-                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
-                />
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]" />
               </a>
               <a href="#" className="w-4 h-4 xs:w-8 xs:h-8">
                 <img
                   src={instagramIcon}
                   alt="Instagram"
-                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
-                />
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]" />
               </a>
               <a href="#" className="w-4 h-4 xs:w-8 xs:h-8">
                 <img
                   src={twitterIcon}
                   alt="Twitter"
-                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
-                />
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]" />
               </a>
               <a href="#" className="w-4 h-4 xs:w-8 xs:h-8">
                 <img
                   src={facebookIcon}
                   alt="Facebook"
-                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
-                />
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]" />
               </a>
               <a
                 href="https://api.whatsapp.com/send?phone=51978883199"
@@ -132,8 +123,7 @@ const Navbar = () => {
                 <img
                   src={whatsappIcon}
                   alt="WhatsApp"
-                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]"
-                />
+                  className="w-full h-full bg-verde_turquesa rounded-full p-[5px]" />
               </a>
             </div>
           </div>
@@ -153,13 +143,11 @@ const Navbar = () => {
             src={menuHamburguesa}
             alt="Menú hamburguesa"
             className="w-[25px] xs:w-[50px] block lg:hidden"
-            onClick={activarSidebar}
-          />
+            onClick={activarSidebar} />
           <img
             src={logoTami}
             alt="logo-tami"
-            className="max-w-[50px] xs:max-w-[120px]"
-          />
+            className="max-w-[50px] xs:max-w-[120px]" />
         </div>
         {/* Íconos tami y menú hamburguesa -------------FIN------------- */}
 
@@ -220,25 +208,25 @@ const Navbar = () => {
 
         {/* Botón contáctanos -------------INICIO------------- */}
         <div
-          className={
-            "flex items-center bg-white border-2 py-[1em] px-6 rounded-2xl lg:block"
-          }
+          className={"flex items-center bg-white border-2 py-[1em] px-6 rounded-2xl lg:block"}
         >
-          <a
-            href="https://api.whatsapp.com/send?phone=51978883199"
-            className="flex items-center space-x-3 rounded-lg"
-          >
-            <div>
-              <p className="text-verde_turquesa text-2xl font-bold">
-                Contáctanos
-              </p>
-            </div>
-          </a>
+
+          <div className={"items-center bg-white border-2 py-3 px-6 rounded-2xl hidden custom:block"}>
+            <a
+              href="https://api.whatsapp.com/send?phone=51978883199"
+              className="flex items-center space-x-3 rounded-lg"
+            >
+              <div>
+                <p className="text-verde_turquesa text-2xl font-bold">
+                  Contáctanos
+                </p>
+              </div>
+            </a>
+          </div>
+          {/* Botón contáctanos -------------FIN------------- */}
         </div>
-        {/* Botón contáctanos -------------FIN------------- */}
-      </div>
-    </header>
+      </div></header>
   );
-};
+}
 
 export default Navbar;

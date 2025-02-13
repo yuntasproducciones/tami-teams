@@ -7,6 +7,7 @@ import Products from "../presentation/pages/Products";
 import About from "../presentation/pages/About";
 import ShippingPolicies from "../presentation/pages/ShippingPolicies";
 import Login from "../presentation/pages/Login.tsx";
+import AdminDashboard from "../presentation/pages/AdminDashboard.tsx";
 import BlogContenido from "../presentation/pages/BlogContenido";
 
 import DetalleLayer from "../presentation/pages/DetalleLayer.tsx";
@@ -15,6 +16,7 @@ import DetalleSelladora from "../presentation/pages/DetalleSelladora";
 import DetalleMaquina from "../presentation/pages/DetalleMaquina.tsx";
 import DetalleBambu from "../presentation/pages/DetalleBambu.tsx";
 import Details from "../presentation/pages/DetalleProductos.tsx";
+
 
 const AppRoutes = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -72,6 +74,9 @@ const AppRoutes = () => {
             <Route path="/maquina" element={<DetalleMaquina />} />
             <Route path="/bambu" element={<DetalleBambu />} />
             <Route path="/detalle-producto/:id" element={<Details />} />
+
+            {/* ✅ Ruta para Admin */}
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </div>
       </div>
