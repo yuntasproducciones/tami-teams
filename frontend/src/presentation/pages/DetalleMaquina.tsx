@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import BANNERA from "../../../public/assets/images/blog/BANNER MAQUINA DE EMBALAJE.jpg";
 import FIBRA from "../../../public/assets/images/blog/maquinaem.webp";
 import Mpanell from "../../../public/assets/images/blog/Interior_decoration_panel_made_with_real_3.jpg";
@@ -8,7 +6,6 @@ import Botellas from "../../../public/assets/images/blog/BOTELLAS.webp";
 const DetalleMaquina = () => {
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-grow">
                 <section className="text-center">
                     {/* Banner Section */}
@@ -96,7 +93,6 @@ const DetalleMaquina = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
 };

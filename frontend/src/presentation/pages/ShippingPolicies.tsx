@@ -1,6 +1,4 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import SP_Hero from "../components/ShippingPolicies/SP_Hero";
+import SP_Hero from "../components/shipping-policies/SP_Hero";
 import mapa from "../../../public/assets/images/politicas/mapa-peru.webp";
 import redUbi from "../../../public/assets/images/politicas/ubicacion_icono.webp";
 import greenUbi from "../../../public/assets/images/politicas/ubicacion-icono2.webp";
@@ -8,7 +6,6 @@ import greenUbi from "../../../public/assets/images/politicas/ubicacion-icono2.w
 const ShippingPolicies = () => {
   return (
     <>
-      <Navbar />
       <SP_Hero />
       <section className="w-full grid grid-flow-col grid-cols-2 py-5">
         <div className="w-full flex justify-center items-center">
@@ -69,7 +66,6 @@ const ShippingPolicies = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };
