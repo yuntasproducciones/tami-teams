@@ -1,6 +1,6 @@
-import  AppRouters from "./routes/AppRoutes";
+import AppRouters from "./routes/AppRoutes";
 
-const App=()=> {
+const App = () => {
   return (
     <div className="App">
       <AppRouters />
@@ -8,9 +8,4 @@ const App=()=> {
   );
 };
 
- 
-
-
-
 export default App;
-
