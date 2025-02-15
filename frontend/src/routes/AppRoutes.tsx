@@ -20,12 +20,12 @@ import About from "../presentation/pages/About";
 import ShippingPolicies from "../presentation/pages/ShippingPolicies";
 import Login from "../presentation/pages/Login";
 import MainTable from "../presentation/pages/admin-pages/MainTable";
-import BlogContenido from "../presentation/pages/BlogContenido";
 import DetalleLayer from "../presentation/pages/DetalleLayer";
 import DetalleSelladora from "../presentation/pages/DetalleSelladora";
 import DetalleMaquina from "../presentation/pages/DetalleMaquina";
 import DetalleBambu from "../presentation/pages/DetalleBambu";
 import Details from "../presentation/pages/DetalleProductos";
+import Blog from "../presentation/components/Blog/Blog.tsx";
 
 const AppRoutes = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -62,7 +62,7 @@ const AppRoutes = () => {
         { path: "about", element: <About /> },
         { path: "products", element: <Products /> },
         { path: "shipping-policies", element: <ShippingPolicies /> },
-        { path: "blog", element: <BlogContenido /> },
+        { path: "blog", element: <Blog /> },
         { path: "blog/detalle/:producto", element: <DetalleLayer /> },
         { path: "selladora", element: <DetalleSelladora /> },
         { path: "maquina", element: <DetalleMaquina /> },
