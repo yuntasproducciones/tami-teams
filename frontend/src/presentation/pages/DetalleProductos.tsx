@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { config, getApiUrl } from "../../config/config";
 import BoxSize from "../components/detallesProductos/box-size.svg";
@@ -37,61 +37,59 @@ const ProductDetail = () => {
     seccion: "No disponible"
   };
 
+  const fetchProductData = useCallback(async (productId: string) => {
+    try {
+      const response = await fetch(getApiUrl(`${config.endpoints.productos}/${productId}`));
+      if (!response.ok) return null;
+      const contentType = response.headers.get("content-type");
+      if (!contentType?.includes("application/json")) return null;
+      return await response.json();
+    } catch (error) {
+      console.error(`Error fetching product ${productId}:`, error);
+      return null;
+    }
+  }, []);
+
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(getApiUrl(`${config.endpoints.productos}/${id}`));
-        
-        if (!response.ok) {
-          setProduct(defaultProduct);
-          return;
-        }
-        
-        const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          console.error("Error fetching product: Expected JSON response");
-          setProduct(defaultProduct);
-          return;
-        }
+    let isMounted = true;
 
-        const data = await response.json();
-        
-        if (!data) {
-          setProduct(defaultProduct);
-          return;
-        }
+    const loadData = async () => {
+      if (!id) return;
+      setLoading(true);
 
-        setProduct(data);
-        
-        // Fetch related products solo si hay producto válido
-        if (data.relatedProducts?.length) {
-          try {
-            const relatedResponses = await Promise.all(
-              data.relatedProducts.map(async (relId: number) => {
-                const relResponse = await fetch(getApiUrl(`${config.endpoints.productos}/${relId}`));
-                return relResponse.ok ? relResponse.json() : null;
-              })
-            );
-            setRelatedProducts(relatedResponses.filter(Boolean));
-          } catch (relError) {
-            console.error("Error loading related products:", relError);
-            setRelatedProducts([]);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching product:", error);
+      const productData = await fetchProductData(id);
+      
+      if (!isMounted) return;
+
+      if (!productData) {
         setProduct(defaultProduct);
-      } finally {
+        setRelatedProducts([]);
         setLoading(false);
+        return;
       }
+
+      setProduct(productData);
+
+      if (productData.relatedProducts?.length) {
+        const relatedData = await Promise.all(
+          productData.relatedProducts.map((relId: number) => fetchProductData(relId.toString()))
+        );
+        
+        if (isMounted) {
+          setRelatedProducts(relatedData.filter(Boolean));
+        }
+      }
+
+      setLoading(false);
     };
 
-    if (id) {
-      fetchProduct();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [id]);
+    loadData();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [id, fetchProductData]);
 
   if (loading) {
     return (
