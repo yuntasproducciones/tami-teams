@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { config, getApiUrl } from "../../config/config";
 import BoxSize from "../components/detallesProductos/box-size.svg";
