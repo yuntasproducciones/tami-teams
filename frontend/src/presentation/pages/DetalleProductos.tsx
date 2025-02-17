@@ -1,30 +1,105 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import ProductsJSON from "../components/detallesProductos/articulos.json";
+import { config, getApiUrl } from "../../config/config";
 import BoxSize from "../components/detallesProductos/box-size.svg";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const [product, setProduct] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [relatedProducts, setRelatedProducts] = useState<any[]>([]);
+
+  const defaultProduct = {
+    id: id || '0',
+    title: "Producto no encontrado",
+    subtitle: "Este producto no está disponible actualmente",
+    tagline: "Lo sentimos, no pudimos encontrar el producto que buscas",
+    description: "El producto que estás intentando ver no existe o no está disponible en este momento. Por favor, intenta con otro producto o contacta con soporte.",
+    specs: {
+      estado: "No disponible",
+      mensaje: "Producto no encontrado en la base de datos"
+    },
+    dimensions: {
+      alto: "N/A",
+      largo: "N/A",
+      ancho: "N/A"
+    },
+    relatedProducts: [],
+    images: [
+      "https://placehold.co/100x150/orange/white?text=noencontrado",
+    ],
+    image: "https://placehold.co/100x150/orange/white?text=noencontrado",
+    nombreProducto: "Producto no encontrado",
+    stockProducto: 0,
+    precioProducto: "0.00",
+    seccion: "No disponible"
+  };
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    const fetchProduct = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(getApiUrl(`${config.endpoints.productos}/${id}`));
+        
+        if (!response.ok) {
+          setProduct(defaultProduct);
+          return;
+        }
+        
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          console.error("Error fetching product: Expected JSON response");
+          setProduct(defaultProduct);
+          return;
+        }
+
+        const data = await response.json();
+        
+        if (!data) {
+          setProduct(defaultProduct);
+          return;
+        }
+
+        setProduct(data);
+        
+        // Fetch related products solo si hay producto válido
+        if (data.relatedProducts?.length) {
+          try {
+            const relatedResponses = await Promise.all(
+              data.relatedProducts.map(async (relId: number) => {
+                const relResponse = await fetch(getApiUrl(`${config.endpoints.productos}/${relId}`));
+                return relResponse.ok ? relResponse.json() : null;
+              })
+            );
+            setRelatedProducts(relatedResponses.filter(Boolean));
+          } catch (relError) {
+            console.error("Error loading related products:", relError);
+            setRelatedProducts([]);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching product:", error);
+        setProduct(defaultProduct);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchProduct();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, [id]);
 
-  console.log("ID recibido:", id);
-
-  const product = ProductsJSON.find((p) => p.id === parseInt(id || ""));
-
-  if (!product) {
+  if (loading) {
     return (
-      <div className="max-w-6xl mx-auto p-4 text-center">
-        <h1 className="text-2xl font-bold text-red-500">
-          Producto {id} no disponible
-        </h1>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Cargando producto...</h1>
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500 mx-auto"></div>
+        </div>
       </div>
     );
   }
@@ -80,7 +155,7 @@ const ProductDetail = () => {
 
               {/* Grid de miniaturas */}
               <div className="grid grid-cols-4 gap-2 w-full md:max-w-[440px]">
-                {product.images?.slice(0, 4).map((image, index) => (
+                {product.images?.slice(0, 4).map((image: string, index: number) => (
                   <div
                     key={index}
                     className=" aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition"
@@ -167,29 +242,24 @@ const ProductDetail = () => {
               ARTÍCULOS SIMILARES
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
-              {product.relatedProducts.map((relatedId) => {
-                const relatedProduct = ProductsJSON.find(
-                  (p) => p.id === relatedId
-                );
-                return relatedProduct ? (
-                  <Link
-                    key={relatedId}
-                    to={`/detalle-producto/${relatedId}`}
-                    className="group cursor-pointer"
-                  >
-                    <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-2">
-                      <img
-                        src={relatedProduct.image}
-                        alt={relatedProduct.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition"
-                      />
-                    </div>
-                    <h3 className="text-center font-bold text-xs md:text-sm">
-                      {relatedProduct.title}
-                    </h3>
-                  </Link>
-                ) : null;
-              })}
+              {relatedProducts.map((relatedProduct) => (
+                <Link
+                  key={relatedProduct.id}
+                  to={`/detalle-producto/${relatedProduct.id}`}
+                  className="group cursor-pointer"
+                >
+                  <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-2">
+                    <img
+                      src={relatedProduct.image}
+                      alt={relatedProduct.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition"
+                    />
+                  </div>
+                  <h3 className="text-center font-bold text-xs md:text-sm">
+                    {relatedProduct.title}
+                  </h3>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
