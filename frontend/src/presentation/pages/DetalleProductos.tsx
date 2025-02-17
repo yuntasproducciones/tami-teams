@@ -108,7 +108,7 @@ const ProductDetail = () => {
       <div className="w-full">
         {/* Hero Banner */}
         <div className="pt-32 md:pt-40 pb-1 md:pb-16 bg-gradient-to-b from-[#15988f] to-[#1cdfd5] text-white relative overflow-hidden">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12 relative z-10">
+          <div className="max-w-6xl md:w-1/2 px-4 md:px-6 py-8 md:py-12 relative z-10">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-5 md:w-6 h-5 md:h-6">
                 <svg
@@ -121,7 +121,7 @@ const ProductDetail = () => {
               </div>
               <h2 className="text-xl md:text-2xl font-bold">{product.title}</h2>
             </div>
-            <h1 className="text-2xl md:text-4xl font-bold max-w-xl mb-6 md:mb-8">
+            <h1 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8">
               {product.subtitle}
             </h1>
             <button className="bg-white text-teal-500 px-8 md:px-12 py-2 md:py-3 rounded-full font-bold text-lg md:text-xl hover:bg-opacity-90 transition">
