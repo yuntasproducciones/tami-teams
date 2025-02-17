@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import imgT from "../../../public/assets/images/Nosotros/Nosotros.jpg";
 import imgfon from "../../../public/assets/images/Nosotros/productos.png";
 import mision from "../../../public/assets/images/Nosotros/objetivo.webp";
@@ -10,7 +8,6 @@ import Valores from "../components/nosotros/Valores";
 const About = () => {
   return (
     <>
-      <Navbar />
       <section
         className="relative bg-cover bg-center h-auto min-h-dvh pt-12 rounded-b-3xl"
         style={{
@@ -98,7 +95,6 @@ const About = () => {
         </div>
       </div>
       <Valores />
-      <Footer />
     </>
   );
 };

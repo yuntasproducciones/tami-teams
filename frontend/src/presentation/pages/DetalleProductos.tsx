@@ -2,8 +2,6 @@ import { useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { config, getApiUrl } from "../../config/config";
 import BoxSize from "../components/detallesProductos/box-size.svg";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -104,7 +102,6 @@ const ProductDetail = () => {
 
   return (
     <>
-      <Navbar />
       <div className="w-full">
         {/* Hero Banner */}
         <div className="pt-32 md:pt-40 pb-1 md:pb-16 bg-gradient-to-b from-[#15988f] to-[#1cdfd5] text-white relative overflow-hidden">
@@ -128,7 +125,7 @@ const ProductDetail = () => {
               ¡COTÍZALO!
             </button>
           </div>
-          <div className="hidden md:block absolute right-0 top-32 w-full md:w-1/2 h-full bg-white rounded-bl-[30%] md:rounded-bl-[50%] rounded-tl-[40%] md:rounded-tl-[60%] rounded-tr-[15%] md:rounded-tr-[25%] items-center justify-center">
+          <div className="hidden md:block absolute right-0 top-32 w-full md:w-1/2 h-full bg-white rounded-bl-[30%] md:rounded-bl-[50%] rounded-tl-[40%] md:rounded-tl-[60%] rounded-tr-[15%] md:rounded-tr-[25%] flex items-center justify-center">
             <img
               src={product.image}
               alt={product.title}
@@ -262,7 +259,6 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

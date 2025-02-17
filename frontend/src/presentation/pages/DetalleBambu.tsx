@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import Navbar from "../components/Navbar";
 import Blog from "../components/Blog/Blog";
-import Footer from "../components/Footer";
 import Bambu from "../../../public/assets/images/blog/Bambu.jpg";
 import Maquina from "../../../public/assets/images/blog/MaquinaEmbalaje.png";
 import selladora from "../../../public/assets/images/blog/Selladora.jpg";
@@ -9,7 +7,6 @@ import selladora from "../../../public/assets/images/blog/Selladora.jpg";
 const BlogContenido = () => {
     return (
         <div>
-            <Navbar />
             <Blog />
             <section className="p-6 text-center mt-56">
                 <h1 className="text-5xl mb-4 mt-44 italic text-left ml-52 text-verde_turquesa"> Blog </h1>
@@ -44,7 +41,6 @@ const BlogContenido = () => {
                     </Link>
                 </div>
             </section>
-            <Footer />
         </div>
     );
 };
