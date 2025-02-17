@@ -1,6 +1,6 @@
 import Header from "../components/AdminDashboard/Header";
 import Sidebar from "../components/AdminDashboard/Sidebar";
-import DataTable from "../components/AdminDashboard/DataTable";
+import MainTable from "./admin-pages/MainTable";
 
 const AdminDashboard = () => {
   return (
@@ -12,7 +12,7 @@ const AdminDashboard = () => {
       <div className="flex flex-1">
         <Sidebar/>
         <div className="flex-1 p-4">
-          <DataTable />
+          <MainTable />
         </div>
       </div>
     </div>

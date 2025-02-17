@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import BANNERB from "../../../public/assets/images/blog/SELLADORA BANNER.jpg";
 import Mpanel from "../../../public/assets/images/blog/maquina de embalaje beneficios.jpg";
 // import Botellas from "../../../public/assets/images/blog/BOTELLAS.webp";
@@ -20,7 +18,6 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 const DetalleSelladora = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <main className="">
         <section className="text-center">
           {/* Banner Section */}
@@ -201,7 +198,6 @@ const DetalleSelladora = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

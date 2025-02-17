@@ -1,6 +1,4 @@
 import { useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 import Botellas from "../../../public/assets/images/blog/BOTELLAS.webp";
 //DetalleSelladora
@@ -36,7 +34,6 @@ const DetalleLayer = () => {
   } else {
     return (
       <div className="flex flex-col min-h-screen">
-        <Navbar />
         <main className="flex-grow">
           <section className="text-center">
             {/* Banner Section */}
@@ -194,7 +191,6 @@ const DetalleLayer = () => {
             </div>
           </section>
         </main>
-        <Footer />
       </div>
     );
   }
