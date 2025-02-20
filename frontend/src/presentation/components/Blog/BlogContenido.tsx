@@ -10,8 +10,8 @@ import { FaHeart, FaComment, FaShare, FaArrowLeft, FaArrowRight } from "react-ic
 import bambu from "../../../../public/assets/images/blog/Bambu.jpg";
 import maquina from "../../../../public/assets/images/blog/MaquinaEmbalaje.png";
 import selladora from "../../../../public/assets/images/blog/Selladora.jpg";
-import imagen_superior from "../../../../public/assets/images/blog/entrada-blog/IMAGEN_SUPERIOR_TAMI.jpg";
-import imagen_inferior from "../../../../public/assets/images/blog/entrada-blog/IMAGEN_INFERIOR_TAMI.jpg";
+import imagen_superior from "../../../../public/assets/images/blog/entrada-blog/IMAGEN_SUPERIOR_TAMI.webp";
+import imagen_inferior from "../../../../public/assets/images/blog/entrada-blog/IMAGEN_INFERIOR_TAMI.webp";
 
 const BlogContenido = () => {
   return (
