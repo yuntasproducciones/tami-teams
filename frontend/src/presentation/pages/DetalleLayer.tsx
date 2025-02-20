@@ -1,199 +1,191 @@
-import { useParams } from "react-router-dom";
+import React from "react";
 
-import Botellas from "../../../public/assets/images/blog/BOTELLAS.webp";
-//DetalleSelladora
-import bannerSelladora from "../../../public/assets/images/blog/SELLADORA BANNER.jpg";
-import imgSelladora1 from "../../../public/assets/images/blog/maquina de embalaje beneficios.jpg";
-import selladora from "../../../public/assets/images/blog/Interior_decoration_panel_made_with_real_3.jpg";
-//DetalleMaquina
-import bannerMaquina from "../../../public/assets/images/blog/BANNER MAQUINA DE EMBALAJE.jpg";
-import maquina from "../../../public/assets/images/blog/maquinaem.webp";
-import imgMaquina1 from "../../../public/assets/images/blog/Interior_decoration_panel_made_with_real_3.jpg";
+// Tipos de datos (opcional, para TypeScript)
+interface ContentBlock {
+  type: string;
+  layout: "imageLeft" | "textLeft";
+  image: string;
+  text: string;
+  imageCredits: string;
+}
 
-const DetalleLayer = () => {
-  const { producto } = useParams();
+interface VideoBlock {
+  title: string;
+  videoThumbnail: string;
+  videoDescription: string;
+}
 
-  const productos = {
-    selladora: {
-      nombre: "Selladora de Botella",
-      banner: bannerSelladora,
-      img1: imgSelladora1,
-      img2: selladora,
-    },
-    maquina: {
-      nombre: "Maquina de Embalaje",
-      banner: bannerMaquina,
-      img1: imgMaquina1,
-      img2: maquina,
-    },
+interface CTA {
+  title: string;
+  description: string;
+  buttonText: string;
+}
+
+interface ContentData {
+  hero: {
+    bannerImage: string;
+    title: string;
+    subtitle: string;
   };
+  publicationDate: string;
+  title: string;
+  subtitle: string;
+  contentBlocks: ContentBlock[];
+  videoBlock: VideoBlock;
+  cta: CTA;
+}
 
-  const detalle = productos[producto as keyof typeof productos];
-  if (!detalle) {
-    return <h1>Producto no encontrado</h1>;
-  } else {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <main className="flex-grow">
-          <section className="text-center">
-            {/* Banner Section */}
-            <div className="relative w-full max-w-6xl h-[20rem] md:h-[30rem] lg:h-[40rem] xl:h-[50rem] mx-auto my-40">
-              <img
-                className="w-full h-full object-cover"
-                src={detalle.banner}
-                alt={detalle.nombre}
-              />
-            </div>
-
-            {/* Article Content */}
-            <div className="max-w-6xl mx-auto px-4 py text-left -mt-20">
-              <p className="text-verde_turquesa text-3xl mb-6">
-                En un mundo donde la logística y el transporte son pilares
-                esenciales para muchas industrias, las máquinas de embalaje se
-                han convertido en una herramienta indispensable. Estas máquinas
-                no solo optimizan los procesos de empaque, sino que también
-                garantizan la seguridad de los productos durante su traslado. En
-                este artículo, explicaremos los diferentes tipos de máquinas de
-                embalaje, sus beneficios y cómo elegir la adecuada para tu
-                negocio.
-              </p>
-              <h2 className="text-5xl font-bold text-verde_turquesa mb-4">
-                ¿Qué son las máquinas de embalajes?
-              </h2>
-              <p className="text-gray-700 text-3xl mb-6">
-                Las máquinas de embalaje son equipos diseñados para automatizar
-                y mejorar los procesos de empaque de productos. Pueden realizar
-                tareas como envolver, sellar, etiquetar o incluso colocar
-                productos en cajas. Gracias a ellas, las empresas pueden ahorrar
-                tiempo, reducir costos y mejorar la presentación de sus
-                productos.
-              </p>
-              <div className="flex justify-center">
-                <img
-                  className="w-1/2 h-full object-cover mb-10 rounded-xl"
-                  src={detalle.img1}
-                  alt="Panel de fibra de bambú"
-                />
-              </div>
-              <div className="bg-teal-100 p-6 rounded-lg mb-6">
-                <h2 className="text-5xl font-bold text-verde_turquesa mb-8">
-                  Beneficios de usar máquinas de embalajes
-                </h2>
-                <ul className="list-disc list-inside text-teal-800 text-3xl mb-6">
-                  <li className="mb-4">
-                    <span className="text-mediumturquoise">Eficiencia:</span>
-                    <span style={{ color: "black" }}>
-                      {" "}
-                      Aceleran los procesos de empaque, permitiendo mayor
-                      producción en menos tiempo.
-                    </span>
-                  </li>
-                  <li className="mb-4">
-                    <span className="text-mediumturquoise">
-                      Reducción de costos:
-                    </span>
-                    :
-                    <span style={{ color: "black" }}>
-                      {" "}
-                      Disminuyen la necesidad de mano de obra intensiva y
-                      reducen el desperdicio de materiales.
-                    </span>
-                  </li>
-                  <li className="mb-4">
-                    <span className="text-mediumturquoise">Seguridad</span>:
-                    <span style={{ color: "black" }}>
-                      Garantizan un empaque uniforme y seguro, minimizando el
-                      riesgo de daños durante el transporte.
-                    </span>
-                  </li>
-                  <li className="mb-4">
-                    <span className="text-mediumturquoise">
-                      Sostenibilidad:
-                    </span>
-                    :
-                    <span style={{ color: "black" }}>
-                      Muchas máquinas están diseñadas para utilizar materiales
-                      reciclables o reducir el uso de plástico, contribuyendo al
-                      cuidado del medio ambiente.
-                    </span>
-                  </li>
-                </ul>
-                <div className="flex justify-center">
-                  <img
-                    className="w-1/2 h-88 object-cover mb-6 rounded-2xl"
-                    src={Botellas}
-                    alt="Máquina de embalaje"
-                  />
-                </div>
-                <p className="text-gray-700 text-3xl">
-                  Las máquinas de embalaje son una inversión clave para
-                  cualquier negocio que desee optimizar sus procesos logísticos
-                  y garantizar la satisfacción del cliente. Analiza tus
-                  necesidades, evalúa tus opciones y elige la máquina que mejor
-                  se ajuste a tu operación. Recuerda que un buen embalaje no
-                  solo protege tus productos, sino que también refuerza la
-                  imagen de tu marca.
-                </p>
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="text-verde_turquesa mt-20">
-              <h2 className="text-5xl font-bold">
-                ¡Explora el mundo del embalaje automatizado y lleva tu negocio
-                al siguiente nivel!
-              </h2>
-            </div>
-
-            {/* Other Articles Section */}
-            <div className="py-10 px-4 mt-24">
-              <h2 className="text-5xl font-bold text-verde_turquesa mb-6 ml-0">
-                OTROS ARTÍCULOS
-              </h2>
-              <div className="flex justify-center items-center space-x-4">
-                <button className="text-verde_turquesa text-2xl">{"<"}</button>
-                <div className="flex space-x-4 overflow-x-auto">
-                  <div className="min-w-[300px] bg-verde_turquesa shadow-lg rounded-lg overflow-hidden mb-6">
-                    <img
-                      className="w-full h-60 object-cover"
-                      src={detalle.img2}
-                      alt={detalle.nombre}
-                    />
-                    <div className="p-4">
-                      <h3 className="text-2xl font-bold text-white">
-                        PANEL DE FIBRA DE BAMBU
-                      </h3>
-                      <p className="text-white">
-                        Sostenibilidad y estètica para la construcciòn moderna.{" "}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="min-w-[300px] bg-verde_turquesa shadow-lg rounded-lg overflow-hidden h-96 mb-6">
-                    <img
-                      className="w-full h-60 object-cover"
-                      src={Botellas}
-                      alt="Panel de fibra de bambú"
-                    />
-                    <div className="p-4">
-                      <h3 className="text-2xl font-bold text-white">
-                        SELLADOR DE BOTELLAS
-                      </h3>
-                      <p className="text-white text-1xl">
-                        La solución ideal para garantizar la calidad de tus
-                        productos.
-                      </p>
-                    </div>
-                  </div>
-                  {/* Add more articles as needed */}
-                </div>
-                <button className="text-verde_turquesa text-2xl">{">"}</button>
-              </div>
-            </div>
-          </section>
-        </main>
-      </div>
-    );
+// JSON de datos falsos
+const contentData: ContentData = {
+  hero: {
+    bannerImage: "/assets/images/blog/Bambu.jpg",
+    title: "Panel de fibra de bambú",
+    subtitle: "Sostenibilidad y estética para la construcción moderna."
+  },
+  publicationDate: "12 de marzo, 2025 - 10:00 AM",
+  title: "Panel Fibra de Bambú",
+  subtitle: "La clave para una construcción sostenible y eficiente",
+  contentBlocks: [
+    {
+      type: "textImage",
+      layout: "imageLeft",
+      image: "/assets/images/blog/Bambu.jpg",
+      text: "El bambú ha revolucionado la industria de la arquitectura y el diseño sostenible, destacando por su gran resistencia, estabilidad estructural y bajo impacto ambiental. A diferencia de la madera tradicional, el bambú es un material renovable y crece hasta cuatro veces más rápido que los árboles comunes, lo que lo convierte en una opción ideal para proyectos que buscan reducir su huella de carbono.",
+      imageCredits: "Banco de imágenes / Fotografía de referencia"
+    },
+    {
+      type: "textImage",
+      layout: "textLeft",
+      image: "/assets/images/blog/Bambu.jpg",
+      text: "Los paneles de fibra de bambú son la opción perfecta para quienes buscan la combinación ideal entre sostenibilidad, resistencia y diseño elegante. Su fabricación con materiales ecológicos garantiza un bajo impacto ambiental, sin comprometer la durabilidad y las prestaciones técnicas requeridas en diferentes entornos. Compatibles en revestimientos interiores y exteriores, estos paneles ofrecen aislamiento térmico y acústico superior, manteniendo la estética natural del bambú.",
+      imageCredits: "Banco de imágenes / Fotografía de referencia"
+    }
+  ],
+  videoBlock: {
+    title: "CÓMO UTILIZAR NUESTRO PRODUCTO",
+    videoThumbnail: "/assets/images/blog/Bambu.jpg",
+    videoDescription: "Una correcta instalación maximiza el desempeño y la vida útil de los paneles. Si deseas profundizar en detalles técnicos o resolver dudas, contáctanos para recibir asesoría especializada."
+  },
+  cta: {
+    title: "¡Transforma tus espacios de manera sostenible!",
+    description: "Descubre por qué el bambú es la alternativa ecológica más versátil para proyectos de construcción y decoración.",
+    buttonText: "Contáctanos"
   }
 };
 
-export default DetalleLayer;
+const PanelFibraBambuCMS: React.FC = () => {
+  return (
+    <div className="bg-teal-50 flex flex-col min-h-screen">
+      {/* SECCIÓN HERO */}
+      <header className="relative w-full h-[30rem]">
+        <img
+          src={contentData.hero.bannerImage}
+          alt="Fondo de construcción con bambú"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex flex-col items-start justify-center">
+          <div className="max-w-6xl mx-auto px-4">
+            <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">
+              {contentData.hero.title}
+            </h1>
+            <p className="text-white text-xl md:text-2xl">
+              {contentData.hero.subtitle}
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* CONTENEDOR UNIFICADO (Contenido + Video) */}
+      <main className="relative z-10 -mt-24 flex-grow max-w-6xl mx-auto px-4 py-10 bg-white rounded-lg shadow-lg mb-10">
+        {/* Fecha / Hora de publicación */}
+        <div className="inline-block px-3 py-1 bg-teal-600 text-white text-sm rounded-full mb-4">
+          {contentData.publicationDate}
+        </div>
+
+        {/* Título y Subtítulo */}
+        <h2 className="text-3xl md:text-4xl font-bold text-teal-600 mb-2">
+          {contentData.title}
+        </h2>
+        <p className="text-xl md:text-2xl text-gray-700 mb-6">
+          {contentData.subtitle}
+        </p>
+
+        {/* Bloques de contenido */}
+        {contentData.contentBlocks.map((block, index) => (
+          <section className="mb-10" key={index}>
+            {block.layout === "imageLeft" ? (
+              <div className="flex flex-col md:flex-row items-start">
+                <img
+                  src={block.image}
+                  alt="Imagen del bloque"
+                  className="w-full md:w-1/2 h-auto rounded-lg object-cover mb-6 md:mb-0 md:mr-6"
+                />
+                <div className="md:w-1/2">
+                  <p className="text-gray-700 text-lg md:text-xl mb-4">
+                    {block.text}
+                  </p>
+                  <p className="text-gray-500 text-sm italic">
+                    <strong>Créditos de imagen:</strong> {block.imageCredits}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="flex flex-col md:flex-row items-start">
+                <div className="md:w-1/2 md:pr-6 mb-6 md:mb-0">
+                  <p className="text-gray-700 text-lg md:text-xl mb-4">
+                    {block.text}
+                  </p>
+                  <p className="text-gray-500 text-sm italic">
+                    <strong>Créditos de imagen:</strong> {block.imageCredits}
+                  </p>
+                </div>
+                <img
+                  src={block.image}
+                  alt="Imagen del bloque"
+                  className="w-full md:w-1/2 h-auto rounded-lg object-cover"
+                />
+              </div>
+            )}
+          </section>
+        ))}
+
+        {/* Bloque de video */}
+        <section className="bg-teal-700 p-6 rounded-lg mb-10">
+          <h1 className="text-white md:text-xl font-bold mb-4">
+            {contentData.videoBlock.title}
+          </h1>
+          <div className="relative w-full h-[30rem]">
+            <img
+              src={contentData.videoBlock.videoThumbnail}
+              alt="Miniatura de video"
+              className="w-full h-full object-cover rounded-lg"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-white bg-opacity-70 rounded-full p-4">
+                <span className="text-2xl text-gray-800">▶</span>
+              </div>
+            </div>
+          </div>
+          <p className="text-white text-lg md:text-xl mt-4">
+            {contentData.videoBlock.videoDescription}
+          </p>
+        </section>
+      </main>
+
+      {/* SECCIÓN CTA */}
+      <section className="max-w-6xl mx-auto px-4 py-10 text-center">
+        <h3 className="text-2xl md:text-3xl font-bold text-teal-600 mb-4">
+          {contentData.cta.title}
+        </h3>
+        <p className="text-gray-700 text-lg md:text-xl mb-6">
+          {contentData.cta.description}
+        </p>
+        <button className="bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition">
+          {contentData.cta.buttonText}
+        </button>
+      </section>
+    </div>
+  );
+};
+
+export default PanelFibraBambuCMS;
