@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import imgT from "../../../../public/assets/images/home_carrusell_1.webp";
 import imgA from "../../../../public/assets/images/home_carrusell_2.webp";
 import imgD from "../../../../public/assets/images/home_carrusell_3.webp";
@@ -29,28 +29,38 @@ const Hero = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [fade, setFade] = useState(true);
 
-  const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const changeSlide = (next: boolean) => {
+    setFade(false);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (next ? (prev + 1) % slides.length : (prev - 1 + slides.length) % slides.length));
+      setFade(true);
+    }, 100);
   };
 
-  const handlePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      changeSlide(true);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
-      className="relative bg-cover bg-center h-dvh pt-32"
+      className={`relative bg-cover bg-center h-dvh pt-32 transition-opacity duration-500 ${
+        fade ? "opacity-100" : "opacity-0"
+      }`}
       style={{
         backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`,
       }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center md:items-start px-4 md:px-[200px] text-center md:text-left">
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center md:items-start px-4 md:px-[200px] text-center md:text-center lg:text-left">
         <div className="text-white">
-          <h1 className="text-3xl md:text-5xl font-bold whitespace-pre-line">
+          <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold whitespace-pre-line">
             {slides[currentSlide].title}
           </h1>
-          <ul className="mt-3 md:mt-5">
+          <ul className="mt-3 md:mt-8">
             {slides[currentSlide].items?.map((item: string, index: number) => (
               <li key={index} className="text-sm md:text-lg">
                 {item}
@@ -64,7 +74,7 @@ const Hero = () => {
       </div>
 
       <button
-        onClick={handlePrev}
+        onClick={() => changeSlide(false)}
         className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
       >
         <svg
@@ -85,7 +95,7 @@ const Hero = () => {
       </button>
 
       <button
-        onClick={handleNext}
+        onClick={() => changeSlide(true)}
         className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
       >
         <svg
@@ -109,3 +119,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
