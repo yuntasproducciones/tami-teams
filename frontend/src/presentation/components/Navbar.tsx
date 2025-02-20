@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import logoTami from "../../../public/assets/images/Logos/logo_movil-02.webp";
+import logoTami2 from "../../../public/assets/images/Logos/logoprincipal.gif";
 import menuHamburguesa from "../../../public/assets/icons/navigation-bar.png";
 import usuarioIcono from "../../../public/assets/icons/USUARIO_Mesa_de_trabajo_1.png";
 import whatsappIcon from "../../../public/assets/icons/WHATSAPP.svg";
@@ -13,6 +14,8 @@ import instagramIcon from "../../../public/assets/icons/INSTAGRAM.svg";
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +35,16 @@ function Navbar() {
   const activarSidebar = () => {
     setIsSidebarOpen((x) => !x);
   };
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1023);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
 
   return (
     <header
@@ -145,9 +158,9 @@ function Navbar() {
             className="w-[25px] xs:w-[50px] block lg:hidden"
             onClick={activarSidebar} />
           <img
-            src={logoTami}
+            src={isLargeScreen ? logoTami2 : logoTami}
             alt="logo-tami"
-            className="max-w-[50px] xs:max-w-[120px]" />
+            className="h-20 transition-all duration-300" />
         </div>
         {/* Íconos tami y menú hamburguesa -------------FIN------------- */}
 
@@ -208,7 +221,7 @@ function Navbar() {
 
         {/* Botón contáctanos -------------INICIO------------- */}
         <div
-          className={"flex items-center bg-white border-2 py-[1em] px-6 rounded-2xl lg:block"}
+          className={"flex items-center bg-white rounded-2xl lg:block"}
         >
 
           <div className={"items-center bg-white border-2 py-3 px-6 rounded-2xl hidden custom:block"}>
