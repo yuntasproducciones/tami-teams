@@ -55,9 +55,9 @@ const Hero = () => {
         backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`,
       }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center md:items-start px-4 md:px-[200px] text-center md:text-center lg:text-left">
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center md:items-start px-4 md:px-[200px] text-left md:text-left lg:text-left">
         <div className="text-white">
-          <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold whitespace-pre-line">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold whitespace-pre-line">
             {slides[currentSlide].title}
           </h1>
           <ul className="mt-3 md:mt-8">
@@ -73,47 +73,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <button
-        onClick={() => changeSlide(false)}
-        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
-      >
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16 4L8 12L16 20"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
 
-      <button
-        onClick={() => changeSlide(true)}
-        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded hover:bg-opacity-75"
-      >
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8 4L16 12L8 20"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
     </section>
   );
 };
