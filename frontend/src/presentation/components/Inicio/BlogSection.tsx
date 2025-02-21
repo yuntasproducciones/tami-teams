@@ -34,7 +34,7 @@ const BlogSection = () => {
         className="absolute inset-0 bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${font})` }}
       ></div>
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-10">
           <h2 className="text-5xl font-bold text-[#2d2d2d]">De nuestro BLOG</h2>
           <h1 className="text-7xl font-extrabold text-[#009e9d]">
@@ -46,15 +46,15 @@ const BlogSection = () => {
           {articles.map((article) => (
             <div
               key={article.id}
-              className="relative shadow-lg min-h-[400px] flex flex-col bg-[#009e9d] rounded-[50px]"
+              className="relative shadow-lg min-h-[400px] flex flex-col bg-[#009e9d] rounded-[70px]"
             >
               <img
                 src={article.image}
                 alt={article.title}
-                className="w-full h-80 object-cover rounded-[50px]"
+                className="w-full h-80 object-cover rounded-[70px]"
               />
 
-              <div className="p-4 flex-grow flex flex-col">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-4xl font-bold text-white p-1">
                   {article.title}
                 </h3>
