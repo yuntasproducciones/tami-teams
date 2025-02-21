@@ -1,46 +1,41 @@
 /**
- * Componente que muestra el hero de la sección de blog.
- * Usa tres contenedores: uno para el contenido, otro para la imagen y otro para el overlay de la imagen.
+ * Componente que muestra la imagen de fondo y el título de la sección de blog.
+ * Esta sección contiene un degradado sobre la imagen y un texto desplazado.
  */
+import React from "react";
+import heroImage from "../../../../public/assets/images/blog/entrada-blog/IMAGENES_HERO.webp";
 
-import hero from "../../../../public/assets/images/blog/entrada-blog/IMAGENES_HERO.webp";
+const BlogHero: React.FC = () => {
+  return (
+    <div className="relative h-screen overflow-hidden">
+      {/* Imagen de fondo */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter brightness-50"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      />
+      {/* Degradado sobre la imagen */}
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-700 via-teal-700/80 via-10% to-transparent to-60%" />
 
-const BlogHeader: React.FC = () => (
-  <div className="relative h-screen bg-gradient-to-r from-teal-600 to-cyan-300 text-white pt-28">
-    {/* Contenedor central para el contenido */}
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center h-full">
-      {/* Contenedor del texto: 100% en mobile y 45% en desktop */}
-      <div className="w-full md:w-[45%] pl-8 flex flex-col justify-center h-full z-10 relative">
-        <h2 className="text-8xl font-extrabold">TAMI</h2>
-        <h1 className="text-8xl font-semibold">BLOG</h1>
-        <p className="mt-4 text-lg">
-          <span className="block font-semibold">
-            En esta sección encontrarás temas sobre diseño de interiores para entornos:
-          </span>
-        </p>
-        <ul className="list-disc list-inside mt-4 space-y-2 text-lg">
-          <li>Profesionales</li>
-          <li>Oficinas</li>
-          <li>Restaurantes</li>
-          <li>Hoteles</li>
-          <li>Eventos especiales</li>
-        </ul>
-        <p className="mt-6 text-lg font-semibold">
-          Incluyendo tips, artículos, tendencias y consejos.
-        </p>
-      </div>
+      {/* Contenedor para posicionar el contenido */}
+      <div className="relative h-full flex flex-col items-start justify-end pb-16">
+        {/* Título */}
+        <h1 className="pl-40 text-7xl font-extrabold text-white">
+          TAMI BLOG
+        </h1>
 
-      {/* Contenedor de la imagen: se muestra solo en md+ */}
-      <div className="hidden md:block absolute top-[127px] left-1/2 right-0 bottom-0 overflow-hidden">
-        <img
-          src={hero}
-          alt="Diseño de interiores"
-          className="w-full h-full object-cover object-center"
-        />
+        {/* Pestaña con texto adicional*/}
+        <div className="mt-4 bg-teal-600/70 text-white w-6/12 p-4 rounded-r-full">
+          <p className="pl-36 pr-12 text-base font-semibold">
+          En esta sección encontrarás temas sobre diseño de interiores 
+          para entornos profesionales, como oficinas, restaurantes, hoteles y eventos especiales, 
+          incluyendo tips, artículos, tendencias y 
+          consejos.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default BlogHeader;
+export default BlogHero;
 
