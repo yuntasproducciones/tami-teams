@@ -151,16 +151,16 @@ function Navbar() {
         {/* Contenido del Menú hamburguesa desplegable solo para celulares (menor que lg 64rem (1024px)) -------------FIN------------- */}
 
         {/* Íconos tami y menú hamburguesa -------------INICIO------------- */}
-        <div className="flex items-center justify-evenly xs:justify-between w-full lg:max-w-[100px] xs:mx-[20px] sm:mx-[40px] lg:mx-[0px]">
+        <div className="flex items-center justify-between xs:justify-between w-full lg:max-w-[100px] xs:mx-[20px] sm:mx-[40px] lg:mx-[0px]">
           <img
             src={menuHamburguesa}
             alt="Menú hamburguesa"
-            className="w-[25px] xs:w-[50px] block lg:hidden"
+            className="w-[50px] xs:w-[50px] block lg:hidden"
             onClick={activarSidebar} />
           <img
             src={isLargeScreen ? logoTami2 : logoTami}
             alt="logo-tami"
-            className="h-20 transition-all duration-300" />
+            className="justify-left h-14 transition-all duration-300" />
         </div>
         {/* Íconos tami y menú hamburguesa -------------FIN------------- */}
 

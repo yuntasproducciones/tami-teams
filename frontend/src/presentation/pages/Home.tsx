@@ -4,6 +4,7 @@ import Bienvenida from "../components/Bienvenida";
 
 import PorQueNosotros from "../components/PorQueNosotros";
 import { Comentarios } from "../components/Comentarios.tsx";
+import BlogSection from "../components/Inicio/BlogSection.tsx";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Bienvenida />
       <PorQueNosotros />
       <Comentarios />
+      <BlogSection />
     </>
   );
 };

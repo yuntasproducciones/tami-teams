@@ -1,7 +1,7 @@
-import font from "../../../../public/assets/images/ARTICULOS-INICIO.jpg";
-import pg1 from "../../../../public/assets/images/Imagen14.webp";
-import pg2 from "../../../../public/assets/images/maquinaembalaje.webp";
-import pg3 from "../../../../public/assets/images/sellador.webp";
+import font from "../../../../public/assets/images/fondoo.jpg";
+import pg1 from "../../../../public/assets/images/DECORACIÓN-01.jpg";
+import pg2 from "../../../../public/assets/images/MÁQUINA-02.webp";
+import pg3 from "../../../../public/assets/images/SELLADORA-03.webp";
 
 const BlogSection = () => {
   const articles = [
@@ -29,39 +29,39 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className="relative bg-white py-10">
+    <section className="relative bg-white py-20">
       <div
-        className="absolute inset-0 bg-no-repeat bg-cover opacity-10"
+        className="absolute inset-0 bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${font})` }}
       ></div>
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-8">
-          <h2 className="text-4xl font-semibold text-black">De nuestro BLOG</h2>
-          <h1 className="text-6xl font-extrabold text-green-800">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="mb-10">
+          <h2 className="text-5xl font-bold text-[#2d2d2d]">De nuestro BLOG</h2>
+          <h1 className="text-7xl font-extrabold text-[#009e9d]">
             NOTICIAS Y ARTÍCULOS <br /> RECIENTES
           </h1>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-0 md:grid-cols-3 gap-12">
           {articles.map((article) => (
             <div
               key={article.id}
-              className="relative  bg-white shadow-lg overflow-hidden rounded-2xl min-h-[400px] flex flex-col"
+              className="relative shadow-lg min-h-[400px] flex flex-col bg-[#009e9d] rounded-[70px]"
             >
               <img
                 src={article.image}
                 alt={article.title}
-                className="w-full h-60 object-cover rounded-t-3xl"
+                className="w-full h-80 object-cover rounded-[70px]"
               />
 
-              <div className="p-4 flex-grow flex flex-col bg-teal-700 rounded-b-3xl">
-                <h3 className="mt-1 text-4xl font-bold text-white p-2">
+              <div className="p-6 flex-grow flex flex-col">
+                <h3 className="text-4xl font-bold text-white p-1">
                   {article.title}
                 </h3>
-                <h2 className="text-xl font-bold text-white p-2">
+                <h2 className="text-base font-bold text-white p-1">
                     {article.subTitle}
                 </h2>
-                <p className="mt-2 text-base font-bold text-white p-2">
+                <p className="text-base text-white p-1">
                   {article.description}
                 </p>
               </div>
