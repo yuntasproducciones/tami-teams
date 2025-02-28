@@ -8,76 +8,82 @@ interface Slide {
   title: string;
   items?: string[];
 }
+const heroArray: Slide[] = [
+  {
+    image: imgT,
+    title: "Innovación y\nsoluciones para\ncada proyecto",
+    items: [],
+  },
+  {
+    image: imgA,
+    title: "Equipos de alta\ntecnología para\nimpulsar tu negocio",
+    items: [],
+  },
+  {
+    image: imgD,
+    title: "Herramientas\ntecnología que\nmarcan la diferencia",
+    items: [],
+  },
+];
 
 const Hero = () => {
-  const slides: Slide[] = [
-    {
-      image: imgT,
-      title: "Innovación y\nsoluciones para\ncada proyecto",
-      items: [],
-    },
-    {
-      image: imgA,
-      title: "Equipos de alta\ntecnología para\nimpulsar tu negocio",
-      items: [],
-    },
-    {
-      image: imgD,
-      title: "Herramientas\ntecnología que\nmarcan la diferencia",
-      items: [],
-    },
-  ];
-
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [fade, setFade] = useState(true);
-
-  const changeSlide = (next: boolean) => {
-    setFade(false);
-    setTimeout(() => {
-      setCurrentSlide((prev) => (next ? (prev + 1) % slides.length : (prev - 1 + slides.length) % slides.length));
-      setFade(true);
-    }, 100);
-  };
+  const [isTextVisible, setIsTextVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      changeSlide(true);
-    }, 5000);
+      setIsTextVisible(false);
+      setTimeout(() => {
+        setCurrentSlide((prevIndex) => (prevIndex + 1) % heroArray.length);
+        setIsTextVisible(true);
+      }, 1000);
+    }, 7500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section
-      className={`relative bg-cover bg-center h-dvh pt-32 transition-opacity duration-500 ${
-        fade ? "opacity-100" : "opacity-0"
-      }`}
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgb(16, 235, 231) 2%, rgba(0, 158, 155, 0.5) 30%, rgba(0, 158, 155, 0) 100%), url(${slides[currentSlide].image})`,
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center md:items-start px-4 md:px-[200px] text-left md:text-left lg:text-left">
-        <div className="text-white">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold whitespace-pre-line">
-            {slides[currentSlide].title}
-          </h1>
-          <ul className="mt-3 md:mt-8">
-            {slides[currentSlide].items?.map((item: string, index: number) => (
+    <section className="relative bg-black h-dvh pt-20 content-center">
+      <div className="absolute w-full h-full top-0 z-20 bg-gradient-to-b from-teal-700 to-black opacity-75"></div>
+      {heroArray.map((slide, index) => (
+        <img
+          key={index}
+          src={slide.image}
+          className={`absolute top-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      <div className="relative px-8 lg:pl-32 z-30">
+        <h1
+          className={`mb-8 xl:mb-12 2xl:mb-16 text-white text-3xl md:text-5xl lg:text-7xl 2xl:text-9xl font-bold whitespace-pre-line transition-all duration-1000 ${
+            isTextVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
+          {heroArray[currentSlide].title}
+        </h1>
+        {heroArray[currentSlide].items && (
+          <ul
+            className={`mt-3 md:mt-8 transition-all duration-1000 ${
+              isTextVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-5"
+            }`}
+          >
+            {heroArray[currentSlide].items.map((item, index) => (
               <li key={index} className="text-sm md:text-lg">
                 {item}
               </li>
             ))}
           </ul>
-          <button className="mt-4 md:mt-6 text-teal-600 text-lg md:text-2xl bg-white px-4 md:px-8 py-2 md:py-4 rounded-xl hover:bg-teal-800 font-bold">
-            Descubre más
-          </button>
-        </div>
+        )}
+        <button className="mt-6 bg-white rounded-3xl border-2 border-slate-300 font-bold text-teal-700 hover:text-white hover:bg-gradient-to-t hover:from-teal-600 hover:to-teal-800 transition-all ease-in-out duration-500 px-5 py-2 text-lg lg:text-2xl lg:px-8 lg:py-3 xl:text-3xl 2xl:text-5xl 2xl:px-14 2xl:py-6">
+          Descubre más
+        </button>
       </div>
-
-
     </section>
   );
 };
 
 export default Hero;
-
-

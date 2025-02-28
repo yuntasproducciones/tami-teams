@@ -1,4 +1,4 @@
-import font from "../../../../public/assets/images/fondoo.jpg";
+import font from "../../../../public/assets/images/fondoo.webp";
 import pg1 from "../../../../public/assets/images/DECORACIÓN-01.jpg";
 import pg2 from "../../../../public/assets/images/MÁQUINA-02.webp";
 import pg3 from "../../../../public/assets/images/SELLADORA-03.webp";
@@ -83,7 +83,3 @@ const BlogSection = () => {
 };
 
 export default BlogSection;
-
-
-
-
