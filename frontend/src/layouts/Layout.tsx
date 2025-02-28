@@ -5,14 +5,14 @@
 
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "../presentation/components/Navbar";
+import Header from "../presentation/components/ui/navbar/Navbar";
 import Footer from "../presentation/components/Footer";
 import ScrollToTop from "../routes/ScrollToTop";
 
 const MainLayout: React.FC = () => {
   return (
     <>
-    <ScrollToTop />
+      <ScrollToTop />
       <Header />
       <main className="min-h-screen">
         <Outlet />

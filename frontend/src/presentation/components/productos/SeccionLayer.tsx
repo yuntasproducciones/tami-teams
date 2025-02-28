@@ -10,7 +10,7 @@ export interface Seccion {
 const SeccionLayer = ({ nombreSeccion, productosDeLaSeccion }: Seccion) => {
   return (
     <section
-      className="relative bg-center bg-cover py-10"
+      className="relative bg-center bg-cover py-10 bg-fixed"
       style={{ backgroundImage: `url(${circuitosFondo})` }}
     >
       <div className="relative w-4/5 place-self-center">
